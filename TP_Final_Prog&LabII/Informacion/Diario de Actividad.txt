@@ -1,0 +1,5 @@
+semana 1 (7/11 - 12/11) -------------------------------------------
+
+nehuen:
+- creó el header Constantes.h y creó ahí mismo las dimensiones DIM1, DIM2 y DIM3
+- creó las librerías arboles y listasDobles

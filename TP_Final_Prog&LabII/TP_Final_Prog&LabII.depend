@@ -1,0 +1,209 @@
+# depslib dependency file v1.0
+1698601348 source:c:\users\diego\desktop\tp_final_prog&labii\menu.c
+
+1698876099 source:c:\users\diego\desktop\tp_final_prog&labii\archivos.c
+
+1698874560 source:c:\users\diego\desktop\tp_final_prog&labii\stcarta.c
+
+1698877865 source:c:\users\diego\desktop\tp_final_prog&labii\stclase.c
+
+1698874769 source:c:\users\diego\desktop\tp_final_prog&labii\stcoleccion.c
+
+1698874935 source:c:\users\diego\desktop\tp_final_prog&labii\stenergia.c
+
+1698875288 source:c:\users\diego\desktop\tp_final_prog&labii\stentrenador.c
+
+1698874728 source:c:\users\diego\desktop\tp_final_prog&labii\stmazo.c
+
+1698874835 source:c:\users\diego\desktop\tp_final_prog&labii\stpokemon.c
+
+1698877620 source:c:\users\diego\desktop\tp_final_prog&labii\stusuario.c
+
+1698879324 source:c:\users\diego\desktop\tp_final_prog&labii\main.c
+	"menu.h"
+	"stCarta.h"
+
+1698604950 c:\users\diego\desktop\tp_final_prog&labii\menu.h
+	<stdio.h>
+	<stdlib.h>
+
+1698879319 c:\users\diego\desktop\tp_final_prog&labii\stcarta.h
+	"stClase.h"
+	"stExpancion.h"
+
+1698878552 c:\users\diego\desktop\tp_final_prog&labii\stclase.h
+	"stPokemon.h"
+	"stEnergia.h"
+	"stEntrenador.h"
+
+1698879319 c:\users\diego\desktop\tp_final_prog&labii\stpokemon.h
+	<stdio.h>
+	<stdlib.h>
+
+1698879319 c:\users\diego\desktop\tp_final_prog&labii\stenergia.h
+	<stdio.h>
+	<stdlib.h>
+
+1698879319 c:\users\diego\desktop\tp_final_prog&labii\stentrenador.h
+	<stdio.h>
+	<stdlib.h>
+
+1698879319 c:\users\diego\desktop\tp_final_prog&labii\stexpancion.h
+
+1698879010 source:c:\users\diego\desktop\tp_final_prog&labii\stexpancion.c
+
+1698876100 source:c:\users\usuario\desktop\tp_final_prog&labii\archivos.c
+
+1699020449 source:c:\users\usuario\desktop\tp_final_prog&labii\main.c
+	"menu.h"
+	"stCarta.h"
+
+1698604952 c:\users\usuario\desktop\tp_final_prog&labii\menu.h
+	<stdio.h>
+	<stdlib.h>
+
+1699016156 c:\users\usuario\desktop\tp_final_prog&labii\stcarta.h
+	"stClase.h"
+	"stExpansion.h"
+
+1699017736 c:\users\usuario\desktop\tp_final_prog&labii\stclase.h
+	"stPokemon.h"
+	"stEnergia.h"
+	"stEntrenador.h"
+
+1699018810 c:\users\usuario\desktop\tp_final_prog&labii\stpokemon.h
+	<stdio.h>
+	<stdlib.h>
+	"string.h"
+
+1699019462 c:\users\usuario\desktop\tp_final_prog&labii\stenergia.h
+	<stdio.h>
+	<stdlib.h>
+
+1699018562 c:\users\usuario\desktop\tp_final_prog&labii\stentrenador.h
+	<stdio.h>
+	<stdlib.h>
+
+1699018858 c:\users\usuario\desktop\tp_final_prog&labii\stexpansion.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1698601350 source:c:\users\usuario\desktop\tp_final_prog&labii\menu.c
+
+1698874770 source:c:\users\usuario\desktop\tp_final_prog&labii\stcoleccion.c
+
+1699018380 source:c:\users\usuario\desktop\tp_final_prog&labii\stenergia.c
+	"stEnergia.h"
+
+1699018562 source:c:\users\usuario\desktop\tp_final_prog&labii\stentrenador.c
+	"stEntrenador.h"
+
+1698874730 source:c:\users\usuario\desktop\tp_final_prog&labii\stmazo.c
+
+1699014150 source:c:\users\usuario\desktop\tp_final_prog&labii\stpokemon.c
+	"stPokemon.h"
+
+1698877622 source:c:\users\usuario\desktop\tp_final_prog&labii\stusuario.c
+
+1699020178 source:c:\users\usuario\desktop\tp_final_prog&labii\stclase.c
+	"stClase.h"
+
+1699018910 source:c:\users\usuario\desktop\tp_final_prog&labii\stexpansion.c
+	"stExpansion.h"
+
+1699012370 source:c:\users\usuario\desktop\tp_final_prog&labii\stcarta.c
+	"stCarta.h"
+
+1698876100 source:c:\users\nehue\documents\trabajofinallab2\tp_final_prog&labii\archivos.c
+
+1698601350 source:c:\users\nehue\documents\trabajofinallab2\tp_final_prog&labii\menu.c
+
+1699012370 source:c:\users\nehue\documents\trabajofinallab2\tp_final_prog&labii\stcarta.c
+	"stCarta.h"
+
+1699387681 c:\users\nehue\documents\trabajofinallab2\tp_final_prog&labii\stcarta.h
+	"stClase.h"
+	"stExpansion.h"
+	"Constantes.h"
+
+1699379543 c:\users\nehue\documents\trabajofinallab2\tp_final_prog&labii\stclase.h
+	"stPokemon.h"
+	"stEnergia.h"
+	"stEntrenador.h"
+
+1699379543 c:\users\nehue\documents\trabajofinallab2\tp_final_prog&labii\stpokemon.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Constantes.h"
+
+1699379543 c:\users\nehue\documents\trabajofinallab2\tp_final_prog&labii\stenergia.h
+	<stdio.h>
+	<stdlib.h>
+	"Constantes.h"
+
+1699379543 c:\users\nehue\documents\trabajofinallab2\tp_final_prog&labii\stentrenador.h
+	<stdio.h>
+	<stdlib.h>
+	"Constantes.h"
+
+1699379543 c:\users\nehue\documents\trabajofinallab2\tp_final_prog&labii\stexpansion.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Constantes.h"
+
+1699386932 source:c:\users\nehue\documents\trabajofinallab2\tp_final_prog&labii\stclase.c
+	"stClase.h"
+
+1698874770 source:c:\users\nehue\documents\trabajofinallab2\tp_final_prog&labii\stcoleccion.c
+
+1699386932 source:c:\users\nehue\documents\trabajofinallab2\tp_final_prog&labii\stenergia.c
+	"stEnergia.h"
+
+1699386932 source:c:\users\nehue\documents\trabajofinallab2\tp_final_prog&labii\stentrenador.c
+	"stEntrenador.h"
+
+1699386932 source:c:\users\nehue\documents\trabajofinallab2\tp_final_prog&labii\stexpansion.c
+	"stExpansion.h"
+
+1698874730 source:c:\users\nehue\documents\trabajofinallab2\tp_final_prog&labii\stmazo.c
+
+1699386932 source:c:\users\nehue\documents\trabajofinallab2\tp_final_prog&labii\stpokemon.c
+	"stPokemon.h"
+
+1698877622 source:c:\users\nehue\documents\trabajofinallab2\tp_final_prog&labii\stusuario.c
+
+1699386932 source:c:\users\nehue\documents\trabajofinallab2\tp_final_prog&labii\main.c
+	"menu.h"
+	"stCarta.h"
+	"Constantes.h"
+
+1699379543 c:\users\nehue\documents\trabajofinallab2\tp_final_prog&labii\menu.h
+	<stdio.h>
+	<stdlib.h>
+
+1699379543 c:\users\nehue\documents\trabajofinallab2\tp_final_prog&labii\constantes.h
+
+1699387224 source:c:\users\nehue\documents\trabajofinallab2\tp_final_prog&labii\arboles.c
+	"arboles.h"
+
+1699387722 c:\users\nehue\documents\trabajofinallab2\tp_final_prog&labii\arboles.h
+	<stdio.h>
+	<stdlib.h>
+	"listaDoble.h"
+	"stColeccion.h"
+
+1699387699 c:\users\nehue\documents\trabajofinallab2\tp_final_prog&labii\listadoble.h
+	<stdio.h>
+	<stdlib.h>
+	"stColeccion.h"
+
+1699387224 source:c:\users\nehue\documents\trabajofinallab2\tp_final_prog&labii\listadoble.c
+	"listaDoble.h"
+
+1699387681 c:\users\nehue\documents\trabajofinallab2\tp_final_prog&labii\stcoleccion.h
+	<stdio.h>
+	<stdlib.h>
+

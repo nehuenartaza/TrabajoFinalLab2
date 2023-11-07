@@ -1,0 +1,9 @@
+#ifndef CONSTANTES_H_INCLUDED
+#define CONSTANTES_H_INCLUDED
+
+#define DIM1 100
+#define DIM2 50
+#define DIM3 20
+#define DIM4 5
+
+#endif // CONSTANTES_H_INCLUDED
