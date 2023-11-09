@@ -4,10 +4,6 @@
 
 int main()
 {
-    arbolDeListasCartas*baseDeDatosDeCartas=inicArbol();
-
-    baseDeDatosDeCartas=cargaArbolDeListasDeCartasUsuario(baseDeDatosDeCartas);
-
-    muestraArbolDeCartas(baseDeDatosDeCartas);
+    hola soy diego probando cosas
     return 0;
 }
