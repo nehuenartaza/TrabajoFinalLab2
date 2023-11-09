@@ -1,76 +1,102 @@
+///Librerias
 #include "stClase.h"
 
+///Cuerpos
+//Revisa un string buscando salto de linea
+void buscaSaltoLinea(char stringARecorrer[])
+{
+    stringARecorrer[strcspn(stringARecorrer, "\n")] = 0;
+}
 //Cargar de cada caso
 stClase cargaClasePokemon(stClase claseACargar_F)
 {
     stPokemon pokemonAGuardar;
-    pokemonAGuardar.estado = 1;
+    pokemonAGuardar.estado=1;
+
     printf("\n Ingrese Hit Points del Pokemon: ");
-    scanf("%d", &pokemonAGuardar.puntosAtaque);
+    scanf("%d", &pokemonAGuardar.hitPoints);
+
     printf("\n Ingrese Tipo del Pokemon: ");
     fflush(stdin);
-    scanf("%s", &pokemonAGuardar.tipo);
+    fgets(pokemonAGuardar.tipo, DIM3, stdin);
+    buscaSaltoLinea(pokemonAGuardar.tipo);
+
     char opcion;
-    printf("\n El pokemon tiene 2 ataques? s/0n ");
+    printf("\n El pokemon tiene 2 ataques? s/n ");
     scanf("%c", &opcion);
     if(opcion=='s')
     {
         printf("\n Ingrese el Ataque Nro 1 del Pokemon: ");
         fflush(stdin);
-        scanf("%s", &pokemonAGuardar.ataqueNro1);
+        fgets(pokemonAGuardar.ataqueNro1, DIM1, stdin);
+        buscaSaltoLinea(pokemonAGuardar.ataqueNro1);
+
         printf("\n Ingrese el Ataque Nro 2 del Pokemon: ");
         fflush(stdin);
-        scanf("%s", &pokemonAGuardar.ataqueNro2);
+        fgets(pokemonAGuardar.ataqueNro2, DIM1, stdin);
+        buscaSaltoLinea(pokemonAGuardar.ataqueNro2);
     }
     else
     {
         printf("\n Ingrese el Ataque del Pokemon: ");
         fflush(stdin);
-        scanf("%s", &pokemonAGuardar.ataqueNro1);
+        fgets(pokemonAGuardar.ataqueNro1, DIM1, stdin);
+        buscaSaltoLinea(pokemonAGuardar.ataqueNro1);
+
         strcpy(pokemonAGuardar.ataqueNro2, "Ninguno.");
     }
-    claseACargar_F.datosPokemon = pokemonAGuardar;
-    claseACargar_F.datosEnergia.estado = 0;
-    claseACargar_F.datosEntrenador.estado = 0;
+
+    claseACargar_F.datosPokemon=pokemonAGuardar;
+    claseACargar_F.datosEnergia.estado=0;
+    claseACargar_F.datosEntrenador.estado=0;
+
     return claseACargar_F;
 }
-
 stClase cargaClaseEnergia(stClase claseACargar_F)
 {
     stEnergia energiaAGuardar;
     energiaAGuardar.estado=1;
-    printf("\n Ingrese Tipo de Energia: ");
+
+    printf("\n Ingrese Tipo de la Energia: ");
     fflush(stdin);
-    scanf("%s", &energiaAGuardar.tipoEnergia);
+    fgets(energiaAGuardar.tipoEnergia, DIM3, stdin);
+    buscaSaltoLinea(energiaAGuardar.tipoEnergia);
+
     claseACargar_F.datosEnergia=energiaAGuardar;
-    claseACargar_F.datosEntrenador.estado=0;
     claseACargar_F.datosPokemon.estado=0;
+    claseACargar_F.datosEntrenador.estado=0;
+
     return claseACargar_F;
 }
-
 stClase cargaClaseEntrenador(stClase claseACargar_F)
 {
     stEntrenador entrenadorAGuardar;
-    entrenadorAGuardar.estado = 1;
+    entrenadorAGuardar.estado=1;
+
     printf("\n Ingrese Efecto del Entrenador: ");
     fflush(stdin);
-    scanf("%s", &entrenadorAGuardar.efecto);
-    claseACargar_F.datosEntrenador = entrenadorAGuardar;
-    claseACargar_F.datosEnergia.estado = 0;
-    claseACargar_F.datosPokemon.estado = 0;
+    fgets(entrenadorAGuardar.efecto, DIM1, stdin);
+    buscaSaltoLinea(entrenadorAGuardar.efecto);
+
+    claseACargar_F.datosEntrenador=entrenadorAGuardar;
+    claseACargar_F.datosPokemon.estado=0;
+    claseACargar_F.datosEnergia.estado=0;
+
     return claseACargar_F;
 }
-
-stClase cargaClaseUsuario(stClase claseACargar_F)   //Carga Preguntando que caso
+//Carga Preguntando que caso
+stClase cargaClaseUsuario(stClase claseACargar_F)
 {
     int opcion;
-    do {
+    do
+    {
         printf("\n Que Clase quiere cargar?");
         printf("\n Ingrese 1 para Pokemon");
         printf("\n Ingrese 2 para Energia");
         printf("\n Ingrese 3 para Entrenador");
         printf("\n Su eleccion es: ");
         scanf("%d", &opcion);
+
         if(opcion==1)
             claseACargar_F=cargaClasePokemon(claseACargar_F);
         else if(opcion==2)
@@ -79,21 +105,25 @@ stClase cargaClaseUsuario(stClase claseACargar_F)   //Carga Preguntando que caso
             claseACargar_F=cargaClaseEntrenador(claseACargar_F);
         else
             printf("\n Opcion Invalida. \n");
-    } while(validaOpcionCargaClaseUsuario(opcion)==0);
+    }
+    while(validaOpcionCargaClaseUsuario(opcion)==0);
+
     return claseACargar_F;
 }
-
-int validaOpcionCargaClaseUsuario(int opcion_F) //Valida Opcion
+//Valida Opcion
+int validaOpcionCargaClaseUsuario(int opcion_F)
 {
     int rta;
+
     if(opcion_F==1 || opcion_F==2 || opcion_F==3)
         rta=1;
     else
         rta=0;
+
     return rta;
 }
-
-void muestraClase(stClase claseAMostrar)    //Muestra la clase
+//Muestra la clase
+void muestraClase(stClase claseAMostrar)
 {
     if(claseAMostrar.datosPokemon.estado==1)
         muestraPokemon(claseAMostrar.datosPokemon);
@@ -102,4 +132,3 @@ void muestraClase(stClase claseAMostrar)    //Muestra la clase
     else if(claseAMostrar.datosEnergia.estado==1)
         muestraEnergia(claseAMostrar.datosEnergia);
 }
-

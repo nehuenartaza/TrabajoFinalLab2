@@ -10,7 +10,8 @@ typedef struct {
     char efecto[DIM1];
 } stEntrenador;
 
-void muestrapokemonAGuardarataqueNro1Entrenador(stEntrenador);
-void muestraEntrenador(stEntrenador);
+///Prototipados
+//Muestra Entrenador
+void muestraEntrenador(stEntrenador entrenadorAMostrar);
 
 #endif // STENTRENADOR_H_INCLUDED
