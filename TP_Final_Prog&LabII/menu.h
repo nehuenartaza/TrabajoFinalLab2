@@ -3,6 +3,9 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
+void buscaSaltoLinea(char[]);
+void * setNULL();
 
 #endif // MENU_H_INCLUDED

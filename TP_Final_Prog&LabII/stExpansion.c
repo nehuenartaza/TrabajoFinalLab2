@@ -1,24 +1,22 @@
-///Librerias
 #include "stExpansion.h"
 
-///Cuerpos
-//Carga
-stExpansion cargaExpansionUsuario(stExpansion expancionACargar)
+
+stExpansion cargaExpansionUsuario(stExpansion expansionACargar) //Carga
 {
     printf("\n Ingrese el Titulo de la Expansion:");
     fflush(stdin);
-    fgets(expancionACargar.expansionTitulo, DIM, stdin);
-    buscaSaltoLinea(expancionACargar.expansionTitulo);
+    fgets(expansionACargar.expansionTitulo, DIM2, stdin);
+    buscaSaltoLinea(expansionACargar.expansionTitulo);
 
     printf("\n Ingrese el SubTitulo de la Expansion:");
     fflush(stdin);
-    fgets(expancionACargar.expansionSubTit, DIM, stdin);
-    buscaSaltoLinea(expancionACargar.expansionTitulo);
+    fgets(expansionACargar.expansionSubTit, DIM2, stdin);
+    buscaSaltoLinea(expansionACargar.expansionTitulo);
 
-    return expancionACargar;
+    return expansionACargar;
 }
-//Muestra
-void muestraExpansion(stExpansion expansionAMostrar)
+
+void muestraExpansion(stExpansion expansionAMostrar)    //Muestra
 {
     printf("\n Expansion: %s", expansionAMostrar.expansionTitulo);
     printf("\n Edicion..: %s", expansionAMostrar.expansionSubTit);

@@ -12,6 +12,6 @@ typedef struct {
     struct stArbol * ramaIzq;
 } stArbol;
 
-void * setNULL();
+
 
 #endif // ARBOLES_H_INCLUDED

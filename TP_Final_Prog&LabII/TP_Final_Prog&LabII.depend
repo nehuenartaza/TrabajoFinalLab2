@@ -117,22 +117,23 @@
 
 1698876100 source:c:\users\nehue\documents\trabajofinallab2\tp_final_prog&labii\archivos.c
 
-1698601350 source:c:\users\nehue\documents\trabajofinallab2\tp_final_prog&labii\menu.c
+1699631891 source:c:\users\nehue\documents\trabajofinallab2\tp_final_prog&labii\menu.c
+	"menu.h"
 
-1699012370 source:c:\users\nehue\documents\trabajofinallab2\tp_final_prog&labii\stcarta.c
+1699631902 source:c:\users\nehue\documents\trabajofinallab2\tp_final_prog&labii\stcarta.c
 	"stCarta.h"
+	"menu.h"
 
-1699387681 c:\users\nehue\documents\trabajofinallab2\tp_final_prog&labii\stcarta.h
+1699631891 c:\users\nehue\documents\trabajofinallab2\tp_final_prog&labii\stcarta.h
 	"stClase.h"
 	"stExpansion.h"
-	"Constantes.h"
 
-1699379543 c:\users\nehue\documents\trabajofinallab2\tp_final_prog&labii\stclase.h
+1699632199 c:\users\nehue\documents\trabajofinallab2\tp_final_prog&labii\stclase.h
 	"stPokemon.h"
 	"stEnergia.h"
 	"stEntrenador.h"
 
-1699379543 c:\users\nehue\documents\trabajofinallab2\tp_final_prog&labii\stpokemon.h
+1699630488 c:\users\nehue\documents\trabajofinallab2\tp_final_prog&labii\stpokemon.h
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -143,18 +144,18 @@
 	<stdlib.h>
 	"Constantes.h"
 
-1699379543 c:\users\nehue\documents\trabajofinallab2\tp_final_prog&labii\stentrenador.h
+1699630488 c:\users\nehue\documents\trabajofinallab2\tp_final_prog&labii\stentrenador.h
 	<stdio.h>
 	<stdlib.h>
 	"Constantes.h"
 
-1699379543 c:\users\nehue\documents\trabajofinallab2\tp_final_prog&labii\stexpansion.h
+1699630013 c:\users\nehue\documents\trabajofinallab2\tp_final_prog&labii\stexpansion.h
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	"Constantes.h"
 
-1699386932 source:c:\users\nehue\documents\trabajofinallab2\tp_final_prog&labii\stclase.c
+1699630488 source:c:\users\nehue\documents\trabajofinallab2\tp_final_prog&labii\stclase.c
 	"stClase.h"
 
 1698874770 source:c:\users\nehue\documents\trabajofinallab2\tp_final_prog&labii\stcoleccion.c
@@ -165,7 +166,7 @@
 1699386932 source:c:\users\nehue\documents\trabajofinallab2\tp_final_prog&labii\stentrenador.c
 	"stEntrenador.h"
 
-1699386932 source:c:\users\nehue\documents\trabajofinallab2\tp_final_prog&labii\stexpansion.c
+1699630097 source:c:\users\nehue\documents\trabajofinallab2\tp_final_prog&labii\stexpansion.c
 	"stExpansion.h"
 
 1698874730 source:c:\users\nehue\documents\trabajofinallab2\tp_final_prog&labii\stmazo.c
@@ -175,21 +176,22 @@
 
 1698877622 source:c:\users\nehue\documents\trabajofinallab2\tp_final_prog&labii\stusuario.c
 
-1699386932 source:c:\users\nehue\documents\trabajofinallab2\tp_final_prog&labii\main.c
+1699630488 source:c:\users\nehue\documents\trabajofinallab2\tp_final_prog&labii\main.c
 	"menu.h"
 	"stCarta.h"
 	"Constantes.h"
 
-1699379543 c:\users\nehue\documents\trabajofinallab2\tp_final_prog&labii\menu.h
+1699632199 c:\users\nehue\documents\trabajofinallab2\tp_final_prog&labii\menu.h
 	<stdio.h>
 	<stdlib.h>
+	<string.h>
 
-1699379543 c:\users\nehue\documents\trabajofinallab2\tp_final_prog&labii\constantes.h
+1699630013 c:\users\nehue\documents\trabajofinallab2\tp_final_prog&labii\constantes.h
 
-1699387224 source:c:\users\nehue\documents\trabajofinallab2\tp_final_prog&labii\arboles.c
+1699630488 source:c:\users\nehue\documents\trabajofinallab2\tp_final_prog&labii\arboles.c
 	"arboles.h"
 
-1699387722 c:\users\nehue\documents\trabajofinallab2\tp_final_prog&labii\arboles.h
+1699630488 c:\users\nehue\documents\trabajofinallab2\tp_final_prog&labii\arboles.h
 	<stdio.h>
 	<stdlib.h>
 	"listaDoble.h"

@@ -10,8 +10,6 @@ typedef struct {
     char efecto[DIM1];
 } stEntrenador;
 
-///Prototipados
-//Muestra Entrenador
-void muestraEntrenador(stEntrenador entrenadorAMostrar);
+void muestraEntrenador(stEntrenador);    //Muestra Entrenador
 
 #endif // STENTRENADOR_H_INCLUDED
