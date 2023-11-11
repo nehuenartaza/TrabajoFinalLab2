@@ -4,9 +4,40 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-typedef struct {
+#include "stCarta.h"
+///Estructura
 
-} stMazo;
+//LA LISTA SIMPLE DEL MAZO
+typedef struct{
+ stCarta dato;
+ struct mazoSimple*siguiente;
+}mazoSimple;
+
+//EL MAZO
+typedef struct
+{
+  mazoSimple*Tope;
+}stMazo;
+
+//FUNCIONES DE LA LISTA SIMPLE DEL MAZO
+mazoSimple*AgregarAlprincipio(mazoSimple*,mazoSimple*);
+mazoSimple*CrearNodo(stCarta);
+stCarta BorrarPrimero(mazoSimple**);
+
+//FUNCIONES PARA EL MAZO
+void apilarMazo(stMazo*,stCarta);
+stCarta DesapilarMazo(stMazo*);
+stCarta MostrarTope(stMazo*);
+int MazoVacio(stMazo*);
+void MostrarMazo(stMazo);
+
+
+
+
+
+
+
+///Prototipado
 
 
 
