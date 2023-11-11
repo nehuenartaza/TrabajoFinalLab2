@@ -50,5 +50,7 @@ arbolDeListasCartas * agregarNodoArbol(arbolDeListasCartas *, arbolDeListasCarta
 void muestraArbolDeCartas(arbolDeListasCartas *);   //Muestra Arbol
 void muestraRaiz(arbolDeListasCartas *); //Muestra Raiz
 arbolDeListasCartas * cargaArbolDeListasDeCartasUsuario(arbolDeListasCartas *);    //Carga Arbol Usuario
+arbolDeListasCartas * agregaCartaANodoDeArbol(arbolDeListasCartas* raizActual_F, char inicialDeNodoArbol, listaDeCartas * nuevaCarta_F);
+arbolDeListasCartas * altaCarta(arbolDeListasCartas * raizActual_F, stCarta cartaACargar);   //Carga un pokemon por inicial y si no esta crea el nodo de la incial
 
 #endif // STCARTA_H_INCLUDED

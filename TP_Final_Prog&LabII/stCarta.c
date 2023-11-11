@@ -92,7 +92,7 @@ void muestraNodoCarta(listaDeCartas * nodoAMostrar)   //Muestra Nodo de la lista
 ///Arboles de Listas
 arbolDeListasCartas * creaNodoArbolCartas(char nuevaInicial)  //Crea Nodo Arbol
 {
-    arbolDeListasCartas * nuevoNodoArbol;
+    arbolDeListasCartas * nuevoNodoArbol = (arbolDeListasCartas*)malloc(sizeof(arbolDeListasCartas));
     nuevoNodoArbol->inicial = nuevaInicial;
     nuevoNodoArbol->izquierda = setNULL();
     nuevoNodoArbol->derecha = setNULL();
@@ -134,18 +134,32 @@ arbolDeListasCartas * altaCarta(arbolDeListasCartas * raizActual_F, stCarta cart
 {
     if(raizActual_F != NULL) //Si raiz es distinto de NULL trabajo
     {
-        arbolDeListasCartas * nodoACargar = buscaNodoConInicial(raizActual_F, cartaACargar.nombre[0]); //busco el nodo de mi arbol con la inicial de mi carta
-        if(nodoACargar == NULL)  //Si no encontro el nodo de la incial lo crea
+        listaDeCartas*nuevaCarta = creaNodoConCarta(cartaACargar); //Creo mi nuevo nodo de lista (una carta nueva) a cargar en el arbol de lista
+        char inicialABuscar = nuevaCarta->dato.nombre[0]; //Creo una variable que guarde su inicial
+        arbolDeListasCartas * nodoACargar = buscaNodoConInicial(raizActual_F, inicialABuscar); //busco el nodo de mi arbol con la inicial de mi carta
+        if(nodoACargar == NULL)  //Si no encontro el nodo de la incial
         {
-            nodoACargar = creaNodoArbolCartas(cartaACargar.nombre[0]);
-            raizActual_F = agregarNodoArbol(raizActual_F, nodoACargar);
+            nodoACargar = creaNodoArbolCartas(inicialABuscar); //Crea el nodo de la inicial que no encontro
+            raizActual_F = agregarNodoArbol(raizActual_F, nodoACargar); //Agrega el nodo con la inicial nueva
         }
         //carga mi carta al nodo
-        nodoACargar->listaDeCartasPorInicial = cargaAFIN(nodoACargar->listaDeCartasPorInicial, creaNodoConCarta(cartaACargar));
+        raizActual_F = agregaCartaANodoDeArbol(raizActual_F, inicialABuscar, nuevaCarta);
     }
     return raizActual_F;
 }
-
+arbolDeListasCartas * agregaCartaANodoDeArbol(arbolDeListasCartas* raizActual_F, char inicialDeNodoArbol, listaDeCartas * nuevaCarta_F)
+{
+    if(raizActual_F!=NULL)
+    {
+        if(raizActual_F->inicial == inicialDeNodoArbol)
+            raizActual_F->listaDeCartasPorInicial = cargaAFIN(raizActual_F->listaDeCartasPorInicial, nuevaCarta_F);
+        else if(inicialDeNodoArbol < raizActual_F->inicial)
+            raizActual_F->izquierda = agregaCartaANodoDeArbol(raizActual_F->izquierda, inicialDeNodoArbol, nuevaCarta_F);
+        else if(inicialDeNodoArbol > raizActual_F->inicial)
+            raizActual_F->derecha = agregaCartaANodoDeArbol(raizActual_F->derecha, inicialDeNodoArbol, nuevaCarta_F);
+    }
+    return raizActual_F;
+}
 void muestraArbolDeCartas(arbolDeListasCartas * arbolAMostrar)    //Muestra Arbol
 {
     if(arbolAMostrar != NULL)
