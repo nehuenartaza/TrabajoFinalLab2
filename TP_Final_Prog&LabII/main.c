@@ -11,7 +11,7 @@ int main()
         cargaArchiCartas(cargaCartaUsuario());
         printf("\n Desea continuar? s/n ");
         fflush(stdin);
-        scanf("%c", &control)
+        scanf("%c", &control);
     }
 
     muestraArchiCartas();

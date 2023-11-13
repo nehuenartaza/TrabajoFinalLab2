@@ -45,4 +45,4 @@ int buscaUltimoIDEnArchi()
     return ultimoID;
 }
 
-arbolDeListasCartas *
+

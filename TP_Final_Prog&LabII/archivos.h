@@ -9,7 +9,7 @@
 
 
 ///Archivos de Cartas
-arbolDeListasCartas * cargaArchiCartas(stCarta cartaAGuardar);
+void cargaArchiCartas(stCarta cartaAGuardar);
 void muestraArchiCartas();
 int buscaUltimoIDEnArchi();
 
