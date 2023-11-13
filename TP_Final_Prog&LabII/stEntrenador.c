@@ -2,7 +2,7 @@
 
 void muestraEntrenador(stEntrenador entrenadorAMostrar) //Mostrar Entrenador
 {
-    printf("\n Efecto: %s", entrenadorAMostrar.efecto);
+    printf("\n Efecto........: %s", entrenadorAMostrar.efecto);
 
 }
 

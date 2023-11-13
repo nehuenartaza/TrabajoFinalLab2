@@ -23,10 +23,10 @@ stCarta cargaCartaUsuario() //Carga una carta
 
 void muestraCarta(stCarta cartaAMostrar)    //Muestra Carta
 {
-    printf("\n Id: %d", cartaAMostrar.id);
-    printf("\n Nombre: %s", cartaAMostrar.nombre);
-    printf("\n Rareza: %s", cartaAMostrar.rareza);
-    printf("\n Cantidad: %d", cartaAMostrar.cant);
+    printf("\n Id............: %d", cartaAMostrar.id);
+    printf("\n Nombre........: %s", cartaAMostrar.nombre);
+    printf("\n Rareza........: %s", cartaAMostrar.rareza);
+    printf("\n Cantidad......: %d", cartaAMostrar.cant);
     muestraClase(cartaAMostrar.claseCarta);
     muestraExpansion(cartaAMostrar.expansionCarta);
 }

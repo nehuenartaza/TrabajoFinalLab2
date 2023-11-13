@@ -2,5 +2,5 @@
 
 void muestraEnergia(stEnergia energiaAMostrar)  //Muestra Energia
 {
-    printf("\n Tipo: %s", energiaAMostrar.tipoEnergia);
+    printf("\n Tipo..........: %s", energiaAMostrar.tipoEnergia);
 }

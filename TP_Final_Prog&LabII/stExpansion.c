@@ -18,6 +18,6 @@ stExpansion cargaExpansionUsuario(stExpansion expansionACargar) //Carga
 
 void muestraExpansion(stExpansion expansionAMostrar)    //Muestra
 {
-    printf("\n Expansion: %s", expansionAMostrar.expansionTitulo);
-    printf("\n Edicion..: %s", expansionAMostrar.expansionSubTit);
+    printf("\n Expansion.....: %s", expansionAMostrar.expansionTitulo);
+    printf("\n Edicion.......: %s", expansionAMostrar.expansionSubTit);
 }
