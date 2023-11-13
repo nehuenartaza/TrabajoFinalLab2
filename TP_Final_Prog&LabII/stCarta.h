@@ -6,12 +6,12 @@
 
 typedef struct
 {
-    int id;
-    int cant;
-    char rareza[DIM3];
-    char nombre[DIM2];
-    stClase claseCarta;
-    stExpansion expansionCarta;
+    int id;  // se define solo
+    int cant; // se define solo
+    char rareza[DIM3]; // Comun , Poco Comun , Rara
+    char nombre[DIM2]; // Respetar Mayusculas en carta
+    stClase claseCarta; // Respetar Mayusculas en carta
+    stExpansion expansionCarta; // Respetar Mayusculas en carta
 }stCarta;
 
 typedef struct

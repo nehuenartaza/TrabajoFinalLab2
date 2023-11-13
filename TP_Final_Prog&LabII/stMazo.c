@@ -88,5 +88,15 @@ void MostrarMazo(stMazo Pila) //muestra el mazo de cartas
     }
 }
 
-//void CargarMazoAleatoriamente(stMazo*Pila) esta nos falta implementar debido a que falta stColeccion
+
+/*void CargarMazoAleatoriamente(stMazo*Pila,stListaD*ListaDoble) //AVISO, PARTE INCONCLUSA DEBIDO AL TIPO DE DATO QUE APILA EL MAZO
+{
+   int cartas=ContarCartasListaDoble(ListaDoble);
+
+   while(cartas!=0)
+   {
+
+   }
+}
+*/
 

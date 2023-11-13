@@ -4,20 +4,20 @@
 stCarta cargaCartaUsuario() //Carga una carta
 {
     stCarta nuevaCarta;
-    printf("\n Ingrese ID de la carta: ");
-    scanf("%d", &nuevaCarta.id);
-    printf("\n Ingrese Cantidad que tiene de esa carta: ");
-    scanf("%d", &nuevaCarta.cant);
+    //printf("\n Ingrese ID de la carta: ");
+    //scanf("%d", &nuevaCarta.id);
+    nuevaCarta.cant = 1;
     printf("\n Ingrese el Nombre de la carta: ");
     fflush(stdin);
     fgets(nuevaCarta.nombre, DIM2, stdin);
     buscaSaltoLinea(nuevaCarta.nombre);
-    printf("\n Ingrese la Rareza de la carta:");
+    printf("\n Ingrese la Rareza de la carta: ");
     fflush(stdin);
     fgets(nuevaCarta.rareza, DIM3, stdin);
     buscaSaltoLinea(nuevaCarta.rareza);
     nuevaCarta.claseCarta = cargaClaseUsuario(nuevaCarta.claseCarta);
     nuevaCarta.expansionCarta = cargaExpansionUsuario(nuevaCarta.expansionCarta);
+    nuevaCarta.id = buscaUltimoIDEnArchi() + 1;
     return nuevaCarta;
 }
 
@@ -144,9 +144,14 @@ arbolDeListasCartas * altaCarta(arbolDeListasCartas * raizActual_F, stCarta cart
         }
         //carga mi carta al nodo
         raizActual_F = agregaCartaANodoDeArbol(raizActual_F, inicialABuscar, nuevaCarta);
+    }else
+    {
+        raizActual_F=creaNodoArbolCartas(cartaACargar.nombre[0]);
+        raizActual_F->listaDeCartasPorInicial=cargaAFIN(raizActual_F->listaDeCartasPorInicial, creaNodoConCarta(cartaACargar));
     }
     return raizActual_F;
 }
+
 arbolDeListasCartas * agregaCartaANodoDeArbol(arbolDeListasCartas* raizActual_F, char inicialDeNodoArbol, listaDeCartas * nuevaCarta_F)
 {
     if(raizActual_F!=NULL)
@@ -160,12 +165,15 @@ arbolDeListasCartas * agregaCartaANodoDeArbol(arbolDeListasCartas* raizActual_F,
     }
     return raizActual_F;
 }
+
 void muestraArbolDeCartas(arbolDeListasCartas * arbolAMostrar)    //Muestra Arbol
 {
     if(arbolAMostrar != NULL)
     {
         muestraArbolDeCartas(arbolAMostrar->izquierda);
+        printf("\n -----------------------");
         printf("\n Cartas con inicial: %c", arbolAMostrar->inicial);
+        printf("\n -----------------------");
         muestraRaiz(arbolAMostrar);
         muestraArbolDeCartas(arbolAMostrar->derecha);
     }
@@ -178,10 +186,10 @@ void muestraRaiz(arbolDeListasCartas * raizAMostrar)  //Muestra Raiz
 
 arbolDeListasCartas * cargaArbolDeListasDeCartasUsuario(arbolDeListasCartas * arbolACargar) //Carga Arbol Usuario
 {
-    stCarta nuevaCarta = cargaCartaUsuario();
-    char control='s';
+    char control = 's';
     do
     {
+        stCarta nuevaCarta = cargaCartaUsuario();
         arbolACargar = altaCarta(arbolACargar, nuevaCarta);
         printf("\nDesea cargar mas cartas? s/n ");
         scanf("%c", &control);

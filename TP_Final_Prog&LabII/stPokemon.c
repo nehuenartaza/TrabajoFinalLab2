@@ -13,9 +13,9 @@ stPokemon cargaPokemon(int puntosAtaque_F, char tipo_F[], char ataqueNro1_F[], c
 
 void muestraPokemon(stPokemon pokemonAMostrar)  //Muestra Pokemon
 {
-    printf("\n Hit Points(HP): %d\n", pokemonAMostrar.puntosAtaque);
-    printf("\n Tipo..........: %s\n", pokemonAMostrar.tipo);
-    printf("\n Ataque Nro 1..: %s\n", pokemonAMostrar.ataqueNro1);
-    printf("\n Ataque Nro 2..: %s\n", pokemonAMostrar.ataqueNro2);
+    printf("\n Hit Points(HP): %d", pokemonAMostrar.puntosAtaque);
+    printf("\n Tipo..........: %s", pokemonAMostrar.tipo);
+    printf("\n Ataque Nro 1..: %s", pokemonAMostrar.ataqueNro1);
+    printf("\n Ataque Nro 2..: %s", pokemonAMostrar.ataqueNro2);
 }
 

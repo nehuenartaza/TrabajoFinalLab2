@@ -3,12 +3,12 @@
 
 stExpansion cargaExpansionUsuario(stExpansion expansionACargar) //Carga
 {
-    printf("\n Ingrese el Titulo de la Expansion:");
+    printf("\n Ingrese el Titulo de la Expansion: ");
     fflush(stdin);
     fgets(expansionACargar.expansionTitulo, DIM2, stdin);
     buscaSaltoLinea(expansionACargar.expansionTitulo);
 
-    printf("\n Ingrese el SubTitulo de la Expansion:");
+    printf("\n Ingrese el SubTitulo de la Expansion: ");
     fflush(stdin);
     fgets(expansionACargar.expansionSubTit, DIM2, stdin);
     buscaSaltoLinea(expansionACargar.expansionTitulo);

@@ -4,9 +4,17 @@
 #include <time.h>
 int main()
 {
-    arbolDeListasCartas * arbolDePrueba = setNULL();
-    arbolDePrueba = altaCarta(arbolDePrueba, cargaCartaUsuario());
-    muestraArbolDeCartas(arbolDePrueba);
+    ///Carga todo el archivo hasta que nosotros queramos
+    char control = 's';
+    while(control == 's')
+    {
+        cargaArchiCartas(cargaCartaUsuario());
+        printf("\n Desea continuar? s/n ");
+        fflush(stdin);
+        scanf("%c", &control)
+    }
+
+    muestraArchiCartas();
     return 0;
 }
 

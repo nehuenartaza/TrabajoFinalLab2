@@ -3,3 +3,8 @@ semana 1 (7/11 - 12/11) -------------------------------------------
 nehuen:
 - creó el header Constantes.h y creó ahí mismo las dimensiones DIM1, DIM2 y DIM3
 - creó las librerías arboles y listasDobles
+
+Julián:
+-Creo la estructura del mazo(pila), y la funcion apilar(),mazoVacio(), desapilar(), mostrar() y mostrarTope()
+-Creo la estructura para la lista simple de cartas con la que se va a cargar el mazo, con la funcion borrarPrimero(),
+agregarAlprincipio() y crearNodo()
