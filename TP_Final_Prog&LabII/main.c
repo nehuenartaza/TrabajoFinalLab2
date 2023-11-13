@@ -5,6 +5,8 @@
 int main()
 {
     ///Carga todo el archivo hasta que nosotros queramos
+    muestraArchiCartas();
+
     char control = 's';
     while(control == 's')
     {
