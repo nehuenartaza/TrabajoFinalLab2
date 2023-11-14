@@ -5,6 +5,7 @@
 #include <stdlib.h>
 
 #include "stCarta.h"
+#include "stColeccion.h"
 ///Estructura
 
 //LA LISTA SIMPLE DEL MAZO
@@ -30,8 +31,8 @@ stCarta DesapilarMazo(stMazo*);
 stCarta MostrarTope(stMazo*);
 int MazoVacio(stMazo*);
 void MostrarMazo(stMazo);
-
-
+void CargarMazoAleatoriamente(stMazo*Pila,stListaD**ListaDoble);
+void BorrarNodoYMeterEnMazoNodoElegidoConContador(stListaD**Lista,stMazo*Pila,int numeroDePosicion,int contador);
 
 
 

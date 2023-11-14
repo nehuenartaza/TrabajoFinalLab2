@@ -3,13 +3,14 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-
+#include "stcarta.h"
 typedef struct {
+  stCarta dataColecc;
 
+  struct stColeccion*sigNodo;
+  struct stColeccion*antNodo;
+}stListaD;
 
-
-
-} stColeccion;
-
+int ContarCartasListaDoble(stListaD*Lista);
 
 #endif // STCOLECCION_H_INCLUDED

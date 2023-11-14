@@ -1,11 +1,5 @@
 #include "stMazo.h"
 //FUNCIONES PARA LA LISTA SIMPLE QUE TIENE EL MAZO///
-/*void*setNULL()   //tambien requiere de este
-{
-    return NULL;
-
-}
-*/
 mazoSimple*AgregarAlprincipio(mazoSimple*Lista,mazoSimple*NuevaLista) //agrega al principio el nuevo nodo
 {
     if(Lista==NULL)
@@ -88,15 +82,56 @@ void MostrarMazo(stMazo Pila) //muestra el mazo de cartas
     }
 }
 
-
-/*void CargarMazoAleatoriamente(stMazo*Pila,stListaD*ListaDoble) //AVISO, PARTE INCONCLUSA DEBIDO AL TIPO DE DATO QUE APILA EL MAZO
+//FUNCION PARA METER EN EL MAZO Y BORRAR NODO
+void CargarMazoAleatoriamente(stMazo*Pila,stListaD**ListaDoble)
 {
    int cartas=ContarCartasListaDoble(ListaDoble);
+   int contador=0;
 
    while(cartas!=0)
    {
-
+        BorrarNodoYMeterEnMazoNodoElegidoConContador(ListaDoble,Pila,rand()%cartas+1,contador++);
    }
 }
-*/
+
+void BorrarNodoYMeterEnMazoNodoElegidoConContador(stListaD**Lista,stMazo*Pila,int numeroDePosicion,int contador)
+{
+    if(Lista!=NULL)
+    {
+        if(contador!=numeroDePosicion)
+        {
+
+            BorrarNodoYMeterEnMazoNodoElegidoConContador((&(*Lista)->sigNodo),Pila,numeroDePosicion,contador+1);
+
+
+        }
+        else
+        {
+            stListaD*Borrar=(*Lista);
+            (*Lista)=(*Lista)->sigNodo;
+            if((*Lista)!=NULL)
+            {
+                (*Lista)->antNodo=Borrar->antNodo;
+                stListaD*siguiente=(*Lista)->sigNodo;
+
+                if(siguiente!=NULL)
+                {
+                    siguiente->antNodo=(*Lista);
+
+
+
+
+                }
+
+            }
+            apilarMazo(Pila,Borrar->dataColecc);
+
+        }
+
+    }
+
+
+
+
+}
 

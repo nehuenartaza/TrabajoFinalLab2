@@ -3,7 +3,6 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include "listaDoble.h"
 #include "stColeccion.h"
 
 typedef struct {
