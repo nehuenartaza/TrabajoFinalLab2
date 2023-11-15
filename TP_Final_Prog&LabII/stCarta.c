@@ -194,9 +194,9 @@ void muestraArbolDeCartas(arbolDeListasCartas * arbolAMostrar)    //Muestra Arbo
     if(arbolAMostrar != NULL)
     {
         muestraArbolDeCartas(arbolAMostrar->izquierda);
-        printf("\n -----------------------");
-        printf("\n Cartas con inicial: %c", arbolAMostrar->inicial);
-        printf("\n -----------------------");
+        printf("\n ------------------------------------------");
+        printf("\n           Cartas con inicial: %c", arbolAMostrar->inicial);
+        printf("\n ------------------------------------------");
         muestraRaiz(arbolAMostrar);
         muestraArbolDeCartas(arbolAMostrar->derecha);
     }

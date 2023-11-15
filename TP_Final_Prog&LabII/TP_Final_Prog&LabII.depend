@@ -933,3 +933,70 @@
 1700054386 c:\users\usuario\desktop\tranajado hoy\trabajofinallab2 - copia\tp_final_prog&labii\stdatosusuario.h
 	"constantes.h"
 
+1700046622 source:c:\users\usuario\documents\github\trabajofinallab2\tp_final_prog&labii\archivos.c
+	"archivos.h"
+
+1700059292 c:\users\usuario\documents\github\trabajofinallab2\tp_final_prog&labii\archivos.h
+	"stUsuario.h"
+
+1700054396 c:\users\usuario\documents\github\trabajofinallab2\tp_final_prog&labii\stusuario.h
+	"stMazo.h"
+	"stNotificaciones.h"
+
+1700053440 c:\users\usuario\documents\github\trabajofinallab2\tp_final_prog&labii\stmazo.h
+	"stColeccion.h"
+
+1700053378 c:\users\usuario\documents\github\trabajofinallab2\tp_final_prog&labii\stcoleccion.h
+	"stCarta.h"
+
+1700053302 c:\users\usuario\documents\github\trabajofinallab2\tp_final_prog&labii\stcarta.h
+	"stClase.h"
+
+1700053299 c:\users\usuario\documents\github\trabajofinallab2\tp_final_prog&labii\stclase.h
+	"constantes.h"
+
+1700053034 c:\users\usuario\documents\github\trabajofinallab2\tp_final_prog&labii\constantes.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<time.h>
+
+1700054394 c:\users\usuario\documents\github\trabajofinallab2\tp_final_prog&labii\stnotificaciones.h
+	"stDatosUsuario.h"
+
+1700059478 c:\users\usuario\documents\github\trabajofinallab2\tp_final_prog&labii\stdatosusuario.h
+	"stCarta.h"
+
+1700053034 source:c:\users\usuario\documents\github\trabajofinallab2\tp_final_prog&labii\constantes.c
+	"constantes.h"
+
+1700049906 source:c:\users\usuario\documents\github\trabajofinallab2\tp_final_prog&labii\main.c
+	"menu.h"
+	"stCarta.h"
+	"Constantes.h"
+	<time.h>
+
+1700053034 c:\users\usuario\documents\github\trabajofinallab2\tp_final_prog&labii\menu.h
+	"constantes.h"
+	"archivos.h"
+
+1700053034 source:c:\users\usuario\documents\github\trabajofinallab2\tp_final_prog&labii\menu.c
+	"menu.h"
+
+1700057813 source:c:\users\usuario\documents\github\trabajofinallab2\tp_final_prog&labii\stcarta.c
+	"stCarta.h"
+
+1700051814 source:c:\users\usuario\documents\github\trabajofinallab2\tp_final_prog&labii\stclase.c
+	"stClase.h"
+
+1700043478 source:c:\users\usuario\documents\github\trabajofinallab2\tp_final_prog&labii\stcoleccion.c
+	"stColeccion.h"
+
+1700043478 source:c:\users\usuario\documents\github\trabajofinallab2\tp_final_prog&labii\stmazo.c
+	"stMazo.h"
+
+1700048582 source:c:\users\usuario\documents\github\trabajofinallab2\tp_final_prog&labii\stnotificaciones.c
+
+1700048348 source:c:\users\usuario\documents\github\trabajofinallab2\tp_final_prog&labii\stusuario.c
+	"stUsuario.h"
+

@@ -12,4 +12,6 @@ void muestraArchiCartas();
 int buscaUltimoIDEnArchi();
 arbolDeListasCartas * cargaCartasArchiToArbolDL(arbolDeListasCartas * arbolACargar);
 
+///Archivo de Usuarios
+datosUsuario guardaIndicadores(datosUsuario); // guarda los datos del usuario
 #endif // ARCHIVOS_H_INCLUDED
