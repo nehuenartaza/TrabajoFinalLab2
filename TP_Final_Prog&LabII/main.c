@@ -5,7 +5,9 @@
 int main()
 {
     ///Carga todo el archivo hasta que nosotros queramos
+    printf("\n ---------------Archi---------------");
     muestraArchiCartas();
+
 
     char control = 's';
     while(control == 's')
@@ -16,6 +18,7 @@ int main()
         scanf("%c", &control);
     }
 
+    printf("\n ---------------Archi Nuevo---------------");
     muestraArchiCartas();
     return 0;
 }

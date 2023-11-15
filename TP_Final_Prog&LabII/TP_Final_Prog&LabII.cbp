@@ -31,19 +31,14 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
-		<Unit filename="Constantes.h" />
-		<Unit filename="arboles.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="arboles.h" />
 		<Unit filename="archivos.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="archivos.h" />
-		<Unit filename="listaDoble.c">
+		<Unit filename="constantes.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="listaDoble.h" />
+		<Unit filename="constantes.h" />
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -63,26 +58,18 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="stColeccion.h" />
-		<Unit filename="stEnergia.c">
+		<Unit filename="stDatosUsuario.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="stEnergia.h" />
-		<Unit filename="stEntrenador.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="stEntrenador.h" />
-		<Unit filename="stExpansion.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="stExpansion.h" />
+		<Unit filename="stDatosUsuario.h" />
 		<Unit filename="stMazo.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="stMazo.h" />
-		<Unit filename="stPokemon.c">
+		<Unit filename="stNotificaciones.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="stPokemon.h" />
+		<Unit filename="stNotificaciones.h" />
 		<Unit filename="stUsuario.c">
 			<Option compilerVar="CC" />
 		</Unit>

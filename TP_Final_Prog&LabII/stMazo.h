@@ -1,11 +1,8 @@
 #ifndef STMAZO_H_INCLUDED
 #define STMAZO_H_INCLUDED
 
-#include <stdio.h>
-#include <stdlib.h>
-
-#include "stCarta.h"
 #include "stColeccion.h"
+
 ///Estructura
 
 //LA LISTA SIMPLE DEL MAZO

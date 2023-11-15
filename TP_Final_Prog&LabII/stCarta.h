@@ -2,8 +2,17 @@
 #define STCARTA_H_INCLUDED
 
 #include "stClase.h"
-#include "stExpansion.h"
 
+///stExpansion
+typedef struct {
+    char expansionTitulo[DIM2];
+    char expansionSubTit[DIM2];
+}stExpansion;
+
+stExpansion cargaExpansionUsuario(stExpansion);    //Carga
+void muestraExpansion(stExpansion);   //Muestra
+
+///stCarta
 typedef struct
 {
     int id;  // se define solo

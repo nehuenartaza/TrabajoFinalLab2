@@ -45,4 +45,19 @@ int buscaUltimoIDEnArchi()
     return ultimoID;
 }
 
-
+arbolDeListasCartas * cargaCartasArchiToArbolDL(arbolDeListasCartas * arbolACargar)
+{
+    FILE * archi = fopen(ARCHI_CARTAS, "rb");
+    if(archi)
+    {
+        stCarta cartitaACargar;
+        while(!feof(archi))
+        {
+            fread(&cartitaACargar, sizeof(stCarta), 1, archi);
+            if(!feof(archi))
+                arbolACargar=altaCarta(arbolACargar, cartitaACargar);
+        }
+        fclose(archi);
+    }
+    return arbolACargar;
+}

@@ -653,3 +653,283 @@
 	<stdio.h>
 	<stdlib.h>
 
+1699656358 source:c:\users\usuario\desktop\trabajofinallab2\tp_final_prog&labii\arboles.c
+	"arboles.h"
+
+1700043478 c:\users\usuario\desktop\trabajofinallab2\tp_final_prog&labii\arboles.h
+	<stdio.h>
+	<stdlib.h>
+	"stColeccion.h"
+
+1700043478 c:\users\usuario\desktop\trabajofinallab2\tp_final_prog&labii\stcoleccion.h
+	<stdio.h>
+	<stdlib.h>
+	"stcarta.h"
+
+1699889286 c:\users\usuario\desktop\trabajofinallab2\tp_final_prog&labii\stcarta.h
+	"stClase.h"
+	"stExpansion.h"
+
+1699889080 c:\users\usuario\desktop\trabajofinallab2\tp_final_prog&labii\stclase.h
+	"stPokemon.h"
+	"stEnergia.h"
+	"stEntrenador.h"
+
+1699656358 c:\users\usuario\desktop\trabajofinallab2\tp_final_prog&labii\stpokemon.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Constantes.h"
+
+1700050778 c:\users\usuario\desktop\trabajofinallab2\tp_final_prog&labii\constantes.h
+
+1699656358 c:\users\usuario\desktop\trabajofinallab2\tp_final_prog&labii\stenergia.h
+	<stdio.h>
+	<stdlib.h>
+	"Constantes.h"
+
+1699656358 c:\users\usuario\desktop\trabajofinallab2\tp_final_prog&labii\stentrenador.h
+	<stdio.h>
+	<stdlib.h>
+	"Constantes.h"
+
+1699656358 c:\users\usuario\desktop\trabajofinallab2\tp_final_prog&labii\stexpansion.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Constantes.h"
+
+1699884784 source:c:\users\usuario\desktop\trabajofinallab2\tp_final_prog&labii\menu.c
+	"menu.h"
+	"stCarta.h"
+	"Constantes.h"
+	<time.h>
+
+1699656358 c:\users\usuario\desktop\trabajofinallab2\tp_final_prog&labii\menu.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1699656358 source:c:\users\usuario\desktop\trabajofinallab2\tp_final_prog&labii\stclase.c
+	"stClase.h"
+
+1700043478 source:c:\users\usuario\desktop\trabajofinallab2\tp_final_prog&labii\stcoleccion.c
+	"stColeccion.h"
+
+1699909880 source:c:\users\usuario\desktop\trabajofinallab2\tp_final_prog&labii\stenergia.c
+	"stEnergia.h"
+
+1699909880 source:c:\users\usuario\desktop\trabajofinallab2\tp_final_prog&labii\stentrenador.c
+	"stEntrenador.h"
+
+1699909880 source:c:\users\usuario\desktop\trabajofinallab2\tp_final_prog&labii\stexpansion.c
+	"stExpansion.h"
+
+1700043478 source:c:\users\usuario\desktop\trabajofinallab2\tp_final_prog&labii\stmazo.c
+	"stMazo.h"
+
+1700043478 c:\users\usuario\desktop\trabajofinallab2\tp_final_prog&labii\stmazo.h
+	<stdio.h>
+	<stdlib.h>
+	"stCarta.h"
+	"stColeccion.h"
+
+1699884326 source:c:\users\usuario\desktop\trabajofinallab2\tp_final_prog&labii\stpokemon.c
+	"stPokemon.h"
+
+1699656358 source:c:\users\usuario\desktop\trabajofinallab2\tp_final_prog&labii\stusuario.c
+
+1700046621 source:c:\users\usuario\desktop\trabajofinallab2\tp_final_prog&labii\archivos.c
+	"archivos.h"
+
+1700046531 c:\users\usuario\desktop\trabajofinallab2\tp_final_prog&labii\archivos.h
+	"stUsuario.h"
+	"stCarta.h"
+
+1700050806 c:\users\usuario\desktop\trabajofinallab2\tp_final_prog&labii\stusuario.h
+	<stdio.h>
+	<stdlib.h>
+	"stCarta.h"
+	"stMazo.h"
+	"stColeccion.h"
+	"stNotificaciones.h"
+
+1700049904 source:c:\users\usuario\desktop\trabajofinallab2\tp_final_prog&labii\main.c
+	"menu.h"
+	"stCarta.h"
+	"Constantes.h"
+	<time.h>
+
+1700046138 source:c:\users\usuario\desktop\trabajofinallab2\tp_final_prog&labii\stcarta.c
+	"stCarta.h"
+	"menu.h"
+
+1700049702 c:\users\usuario\desktop\trabajofinallab2\tp_final_prog&labii\stnotificaciones.h
+	<stdio.h>
+	<stdlib.h>
+	"stCarta.h"
+	"stMazo.h"
+	"stColeccion.h"
+
+1700048581 source:c:\users\usuario\desktop\trabajofinallab2\tp_final_prog&labii\stnotificaciones.c
+
+1699656358 source:c:\users\usuario\desktop\trabajofinallab2 - copia\tp_final_prog&labii\arboles.c
+	"arboles.h"
+
+1700043478 c:\users\usuario\desktop\trabajofinallab2 - copia\tp_final_prog&labii\arboles.h
+	<stdio.h>
+	<stdlib.h>
+	"stColeccion.h"
+
+1700043478 c:\users\usuario\desktop\trabajofinallab2 - copia\tp_final_prog&labii\stcoleccion.h
+	<stdio.h>
+	<stdlib.h>
+	"stcarta.h"
+
+1700051855 c:\users\usuario\desktop\trabajofinallab2 - copia\tp_final_prog&labii\stcarta.h
+	"stClase.h"
+
+1700051735 c:\users\usuario\desktop\trabajofinallab2 - copia\tp_final_prog&labii\stclase.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Constantes.h"
+
+1700050778 c:\users\usuario\desktop\trabajofinallab2 - copia\tp_final_prog&labii\constantes.h
+
+1699656358 c:\users\usuario\desktop\trabajofinallab2 - copia\tp_final_prog&labii\stexpansion.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Constantes.h"
+
+1700046621 source:c:\users\usuario\desktop\trabajofinallab2 - copia\tp_final_prog&labii\archivos.c
+	"archivos.h"
+
+1700046531 c:\users\usuario\desktop\trabajofinallab2 - copia\tp_final_prog&labii\archivos.h
+	"stUsuario.h"
+	"stCarta.h"
+
+1700050806 c:\users\usuario\desktop\trabajofinallab2 - copia\tp_final_prog&labii\stusuario.h
+	<stdio.h>
+	<stdlib.h>
+	"stCarta.h"
+	"stMazo.h"
+	"stColeccion.h"
+	"stNotificaciones.h"
+
+1700043478 c:\users\usuario\desktop\trabajofinallab2 - copia\tp_final_prog&labii\stmazo.h
+	<stdio.h>
+	<stdlib.h>
+	"stCarta.h"
+	"stColeccion.h"
+
+1700049702 c:\users\usuario\desktop\trabajofinallab2 - copia\tp_final_prog&labii\stnotificaciones.h
+	<stdio.h>
+	<stdlib.h>
+	"stCarta.h"
+	"stMazo.h"
+	"stColeccion.h"
+
+1700049904 source:c:\users\usuario\desktop\trabajofinallab2 - copia\tp_final_prog&labii\main.c
+	"menu.h"
+	"stCarta.h"
+	"Constantes.h"
+	<time.h>
+
+1699656358 c:\users\usuario\desktop\trabajofinallab2 - copia\tp_final_prog&labii\menu.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1699884784 source:c:\users\usuario\desktop\trabajofinallab2 - copia\tp_final_prog&labii\menu.c
+	"menu.h"
+	"stCarta.h"
+	"Constantes.h"
+	<time.h>
+
+1700043478 source:c:\users\usuario\desktop\trabajofinallab2 - copia\tp_final_prog&labii\stcoleccion.c
+	"stColeccion.h"
+
+1700043478 source:c:\users\usuario\desktop\trabajofinallab2 - copia\tp_final_prog&labii\stmazo.c
+	"stMazo.h"
+
+1700048581 source:c:\users\usuario\desktop\trabajofinallab2 - copia\tp_final_prog&labii\stnotificaciones.c
+
+1700048347 source:c:\users\usuario\desktop\trabajofinallab2 - copia\tp_final_prog&labii\stusuario.c
+	"stUsuario.h"
+
+1700051500 source:c:\users\usuario\desktop\trabajofinallab2 - copia\tp_final_prog&labii\stcarta.c
+	"stCarta.h"
+	"menu.h"
+
+1700051812 source:c:\users\usuario\desktop\trabajofinallab2 - copia\tp_final_prog&labii\stclase.c
+	"stClase.h"
+
+1700046622 source:c:\users\usuario\desktop\tranajado hoy\trabajofinallab2 - copia\tp_final_prog&labii\archivos.c
+	"archivos.h"
+
+1700053197 c:\users\usuario\desktop\tranajado hoy\trabajofinallab2 - copia\tp_final_prog&labii\archivos.h
+	"stUsuario.h"
+
+1700054396 c:\users\usuario\desktop\tranajado hoy\trabajofinallab2 - copia\tp_final_prog&labii\stusuario.h
+	"stMazo.h"
+	"stNotificaciones.h"
+
+1700053302 c:\users\usuario\desktop\tranajado hoy\trabajofinallab2 - copia\tp_final_prog&labii\stcarta.h
+	"stClase.h"
+
+1700053299 c:\users\usuario\desktop\tranajado hoy\trabajofinallab2 - copia\tp_final_prog&labii\stclase.h
+	"constantes.h"
+
+1700053034 c:\users\usuario\desktop\tranajado hoy\trabajofinallab2 - copia\tp_final_prog&labii\constantes.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<time.h>
+
+1700053440 c:\users\usuario\desktop\tranajado hoy\trabajofinallab2 - copia\tp_final_prog&labii\stmazo.h
+	"stColeccion.h"
+
+1700053378 c:\users\usuario\desktop\tranajado hoy\trabajofinallab2 - copia\tp_final_prog&labii\stcoleccion.h
+	"stCarta.h"
+
+1700054394 c:\users\usuario\desktop\tranajado hoy\trabajofinallab2 - copia\tp_final_prog&labii\stnotificaciones.h
+	"stDatosUsuario.h"
+
+1700049906 source:c:\users\usuario\desktop\tranajado hoy\trabajofinallab2 - copia\tp_final_prog&labii\main.c
+	"menu.h"
+	"stCarta.h"
+	"Constantes.h"
+	<time.h>
+
+1700053034 c:\users\usuario\desktop\tranajado hoy\trabajofinallab2 - copia\tp_final_prog&labii\menu.h
+	"constantes.h"
+	"archivos.h"
+
+1700053034 source:c:\users\usuario\desktop\tranajado hoy\trabajofinallab2 - copia\tp_final_prog&labii\menu.c
+	"menu.h"
+
+1700053216 source:c:\users\usuario\desktop\tranajado hoy\trabajofinallab2 - copia\tp_final_prog&labii\stcarta.c
+	"stCarta.h"
+
+1700051814 source:c:\users\usuario\desktop\tranajado hoy\trabajofinallab2 - copia\tp_final_prog&labii\stclase.c
+	"stClase.h"
+
+1700043478 source:c:\users\usuario\desktop\tranajado hoy\trabajofinallab2 - copia\tp_final_prog&labii\stcoleccion.c
+	"stColeccion.h"
+
+1700043478 source:c:\users\usuario\desktop\tranajado hoy\trabajofinallab2 - copia\tp_final_prog&labii\stmazo.c
+	"stMazo.h"
+
+1700048582 source:c:\users\usuario\desktop\tranajado hoy\trabajofinallab2 - copia\tp_final_prog&labii\stnotificaciones.c
+
+1700048348 source:c:\users\usuario\desktop\tranajado hoy\trabajofinallab2 - copia\tp_final_prog&labii\stusuario.c
+	"stUsuario.h"
+
+1700053034 source:c:\users\usuario\desktop\tranajado hoy\trabajofinallab2 - copia\tp_final_prog&labii\constantes.c
+	"constantes.h"
+
+1700054386 c:\users\usuario\desktop\tranajado hoy\trabajofinallab2 - copia\tp_final_prog&labii\stdatosusuario.h
+	"constantes.h"
+
