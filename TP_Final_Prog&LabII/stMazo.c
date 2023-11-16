@@ -77,7 +77,7 @@ void MostrarMazo(stMazo Pila) //muestra el mazo de cartas
     {
         printf("----------------------------------\n");
         muestraCarta((Pila.Tope)->dato);
-        DesapilarMazo((&Pila)->Tope);
+        DesapilarMazo(&Pila);
         printf("----------------------------------\n");
     }
 }
@@ -85,38 +85,38 @@ void MostrarMazo(stMazo Pila) //muestra el mazo de cartas
 //FUNCION PARA METER EN EL MAZO Y BORRAR NODO
 void CargarMazoAleatoriamente(stMazo*Pila,stListaD**ListaDoble)
 {
-   int cartas=ContarCartasListaDoble(ListaDoble);
+   int cartas=contarCartasListaDoble(ListaDoble);
    int contador=0;
-
+   stListaD*Auxiliar=(*ListaDoble);
    while(cartas!=0)
    {
-        BorrarNodoYMeterEnMazoNodoElegidoConContador(ListaDoble,Pila,rand()%cartas+1,contador++);
+        Auxiliar=BorrarNodoYMeterEnMazoNodoElegidoConContador(Auxiliar,Pila,rand()%cartas+1,contador++);
    }
 }
 
-void BorrarNodoYMeterEnMazoNodoElegidoConContador(stListaD**Lista,stMazo*Pila,int numeroDePosicion,int contador)
+stListaD*BorrarNodoYMeterEnMazoNodoElegidoConContador(stListaD*Lista,stMazo*Pila,int numeroDePosicion,int contador)
 {
     if(Lista!=NULL)
     {
         if(contador!=numeroDePosicion)
         {
 
-            BorrarNodoYMeterEnMazoNodoElegidoConContador((&(*Lista)->sigNodo),Pila,numeroDePosicion,contador+1);
+           Lista->sigNodo=BorrarNodoYMeterEnMazoNodoElegidoConContador(Lista->sigNodo,Pila,numeroDePosicion,contador+1);
 
 
         }
         else
         {
-            stListaD*Borrar=(*Lista);
-            (*Lista)=(*Lista)->sigNodo;
-            if((*Lista)!=NULL)
+            stListaD*Borrar=Lista;
+            Lista=Lista->sigNodo;
+            if(Lista!=NULL)
             {
-                (*Lista)->antNodo=Borrar->antNodo;
-                stListaD*siguiente=(*Lista)->sigNodo;
+                Lista->antNodo=Borrar->antNodo;
+                stListaD*siguiente=Lista->sigNodo;
 
                 if(siguiente!=NULL)
                 {
-                    siguiente->antNodo=(*Lista);
+                    siguiente->antNodo=Lista;
 
 
 
@@ -130,7 +130,7 @@ void BorrarNodoYMeterEnMazoNodoElegidoConContador(stListaD**Lista,stMazo*Pila,in
 
     }
 
-
+    return Lista;
 
 
 }

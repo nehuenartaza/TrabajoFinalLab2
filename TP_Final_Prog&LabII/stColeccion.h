@@ -2,14 +2,18 @@
 #define STCOLECCION_H_INCLUDED
 
 #include "stCarta.h"
-
 typedef struct {
   stCarta dataColecc;
 
-  struct stColeccion*sigNodo;
-  struct stColeccion*antNodo;
+  struct stColeccion * sigNodo;
+  struct stColeccion * antNodo;
 }stListaD;
 
-int ContarCartasListaDoble(stListaD*Lista);
+int contarCartasListaDoble(stListaD *);
+stListaD * romperEnlaces(stListaD*);
+stListaD * agregarInicioColeccion(stListaD *, stListaD *);
+stListaD * agregarFinalColeccion(stListaD *, stListaD *);
+stListaD * retornarUltimaCarta(stListaD *);
+void MostrarListaDoble(stListaD*Lista);
 
 #endif // STCOLECCION_H_INCLUDED

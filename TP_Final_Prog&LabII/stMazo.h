@@ -29,7 +29,7 @@ stCarta MostrarTope(stMazo*);
 int MazoVacio(stMazo*);
 void MostrarMazo(stMazo);
 void CargarMazoAleatoriamente(stMazo*Pila,stListaD**ListaDoble);
-void BorrarNodoYMeterEnMazoNodoElegidoConContador(stListaD**Lista,stMazo*Pila,int numeroDePosicion,int contador);
+stListaD*BorrarNodoYMeterEnMazoNodoElegidoConContador(stListaD*Lista,stMazo*Pila,int numeroDePosicion,int contador);
 
 
 
