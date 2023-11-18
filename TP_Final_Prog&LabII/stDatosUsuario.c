@@ -8,10 +8,12 @@ datosUsuario creaUsuario() //inicializa los dato del usuario
     printf("\n Ingrese el Nombre de su Usuario: ");
     fflush(stdin);
     fgets(nuevoUsuario.nombre, DIM3, stdin);
+    buscaSaltoLinea(nuevoUsuario.nombre);
 
     printf("\n Ingrese la Contraseña de su Usuario: ");
     fflush(stdin);
     fgets(nuevoUsuario.contra, DIM3, stdin);
+    buscaSaltoLinea(nuevoUsuario.contra);
 
     nuevoUsuario.validosDatosBuzon = 0;
     nuevoUsuario.validosDatosColeccion = 0;
@@ -66,5 +68,7 @@ datosUsuario guardaIndicadorBuzon(datosUsuario usuarioANotificar, int idOfer, in
     usuarioANotificar.datosBuzon[usuarioANotificar.validosDatosBuzon].resultado = resultado_F;
 
     usuarioANotificar.validosDatosBuzon++;
-    return usuarioAGuardar;
+    return usuarioANotificar;
 }
+
+

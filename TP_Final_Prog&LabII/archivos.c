@@ -61,3 +61,51 @@ arbolDeListasCartas * cargaCartasArchiToArbolDL(arbolDeListasCartas * arbolACarg
     }
     return arbolACargar;
 }
+
+void cargaArchiUsuarios(datosUsuario usuarioAGuardar)
+{
+    FILE * archi = fopen(ARCHI_USUARIOS, "ab");
+
+    if(archi){
+        fwrite(&usuarioAGuardar, sizeof(datosUsuario), 1, archi);
+        fclose(archi);
+    }
+    else
+        printf("\n El archivo no se abrio correctamente. ");
+}
+
+datosUsuario iniciarSesion()
+{
+    datosUsuario usuario;
+    char nombreUsuario[DIM3];
+    char contrasenia[DIM3];
+
+    printf("\n Ingrese su nombre de usuario: ");
+    fflush(stdin);
+    fgets(nombreUsuario, DIM3, stdin);
+    buscaSaltoLinea(nombreUsuario);
+
+    printf("\n Ingrese la contrasenia: ");
+    fflush(stdin);
+    fgets(contrasenia, DIM3, stdin);
+    buscaSaltoLinea(contrasenia);
+
+    FILE * buffer = fopen(ARCHI_USUARIOS, "rb");
+    if(buffer)
+    {
+        while(fread(&usuario, sizeof(datosUsuario), 1, buffer)==1)    // recorre todos los usuarios guardados y verifica que coincidan las credenciales
+        {
+            if(strcmp(usuario.nombre, nombreUsuario)==0 && strcmp(usuario.contra, contrasenia)==0)  // si lo encuentra, cierra el archivo para dejar de recorrerlo
+            {
+                printf("\n Ha iniciado sesion correctamente! Bienvenido %s \n", usuario.nombre);
+                fclose(buffer);
+                return usuario;                                                                     // es pecado esto pero no encontre otra forma de poder hacerlo bien, hay dos return en la funcion
+            }
+        }
+    }
+    fclose(buffer);
+    printf("\n ERROR: Nombre de usuario o contrasenia incorrectos.\n");
+    datosUsuario noSeEncontroUsuario = {" ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " "}; // creo una variable "aux" y la lleno con datos inutiles, no se si esta del todo correcto porque hay datos tipo int, char
+                                                                                                     // y otros definidos por nosotros con sus respectivos campos
+    return noSeEncontroUsuario;
+}
