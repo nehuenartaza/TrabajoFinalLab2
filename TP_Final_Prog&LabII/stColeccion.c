@@ -75,12 +75,11 @@ stListaD * retornarUltimaCarta(stListaD * lista)    ///devuelve la última carta 
     return lista;
 }
 
-void MostrarListaDoble(stListaD*Lista)
+void mostrarListaDoble(stListaD * lista)
 {
-    if(Lista!=NULL)
-    {
-      muestraCarta(Lista->dataColecc);
+    while ( lista != NULL ) {
+      muestraCarta(lista->dataColecc);
+      lista = lista->sigNodo;
     }
-
 }
 

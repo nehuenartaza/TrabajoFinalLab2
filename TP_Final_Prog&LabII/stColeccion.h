@@ -14,6 +14,6 @@ stListaD * romperEnlaces(stListaD*);
 stListaD * agregarInicioColeccion(stListaD *, stListaD *);
 stListaD * agregarFinalColeccion(stListaD *, stListaD *);
 stListaD * retornarUltimaCarta(stListaD *);
-void MostrarListaDoble(stListaD*Lista);
+void mostrarListaDoble(stListaD *);
 
 #endif // STCOLECCION_H_INCLUDED
