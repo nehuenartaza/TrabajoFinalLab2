@@ -74,7 +74,7 @@ void cargaArchiUsuarios(datosUsuario usuarioAGuardar)
         printf("\n El archivo no se abrio correctamente. ");
 }
 
-datosUsuario iniciarSesion()
+datosUsuario iniciarSesion(int * login)
 {
     datosUsuario usuario;
     char nombreUsuario[DIM3];
@@ -98,6 +98,7 @@ datosUsuario iniciarSesion()
             if(strcmp(usuario.nombre, nombreUsuario)==0 && strcmp(usuario.contra, contrasenia)==0)  // si lo encuentra, cierra el archivo para dejar de recorrerlo
             {
                 printf("\n Ha iniciado sesion correctamente! Bienvenido %s \n", usuario.nombre);
+                *login = 1;
                 fclose(buffer);
                 return usuario;                                                                     // es pecado esto pero no encontre otra forma de poder hacerlo bien, hay dos return en la funcion
             }
@@ -108,4 +109,12 @@ datosUsuario iniciarSesion()
     datosUsuario noSeEncontroUsuario = {" ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " "}; // creo una variable "aux" y la lleno con datos inutiles, no se si esta del todo correcto porque hay datos tipo int, char
                                                                                                      // y otros definidos por nosotros con sus respectivos campos
     return noSeEncontroUsuario;
+}
+
+datosUsuario cerrarSesion(int * login)
+{
+    datosUsuario usuario = {" ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " "};
+    *login = 0;
+
+    return usuario;
 }

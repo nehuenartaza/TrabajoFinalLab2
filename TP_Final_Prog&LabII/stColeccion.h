@@ -24,5 +24,5 @@ stListaD * borrarNodoDeColeccion(stListaD *, stCarta *);    ///borra una carta d
 void buscarCartasPorRareza(stListaD *, char[]);
 bool rarezasCartasCoinciden(char[], char[]);
 void buscarCartaPorID(stListaD *, int);
-
+bool verificaSiListaDobleEstaVacia(stListaD *); // Retorna false si esta vacia, o true si tiene algun nodo cargado
 #endif // STCOLECCION_H_INCLUDED

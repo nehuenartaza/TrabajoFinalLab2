@@ -9,3 +9,5 @@ void * setNULL()
 {
     return NULL;
 }
+
+

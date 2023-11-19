@@ -186,6 +186,13 @@ void buscarCartaPorID(stListaD * lista, int id)
     }
 }
 
+bool verificaSiListaDobleEstaVacia(stListaD * listaD)  // Retorna false si esta vacia, o true si tiene algun nodo cargado
+{
+    bool rta = false;
+    if(listaD != NULL)
+        rta = true;
 
+    return rta;
+}
 
 
