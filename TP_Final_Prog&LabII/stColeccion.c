@@ -83,3 +83,109 @@ void mostrarListaDoble(stListaD * lista)
     }
 }
 
+void buscarCartasPorStringAproximado(stListaD * lista, char str[])
+{
+    while ( lista != NULL ) {
+        if ( strstr(lista->dataColecc.nombre, str) != NULL ) {
+            muestraCarta(lista->dataColecc);
+        }
+        lista = lista->sigNodo;
+    }
+}
+
+stListaD * eliminarYRetirarCartaDeColeccion(stListaD * lista, stCarta * retirar)  ///busca una coincidencia, copia los datos y decrementa la cantidad en 1, si llega a 0
+{
+    if ( lista != NULL ) {
+            stListaD * seg = lista;
+            while ( !IDsCartasCoinciden(seg->dataColecc, *retirar) ) {
+                seg = seg->sigNodo;
+            }
+        if ( seg != NULL ) {
+            if ( ( seg->dataColecc.cant - 1 ) == 0 ) {  ///solo hay una copia de la carta encontrada,
+                lista = borrarNodoDeColeccion(lista, retirar);
+            } else {
+                    *retirar = seg->dataColecc;
+                    seg->dataColecc.cant--;
+                }
+        }
+    }
+    return lista;
+}
+
+bool IDsCartasCoinciden(stCarta arg1, stCarta arg2)
+{
+    bool coincidencia = false;
+    if ( arg1.id == arg2.id ) {
+        coincidencia = true;
+    }
+    return coincidencia;
+}
+
+stListaD * borrarNodoDeColeccion(stListaD * lista, stCarta * borrar)  ///Borra un nodo/carta en la colección
+{
+    if ( lista != NULL ) {
+        if ( lista->dataColecc.id == (*borrar).id ) {
+            *borrar = lista->dataColecc;
+            stListaD * aux = lista;
+            lista = lista->sigNodo;
+            free(aux);
+        } else {
+                stListaD * seg = lista;
+                while ( seg != NULL && seg->dataColecc.id != (*borrar).id ) {
+                    seg = seg->sigNodo;
+                }
+                if ( seg != NULL ) {
+                    *borrar = seg->dataColecc;
+                    if ( seg->sigNodo == NULL ) {
+                        seg = seg->antNodo;
+                        free(seg->sigNodo);
+                        seg->sigNodo = setNULL();
+                    } else {
+                            stListaD * temp = seg;
+                            temp = temp->sigNodo;
+                            temp->antNodo = setNULL();
+                            temp->antNodo = seg->antNodo;
+                            temp = temp->antNodo;
+                            temp->sigNodo = setNULL();
+                            temp->sigNodo = seg->sigNodo;
+                            free(seg);
+                        }
+                }
+            }
+    }
+    return lista;
+}
+
+void buscarCartasPorRareza(stListaD * lista, char rareza[])
+{
+    while ( lista != NULL ) {
+        if ( rarezasCartasCoinciden(lista->dataColecc.rareza, rareza) ) {
+            muestraCarta(lista->dataColecc);
+        }
+        lista = lista->sigNodo;
+    }
+}
+
+bool rarezasCartasCoinciden(char arg1[], char arg2[])
+{
+    bool coincidencia = false;
+    if ( strcmp(arg1, arg2) == 0 ) {
+        coincidencia = true;
+    }
+    return coincidencia;
+}
+
+void buscarCartaPorID(stListaD * lista, int id)
+{
+    while ( lista != NULL ) {
+        if ( lista->dataColecc.id == id ) {
+            muestraCarta(lista->dataColecc);
+            break;
+        }
+        lista = lista->sigNodo;
+    }
+}
+
+
+
+

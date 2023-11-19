@@ -133,7 +133,7 @@ arbolDeListasCartas * buscaNodoConInicial(arbolDeListasCartas * raizEnQueBuscar,
             raizQueBusco = raizEnQueBuscar;
         else if(raizEnQueBuscar->inicial > inicialABuscar)
             raizQueBusco = buscaNodoConInicial(raizEnQueBuscar->izquierda, inicialABuscar);
-        else if(raizEnQueBuscar->inicial < inicialABuscar)
+        else
             raizQueBusco = buscaNodoConInicial(raizEnQueBuscar->derecha, inicialABuscar);
     }
     return raizQueBusco; //si devuelve NULL no lo encontro
@@ -183,7 +183,7 @@ arbolDeListasCartas * agregaCartaANodoDeArbol(arbolDeListasCartas* raizActual_F,
             raizActual_F->listaDeCartasPorInicial = cargaAFIN(raizActual_F->listaDeCartasPorInicial, nuevaCarta_F);
         else if(inicialDeNodoArbol < raizActual_F->inicial)
             raizActual_F->izquierda = agregaCartaANodoDeArbol(raizActual_F->izquierda, inicialDeNodoArbol, nuevaCarta_F);
-        else if(inicialDeNodoArbol > raizActual_F->inicial)
+        else
             raizActual_F->derecha = agregaCartaANodoDeArbol(raizActual_F->derecha, inicialDeNodoArbol, nuevaCarta_F);
     }
     return raizActual_F;

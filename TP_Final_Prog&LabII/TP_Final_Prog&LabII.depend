@@ -1006,10 +1006,10 @@
 
 1700081807 source:c:\users\mrsli\onedrive\documentos\github\trabajofinallab2\tp_final_prog&labii\stnotificaciones.c
 
-1700249173 source:c:\users\nehuen\documents\github\trabajofinallab2\tp_final_prog&labii\archivos.c
+1700347945 source:c:\users\nehuen\documents\github\trabajofinallab2\tp_final_prog&labii\archivos.c
 	"archivos.h"
 
-1700249173 c:\users\nehuen\documents\github\trabajofinallab2\tp_final_prog&labii\archivos.h
+1700347945 c:\users\nehuen\documents\github\trabajofinallab2\tp_final_prog&labii\archivos.h
 	"stUsuario.h"
 
 1700249174 c:\users\nehuen\documents\github\trabajofinallab2\tp_final_prog&labii\stusuario.h
@@ -1019,7 +1019,7 @@
 1700249174 c:\users\nehuen\documents\github\trabajofinallab2\tp_final_prog&labii\stmazo.h
 	"stColeccion.h"
 
-1700318714 c:\users\nehuen\documents\github\trabajofinallab2\tp_final_prog&labii\stcoleccion.h
+1700355570 c:\users\nehuen\documents\github\trabajofinallab2\tp_final_prog&labii\stcoleccion.h
 	"stCarta.h"
 
 1700249174 c:\users\nehuen\documents\github\trabajofinallab2\tp_final_prog&labii\stcarta.h
@@ -1028,11 +1028,12 @@
 1700249174 c:\users\nehuen\documents\github\trabajofinallab2\tp_final_prog&labii\stclase.h
 	"constantes.h"
 
-1700249173 c:\users\nehuen\documents\github\trabajofinallab2\tp_final_prog&labii\constantes.h
+1700349187 c:\users\nehuen\documents\github\trabajofinallab2\tp_final_prog&labii\constantes.h
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	<time.h>
+	<stdbool.h>
 
 1700249174 c:\users\nehuen\documents\github\trabajofinallab2\tp_final_prog&labii\stnotificaciones.h
 	"stDatosUsuario.h"
@@ -1043,7 +1044,7 @@
 1700249173 source:c:\users\nehuen\documents\github\trabajofinallab2\tp_final_prog&labii\constantes.c
 	"constantes.h"
 
-1700249173 source:c:\users\nehuen\documents\github\trabajofinallab2\tp_final_prog&labii\main.c
+1700319194 source:c:\users\nehuen\documents\github\trabajofinallab2\tp_final_prog&labii\main.c
 	"menu.h"
 	"stCarta.h"
 	"Constantes.h"
@@ -1062,7 +1063,7 @@
 1700249174 source:c:\users\nehuen\documents\github\trabajofinallab2\tp_final_prog&labii\stclase.c
 	"stClase.h"
 
-1700249174 source:c:\users\nehuen\documents\github\trabajofinallab2\tp_final_prog&labii\stdatosusuario.c
+1700347945 source:c:\users\nehuen\documents\github\trabajofinallab2\tp_final_prog&labii\stdatosusuario.c
 	"stDatosUsuario.h"
 
 1700249174 source:c:\users\nehuen\documents\github\trabajofinallab2\tp_final_prog&labii\stmazo.c

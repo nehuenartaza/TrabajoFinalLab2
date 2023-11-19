@@ -17,5 +17,12 @@ stListaD * agregarInicioColeccion(stListaD *, stListaD *);
 stListaD * agregarFinalColeccion(stListaD *, stListaD *);
 stListaD * retornarUltimaCarta(stListaD *);
 void mostrarListaDoble(stListaD *);
+void buscarCartasPorStringAproximado(stListaD *, char[]);
+stListaD * eliminarYRetirarCartaDeColeccion(stListaD *, stCarta *); ///elimina 1 unidad de una carta en la colección pero se retorna el dato extraído para un intercambio (no setea la cantidad de la carta extraída en 1)
+bool IDsCartasCoinciden(stCarta, stCarta);
+stListaD * borrarNodoDeColeccion(stListaD *, stCarta *);    ///borra una carta de la colección, generalmente porque la cantidad de la carta es 0, va de la mano con eliminarYRetirar...
+void buscarCartasPorRareza(stListaD *, char[]);
+bool rarezasCartasCoinciden(char[], char[]);
+void buscarCartaPorID(stListaD *, int);
 
 #endif // STCOLECCION_H_INCLUDED
