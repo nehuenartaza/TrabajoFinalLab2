@@ -12,6 +12,7 @@ void menuColeccion1();
 void menuColeccion2();
 void menuIntercambio();
 void menuMazo();
+void menuFINAL();
 
 
 #endif // MENU_H_INCLUDED
