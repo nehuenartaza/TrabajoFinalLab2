@@ -2,7 +2,7 @@
 #define STUSUARIO_H_INCLUDED
 
 #include "stMazo.h"
-#include "stNotificaciones.h"
+#include "stBuzon.h"
 
 typedef struct
 {
@@ -11,7 +11,7 @@ typedef struct
     stMazo mazo;
     stListaD coleccion;
     stListaD mazoIntercambio;
-    stNotificacion buzon;
+    stBuzon buzon;
 } stUsuario;
 
 #endif // STUSUARIO_H_INCLUDED

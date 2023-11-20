@@ -62,6 +62,7 @@ arbolDeListasCartas * cargaCartasArchiToArbolDL(arbolDeListasCartas * arbolACarg
     return arbolACargar;
 }
 
+///Archivo de Usuarios
 void cargaArchiUsuarios(datosUsuario usuarioAGuardar)
 {
     FILE * archi = fopen(ARCHI_USUARIOS, "ab");
@@ -117,4 +118,23 @@ datosUsuario cerrarSesion(int * login)
     *login = 0;
 
     return usuario;
+}
+
+datosUsuario buscaUsuarioPorIdEnArchi(int idAbuscar) //Buscca y retorna datos de usuario pedidos apartir de un id //////////////////////////// Falta testear
+{
+    int estado = 0;
+    datosUsuario usuarioBuscado;
+
+    FILE * archi = fopen(ARCHI_USUARIOS , "rb");
+    if(archi)
+    {
+        while(!feof(archi) && estado == 0)
+        {
+            fread(&usuarioBuscado , sizeof(datosUsuario) , 1 , archi);
+            if(!feof(archi) && usuarioBuscado.id == idAbuscar)
+                estado = 1;
+        }
+        fclose(archi);
+    }
+    return usuarioBuscado;
 }

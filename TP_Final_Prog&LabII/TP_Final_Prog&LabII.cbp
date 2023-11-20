@@ -46,6 +46,10 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="menu.h" />
+		<Unit filename="stBuzon.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="stBuzon.h" />
 		<Unit filename="stCarta.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -66,10 +70,6 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="stMazo.h" />
-		<Unit filename="stNotificaciones.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="stNotificaciones.h" />
 		<Unit filename="stUsuario.c">
 			<Option compilerVar="CC" />
 		</Unit>
