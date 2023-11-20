@@ -101,20 +101,22 @@ datosUsuario iniciarSesion(int * login)
                 printf("\n Ha iniciado sesion correctamente! Bienvenido %s \n", usuario.nombre);
                 *login = 1;
                 fclose(buffer);
-                return usuario;                                                                     // es pecado esto pero no encontre otra forma de poder hacerlo bien, hay dos return en la funcion
             }
         }
     }
-    fclose(buffer);
-    printf("\n ERROR: Nombre de usuario o contrasenia incorrectos.\n");
-    datosUsuario noSeEncontroUsuario = {" ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " "}; // creo una variable "aux" y la lleno con datos inutiles, no se si esta del todo correcto porque hay datos tipo int, char
-                                                                                                     // y otros definidos por nosotros con sus respectivos campos
-    return noSeEncontroUsuario;
+    if((*login)==0)
+    {
+        fclose(buffer);
+        printf("\n ERROR: Nombre de usuario o contrasenia incorrectos.\n");
+        usuario = vaciarDatosUsuario();
+    }
+
+    return usuario;
 }
 
 datosUsuario cerrarSesion(int * login)
 {
-    datosUsuario usuario = {" ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " "};
+    datosUsuario usuario = vaciarDatosUsuario();
     *login = 0;
 
     return usuario;

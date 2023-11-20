@@ -59,6 +59,7 @@ datosUsuario guardaIndicadorMazo(datosUsuario, stCarta); // guarda datos de 1 ca
 datosUsuario guardaIndicadorColeccion(datosUsuario, stCarta); // guarda datos de las cartas en coleccion
 datosUsuario guardaIndicadorBuzon(datosUsuario, stCarta , stCarta , int , int , char[] , char[]); // guarda datos del intercambio en buzon
 datosUsuario eliminaUsuario(datosUsuario); // "elimina" un usuario
+datosUsuario vaciarDatosUsuario();
 
 
 #endif // STDATOSUSUARIO_H_INCLUDED

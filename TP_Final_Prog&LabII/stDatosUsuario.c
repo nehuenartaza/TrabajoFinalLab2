@@ -47,3 +47,17 @@ datosUsuario eliminaUsuario(datosUsuario usuarioAEliminar) // "elimina" un usuar
     usuarioAEliminar.estado=0;
     return usuarioAEliminar;
 }
+
+datosUsuario vaciarDatosUsuario()
+{
+    datosUsuario usuario;
+    usuario.id = 0;
+    usuario.estado = 0;
+    strcpy(usuario.nombre, "error");
+    strcpy(usuario.contra, "error");
+    usuario.validosDatosMazo = 0;
+    usuario.validosDatosBuzon = 0;
+    usuario.validosDatosColeccion = 0;
+
+    return usuario;
+}
