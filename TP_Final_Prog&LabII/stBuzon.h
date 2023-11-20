@@ -6,11 +6,7 @@
 
 typedef struct
 {
-    int idOfertario;
-    stListaD * mazoIntercambioOferta;
-
-    int idDemandante;
-    stListaD * mazoIntercambioDemandante;
+    indicadorBuzon datos;
 
     struct stNotificacion * siguiente;
 } stNotificacion;
@@ -22,9 +18,13 @@ typedef struct
 } stBuzon;
 
 ///Muestra
-void muestraDatosIntercambio(datosUsuario); //Muestra datos importantes para el intercabio
+void muestraMazoIntercambio(stListaD * mazoIntercambioAMostrar); //Muestra Cartas de la coleccion que se pueden intercambiar ///
+void muestraCartaAIntercambiar(stCarta cartaInterAMostrar); //Muestra datos de la carta que se intercambio
 void muestraNotificacion(stNotificacion*); //Muestra la Notificacion
 void muestraTodasNotificaciones(stNotificacion*); //Muestra la Notificacion
 void muestraBuzon(stBuzon*); //Muestra Buzon Entero
+
+///Logica
+stNotificacion * intercambio(stListaD** , stListaD** , indicadorBuzon datosDeIntercambio); //Intercambia 2 cartas en colecciones distintas
 
 #endif // STBUZON_H_INCLUDED

@@ -8,10 +8,10 @@ typedef struct
 {
     datosUsuario dato;
 
-    stMazo mazo;
-    stListaD coleccion;
-    stListaD mazoIntercambio;
-    stBuzon buzon;
+    stMazo * mazo;
+    stListaD * coleccion;
+    stListaD * mazoIntercambio;
+    stBuzon * buzon;
 } stUsuario;
 
 #endif // STUSUARIO_H_INCLUDED
