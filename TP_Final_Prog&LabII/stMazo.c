@@ -47,6 +47,10 @@ stCarta BorrarPrimero(mazoSimple**Lista) //borra el primer nodo de la lista usan
 }
 
 //FUNCIONES PARA EL MAZO
+void InicMazo(stMazo*Pila) //INICIALIZA EL MAZO
+{
+    Pila->Tope=setNULL();
+}
 void apilarMazo(stMazo*Pila,stCarta NuevaCarta)  //apila una carta en el mazo creado
 {
     mazoSimple*NuevoNodo=CrearNodo(NuevaCarta);
@@ -81,50 +85,67 @@ void MostrarMazo(stMazo Pila) //muestra el mazo de cartas
         printf("----------------------------------\n");
     }
 }
-
 //FUNCION PARA METER EN EL MAZO Y BORRAR NODO
-void CargarMazoAleatoriamente(stMazo*Pila,stListaD**ListaDoble)
+void CargarMazoAleatoriamente(stMazo*Pila,stListaD*ListaDoble)
 {
    int cartas=contarCartasListaDoble(ListaDoble);
-   int contador=0;
-   stListaD*Auxiliar=(*ListaDoble);
+   int contador;
+   int numeroRandom;
    while(cartas!=0)
    {
-        Auxiliar=BorrarNodoYMeterEnMazoNodoElegidoConContador(Auxiliar,Pila,rand()%cartas+1,contador++);
+        contador=0;
+        numeroRandom=rand()%cartas+1;
+        ListaDoble=BorrarNodoYMeterEnMazoNodoElegidoConContador(ListaDoble,Pila,numeroRandom,contador+1);
+        cartas--;
    }
 }
+
 
 stListaD*BorrarNodoYMeterEnMazoNodoElegidoConContador(stListaD*Lista,stMazo*Pila,int numeroDePosicion,int contador)
 {
     if(Lista!=NULL)
     {
-        if(contador!=numeroDePosicion)
+        stListaD*Borrar;
+        if(contador==numeroDePosicion)
         {
-
-           Lista->sigNodo=BorrarNodoYMeterEnMazoNodoElegidoConContador(Lista->sigNodo,Pila,numeroDePosicion,contador+1);
-
+            Borrar=Lista;
+            Lista=Lista->sigNodo;
+            apilarMazo(Pila,Borrar->dataColecc);
+            free(Borrar);
 
         }
         else
         {
-            stListaD*Borrar=Lista;
-            Lista=Lista->sigNodo;
-            if(Lista!=NULL)
-            {
-                Lista->antNodo=Borrar->antNodo;
-                stListaD*siguiente=Lista->sigNodo;
-
-                if(siguiente!=NULL)
-                {
-                    siguiente->antNodo=Lista;
+           contador++;
+           stListaD*siguiente=Lista->sigNodo;
+           stListaD*anterior=Lista;
+           while(siguiente!=NULL&&contador!=numeroDePosicion)
+           {
+                anterior=siguiente;
+                siguiente=siguiente->sigNodo;
+                contador++;
 
 
+           }
+           if(siguiente!=NULL)
+           {
+             Borrar=siguiente;
+             siguiente=siguiente->sigNodo;
+             anterior->sigNodo=Borrar->sigNodo;
+             if(siguiente!=NULL)
+             {
+
+                siguiente->antNodo=anterior;
 
 
-                }
+             }
 
-            }
             apilarMazo(Pila,Borrar->dataColecc);
+            free(Borrar);
+
+           }
+
+
 
         }
 
@@ -134,4 +155,3 @@ stListaD*BorrarNodoYMeterEnMazoNodoElegidoConContador(stListaD*Lista,stMazo*Pila
 
 
 }
-
