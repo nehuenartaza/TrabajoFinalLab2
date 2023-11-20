@@ -97,7 +97,7 @@ stListaD * eliminarYRetirarCartaDeColeccion(stListaD * lista, stCarta * retirar)
 {
     if ( lista != NULL ) {
             stListaD * seg = lista;
-            while ( !IDsCartasCoinciden(seg->dataColecc, *retirar) ) {
+            while ( seg != NULL && !IDsCartasCoinciden(seg->dataColecc, *retirar) ) {
                 seg = seg->sigNodo;
             }
         if ( seg != NULL ) {
