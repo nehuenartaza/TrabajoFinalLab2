@@ -426,26 +426,26 @@
 	"stColeccion.h"
 	"stMazo.h"
 
-1700088440 c:\users\mrsli\onedrive\documentos\github\trabajofinallab2\tp_final_prog&labii\stcoleccion.h
+1700512897 c:\users\mrsli\onedrive\documentos\github\trabajofinallab2\tp_final_prog&labii\stcoleccion.h
 	"stCarta.h"
 
-1700081807 source:c:\users\mrsli\onedrive\documentos\github\trabajofinallab2\tp_final_prog&labii\archivos.c
+1700512897 source:c:\users\mrsli\onedrive\documentos\github\trabajofinallab2\tp_final_prog&labii\archivos.c
 	"archivos.h"
 
-1700081807 source:c:\users\mrsli\onedrive\documentos\github\trabajofinallab2\tp_final_prog&labii\menu.c
+1700512897 source:c:\users\mrsli\onedrive\documentos\github\trabajofinallab2\tp_final_prog&labii\menu.c
 	"menu.h"
 
-1700081807 c:\users\mrsli\onedrive\documentos\github\trabajofinallab2\tp_final_prog&labii\menu.h
+1700512897 c:\users\mrsli\onedrive\documentos\github\trabajofinallab2\tp_final_prog&labii\menu.h
 	"constantes.h"
 	"archivos.h"
 
-1700081807 source:c:\users\mrsli\onedrive\documentos\github\trabajofinallab2\tp_final_prog&labii\stcarta.c
+1700512897 source:c:\users\mrsli\onedrive\documentos\github\trabajofinallab2\tp_final_prog&labii\stcarta.c
 	"stCarta.h"
 
-1700081807 c:\users\mrsli\onedrive\documentos\github\trabajofinallab2\tp_final_prog&labii\stcarta.h
+1700512897 c:\users\mrsli\onedrive\documentos\github\trabajofinallab2\tp_final_prog&labii\stcarta.h
 	"stClase.h"
 
-1700081807 c:\users\mrsli\onedrive\documentos\github\trabajofinallab2\tp_final_prog&labii\stclase.h
+1700512897 c:\users\mrsli\onedrive\documentos\github\trabajofinallab2\tp_final_prog&labii\stclase.h
 	"constantes.h"
 
 1699909962 c:\users\mrsli\onedrive\documentos\github\trabajofinallab2\tp_final_prog&labii\stpokemon.h
@@ -454,11 +454,12 @@
 	<string.h>
 	"Constantes.h"
 
-1700081806 c:\users\mrsli\onedrive\documentos\github\trabajofinallab2\tp_final_prog&labii\constantes.h
+1700512896 c:\users\mrsli\onedrive\documentos\github\trabajofinallab2\tp_final_prog&labii\constantes.h
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	<time.h>
+	<stdbool.h>
 
 1699909962 c:\users\mrsli\onedrive\documentos\github\trabajofinallab2\tp_final_prog&labii\stenergia.h
 	<stdio.h>
@@ -476,10 +477,10 @@
 	<string.h>
 	"Constantes.h"
 
-1700081807 source:c:\users\mrsli\onedrive\documentos\github\trabajofinallab2\tp_final_prog&labii\stclase.c
+1700512897 source:c:\users\mrsli\onedrive\documentos\github\trabajofinallab2\tp_final_prog&labii\stclase.c
 	"stClase.h"
 
-1700088440 source:c:\users\mrsli\onedrive\documentos\github\trabajofinallab2\tp_final_prog&labii\stcoleccion.c
+1700512897 source:c:\users\mrsli\onedrive\documentos\github\trabajofinallab2\tp_final_prog&labii\stcoleccion.c
 	"stColeccion.h"
 
 1699931647 source:c:\users\mrsli\onedrive\documentos\github\trabajofinallab2\tp_final_prog&labii\stenergia.c
@@ -494,19 +495,19 @@
 1699909962 source:c:\users\mrsli\onedrive\documentos\github\trabajofinallab2\tp_final_prog&labii\stpokemon.c
 	"stPokemon.h"
 
-1700081807 source:c:\users\mrsli\onedrive\documentos\github\trabajofinallab2\tp_final_prog&labii\stusuario.c
+1700512897 source:c:\users\mrsli\onedrive\documentos\github\trabajofinallab2\tp_final_prog&labii\stusuario.c
 	"stUsuario.h"
 
-1700094915 source:c:\users\mrsli\onedrive\documentos\github\trabajofinallab2\tp_final_prog&labii\main.c
+1700512897 source:c:\users\mrsli\onedrive\documentos\github\trabajofinallab2\tp_final_prog&labii\main.c
 	"menu.h"
 	"stCarta.h"
 	"Constantes.h"
 	<time.h>
 
-1700093548 source:c:\users\mrsli\onedrive\documentos\github\trabajofinallab2\tp_final_prog&labii\stmazo.c
+1700513489 source:c:\users\mrsli\onedrive\documentos\github\trabajofinallab2\tp_final_prog&labii\stmazo.c
 	"stMazo.h"
 
-1700089430 c:\users\mrsli\onedrive\documentos\github\trabajofinallab2\tp_final_prog&labii\stmazo.h
+1700513539 c:\users\mrsli\onedrive\documentos\github\trabajofinallab2\tp_final_prog&labii\stmazo.h
 	"stColeccion.h"
 
 1699673655 source:c:\users\mrsli\onedrive\documentos\github\trabajofinallab2\tp_final_prog&labii\listadoble.c
@@ -633,12 +634,12 @@
 	"stMazo.h"
 	"stBuzon.h"
 
-1700081807 c:\users\mrsli\onedrive\documentos\github\trabajofinallab2\tp_final_prog&labii\archivos.h
+1700512897 c:\users\mrsli\onedrive\documentos\github\trabajofinallab2\tp_final_prog&labii\archivos.h
 	"stUsuario.h"
 
-1700081807 c:\users\mrsli\onedrive\documentos\github\trabajofinallab2\tp_final_prog&labii\stusuario.h
+1700512897 c:\users\mrsli\onedrive\documentos\github\trabajofinallab2\tp_final_prog&labii\stusuario.h
 	"stMazo.h"
-	"stNotificaciones.h"
+	"stBuzon.h"
 
 1699656358 source:c:\users\usuario\desktop\trabajofinallab2\tp_final_prog&labii\arboles.c
 	"arboles.h"
@@ -990,13 +991,13 @@
 1700081807 c:\users\mrsli\onedrive\documentos\github\trabajofinallab2\tp_final_prog&labii\stnotificaciones.h
 	"stDatosUsuario.h"
 
-1700081807 c:\users\mrsli\onedrive\documentos\github\trabajofinallab2\tp_final_prog&labii\stdatosusuario.h
+1700512897 c:\users\mrsli\onedrive\documentos\github\trabajofinallab2\tp_final_prog&labii\stdatosusuario.h
 	"stCarta.h"
 
-1700081807 source:c:\users\mrsli\onedrive\documentos\github\trabajofinallab2\tp_final_prog&labii\constantes.c
+1700512897 source:c:\users\mrsli\onedrive\documentos\github\trabajofinallab2\tp_final_prog&labii\constantes.c
 	"constantes.h"
 
-1700081807 source:c:\users\mrsli\onedrive\documentos\github\trabajofinallab2\tp_final_prog&labii\stdatosusuario.c
+1700512897 source:c:\users\mrsli\onedrive\documentos\github\trabajofinallab2\tp_final_prog&labii\stdatosusuario.c
 	"stDatosUsuario.h"
 
 1700081807 source:c:\users\mrsli\onedrive\documentos\github\trabajofinallab2\tp_final_prog&labii\stnotificaciones.c
@@ -1161,5 +1162,12 @@
 	"stDatosUsuario.h"
 
 1700499276 source:h:\documentos\utn\primer año\segundo cuatrimestre\progra-labo 2\tp final pokemon\tp final\tp_final_prog&labii\stbuzon.c
+	"stBuzon.h"
+
+1700512897 c:\users\mrsli\onedrive\documentos\github\trabajofinallab2\tp_final_prog&labii\stbuzon.h
+	"stColeccion.h"
+	"stDatosUsuario.h"
+
+1700512897 source:c:\users\mrsli\onedrive\documentos\github\trabajofinallab2\tp_final_prog&labii\stbuzon.c
 	"stBuzon.h"
 
