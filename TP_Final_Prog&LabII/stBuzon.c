@@ -40,7 +40,7 @@ void muestraTodasNotificaciones(stNotificacion * notificacionesAMostrar) //Muest
     }
 }
 
-void muestraBuzon(stBuzon * buzonAMostrar) //Muestra Buzon Entero
+void muestraBuzon(stBuzon * buzonAMostrar) //Muestra Buzon Entero //////////////////// Cambiarlo para que muestre de a 1 y cada que muestra se toma como "atiende" y va borrando
 {
     muestraTodasNotificaciones(buzonAMostrar->primero);
 }
