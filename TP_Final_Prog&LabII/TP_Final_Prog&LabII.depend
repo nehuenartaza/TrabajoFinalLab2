@@ -385,7 +385,7 @@
 1700082869 source:c:\users\diego\documents\github\trabajofinallab2\tp_final_prog&labii\stclase.c
 	"stClase.h"
 
-1700438660 source:c:\users\diego\documents\github\trabajofinallab2\tp_final_prog&labii\stcoleccion.c
+1700576772 source:c:\users\diego\documents\github\trabajofinallab2\tp_final_prog&labii\stcoleccion.c
 	"stColeccion.h"
 
 1699909878 source:c:\users\diego\documents\github\trabajofinallab2\tp_final_prog&labii\stenergia.c
@@ -627,7 +627,7 @@
 	<stdio.h>
 	<stdlib.h>
 
-1700576772 c:\users\diego\documents\github\trabajofinallab2\tp_final_prog&labii\archivos.h
+1700580121 c:\users\diego\documents\github\trabajofinallab2\tp_final_prog&labii\archivos.h
 	"stUsuario.h"
 
 1700559577 c:\users\diego\documents\github\trabajofinallab2\tp_final_prog&labii\stusuario.h
@@ -1151,7 +1151,7 @@
 	"stColeccion.h"
 	"stDatosUsuario.h"
 
-1700560773 c:\users\diego\documents\github\trabajofinallab2\tp_final_prog&labii\stdatosusuario.h
+1700578055 c:\users\diego\documents\github\trabajofinallab2\tp_final_prog&labii\stdatosusuario.h
 	"stCarta.h"
 
 1700559439 source:c:\users\diego\documents\github\trabajofinallab2\tp_final_prog&labii\stdatosusuario.c
@@ -1171,6 +1171,6 @@
 1700512897 source:c:\users\mrsli\onedrive\documentos\github\trabajofinallab2\tp_final_prog&labii\stbuzon.c
 	"stBuzon.h"
 
-1700560202 source:c:\users\diego\documents\github\trabajofinallab2\tp_final_prog&labii\stbuzon.c
+1700577927 source:c:\users\diego\documents\github\trabajofinallab2\tp_final_prog&labii\stbuzon.c
 	"stBuzon.h"
 

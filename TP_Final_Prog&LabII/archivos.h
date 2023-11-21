@@ -11,7 +11,11 @@
 void cargaArchiCartas(stCarta cartaAGuardar);
 arbolDeListasCartas * cargaCartasArchiToArbolDL(arbolDeListasCartas * arbolACargar);
 //Muestra
-void muestraArchiCartas();
+void muestraArchiCartas(); //Muestra Base de datos completa
+void muestraArchiCartasPorNombre(); //Muestra Base de datos completa
+void muestraArchiCartasPorRareza(); //Muestra Base de datos completa
+void muestraArchiCartasPorExpansion(); //Muestra Base de datos completa
+void muestraArchiCartasPorSubExpansion(); //Muestra Base de datos completa
 //Busqueda
 int buscaUltimoIDEnArchi();
 stCarta buscaCartaPorIdEnArchi(int idAbuscar); //Buscca y retorna datos de carta pedidos apartir de un id //////////////////////////// Falta testear
@@ -23,6 +27,8 @@ datosUsuario iniciarSesion(int*); // pide nombre de usuario y contraseña, busca 
 datosUsuario cerrarSesion(int*);  // vacia los datos de variable usuario y los retorna. Modifica la variable login por puntero
 //Carga Datos Del Usuario
 stListaD * cargaColeccionPorParametro(datosUsuario datosUsuarioACargar);
+stListaD * cargaMazoPorParametro(datosUsuario datosUsuarioACargar); ////// JULI
+void cargaBuzonPorParametro(datosUsuario datosUsuarioACargar , stBuzon * buzonACargar);
 //Muestra Datos Usuario
 void muestraUsuariosEnArchi();
 void muestraColeccionIntercambioUsuarioEnArchi(int idDeUsuarioAMostrar);

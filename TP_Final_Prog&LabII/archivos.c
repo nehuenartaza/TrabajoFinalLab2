@@ -48,6 +48,70 @@ void muestraArchiCartas()
     }
 }
 
+void muestraArchiCartasPorNombre(char nombrePokemonAMostrar[]) //Muestra Base de datos por nombre recibido por parametro
+{
+    FILE * archi = fopen(ARCHI_CARTAS, "rb");
+    if(archi)
+    {
+        stCarta cartitaAMostrar;
+        while(!feof(archi))
+        {
+            fread(&cartitaAMostrar, sizeof(stCarta), 1, archi);
+            if(!feof(archi) && strstr(cartitaAMostrar.nombre , nombrePokemonAMostrar) != NULL)
+                muestraCarta(cartitaAMostrar);
+        }
+        fclose(archi);
+    }
+}
+
+void muestraArchiCartasPorRareza(char rarezaAMostrar[]) //Muestra Base de datos Por rarezas Recibidas por parametro
+{
+    FILE * archi = fopen(ARCHI_CARTAS, "rb");
+    if(archi)
+    {
+        stCarta cartitaAMostrar;
+        while(!feof(archi))
+        {
+            fread(&cartitaAMostrar, sizeof(stCarta), 1, archi);
+            if(!feof(archi) && strcmp(cartitaAMostrar.rareza , rarezaAMostrar) == 0)
+                muestraCarta(cartitaAMostrar);
+        }
+        fclose(archi);
+    }
+}
+
+void muestraArchiCartasPorExpansion(char expancionAMostrar[]) //Muestra Base de datos Por Expansion
+{
+    FILE * archi = fopen(ARCHI_CARTAS, "rb");
+    if(archi)
+    {
+        stCarta cartitaAMostrar;
+        while(!feof(archi))
+        {
+            fread(&cartitaAMostrar, sizeof(stCarta), 1, archi);
+            if(!feof(archi) && strcmp(cartitaAMostrar.expansionCarta.expansionTitulo , expancionAMostrar) == 0 )
+                muestraCarta(cartitaAMostrar);
+        }
+        fclose(archi);
+    }
+}
+
+void muestraArchiCartasPorSubExpansion(char subExpancionAMostrar[]) //Muestra Base de datos Por SubExpansion
+{
+    FILE * archi = fopen(ARCHI_CARTAS, "rb");
+    if(archi)
+    {
+        stCarta cartitaAMostrar;
+        while(!feof(archi))
+        {
+            fread(&cartitaAMostrar, sizeof(stCarta), 1, archi);
+            if(!feof(archi) && strcmp(cartitaAMostrar.expansionCarta.expansionSubTit , subExpancionAMostrar) == 0)
+                muestraCarta(cartitaAMostrar);
+        }
+        fclose(archi);
+    }
+}
+
 //Busqueda
 int buscaUltimoIDEnArchi()
 {
@@ -162,6 +226,18 @@ stListaD * cargaColeccionPorParametro(datosUsuario datosUsuarioACargar)
         datosCargados++;
     }
     return coleccionACargar;
+}
+
+void cargaBuzonPorParametro(datosUsuario datosUsuarioACargar , stBuzon * buzonACargar)
+{
+    int datosCargados = 0;
+    stNotificacion * notificacionAGuardar = setNULL();
+    while(datosCargados < datosUsuarioACargar.validosDatosBuzon)
+    {
+        notificacionAGuardar = creaNodoNotificacion(datosUsuarioACargar.datosBuzon[datosCargados]);
+        agregarAlFinalBuzon(buzonACargar , notificacionAGuardar);
+        datosCargados++;
+    }
 }
 
 //Muestra Datos Usuario

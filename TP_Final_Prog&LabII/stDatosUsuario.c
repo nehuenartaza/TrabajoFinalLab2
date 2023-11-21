@@ -32,6 +32,16 @@ datosUsuario guardaIndicadorMazo(datosUsuario datosMazoACambiar, stCarta cartaAA
     return datosMazoACambiar;
 }
 
+datosUsuario guardaIndicadorColeccion(datosUsuario datosColeccionACambiar, stCarta cartaAAgregar) // guarda datos de las cartas en coleccion
+{
+    datosColeccionACambiar.datosColeccion[datosColeccionACambiar.validosDatosColeccion].idCartaEnColeccion = cartaAAgregar.id;
+    datosColeccionACambiar.datosColeccion[datosColeccionACambiar.validosDatosColeccion].cantCartaEnColeccion = cartaAAgregar.cant;
+
+    datosColeccionACambiar.validosDatosColeccion++;
+
+    return datosColeccionACambiar;
+}
+
 datosOferta creaOferta(datosUsuario ofertante , stCarta cartaOfrecida)
 {
     datosOferta nuevaOferta;
