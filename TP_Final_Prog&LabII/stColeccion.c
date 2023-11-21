@@ -60,16 +60,16 @@ stListaD * agregarPorIDColeccion(stListaD * coleccion, stListaD * nuevo)
         {
             stListaD * aux = coleccion;
             stListaD * seg = coleccion->sigNodo;
-            while ( seg != NULL && ( nuevo->dataColecc.id > seg->dataColecc.id || nuevo->dataColecc.id != coleccion->dataColecc.id ) )
+            while ( seg != NULL && ( nuevo->dataColecc.id > seg->dataColecc.id || nuevo->dataColecc.id != seg->dataColecc.id ) )
             {
                 aux = seg;
                 seg = seg->sigNodo;
             }
             if(seg != NULL)
             {
-                if ( nuevo->dataColecc.id == coleccion->dataColecc.id )     //si se repite se le suma 1, caso contrario hace los enlaces
+                if ( nuevo->dataColecc.id == seg->dataColecc.id )     //si se repite se le suma 1, caso contrario hace los enlaces
                 {
-                    coleccion->dataColecc.cant++;
+                    seg->dataColecc.cant++;
                 }
                 else
                 {
