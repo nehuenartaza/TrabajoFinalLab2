@@ -6,7 +6,7 @@ stUsuario cargaDatosUsuario(datosUsuario usuarioACargar)
 
     usuarioCargado.dato = usuarioACargar;
     usuarioCargado.coleccion = cargaColeccionPorParametro(usuarioACargar);
-    usuarioCargado.mazo = cargaMazoPorParametro(usuarioACargar);
+    //usuarioCargado.mazo = cargaMazoPorParametro(usuarioACargar); //////JULI
     cargaBuzonPorParametro(usuarioACargar , &usuarioCargado.buzon);
 
     return usuarioCargado;
@@ -18,6 +18,6 @@ datosUsuario guardaDatosUsuario(stUsuario usuarioAGuardar)
 
     usuarioGuardado = guardaIndicadoresDeColeccion(usuarioAGuardar.coleccion , usuarioGuardado);
     usuarioGuardado = guardaIndicadoresDeBuzon(&usuarioAGuardar.buzon);
-    usuarioGuardado = guardaIndicadoresDeMazo(); //////JULI
+    //usuarioGuardado = guardaIndicadoresDeMazo(); //////JULI
     return usuarioGuardado;
 }

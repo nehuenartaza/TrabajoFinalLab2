@@ -16,6 +16,10 @@ void muestraArchiCartasPorNombre(); //Muestra Base de datos completa
 void muestraArchiCartasPorRareza(); //Muestra Base de datos completa
 void muestraArchiCartasPorExpansion(); //Muestra Base de datos completa
 void muestraArchiCartasPorSubExpansion(); //Muestra Base de datos completa
+void muestraArchiCartasPorClase(char claseAMostrar[]);
+void muestraArchiCartasPokemon();
+void muestraArchiCartasEnergia();
+void muestraArchiCartasEntrenador();
 //Busqueda
 int buscaUltimoIDEnArchi();
 stCarta buscaCartaPorIdEnArchi(int idAbuscar); //Buscca y retorna datos de carta pedidos apartir de un id //////////////////////////// Falta testear

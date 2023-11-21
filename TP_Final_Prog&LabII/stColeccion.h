@@ -7,8 +7,8 @@
 typedef struct {
   stCarta dataColecc;
 
-  struct stColeccion * sigNodo;
-  struct stColeccion * antNodo;
+  struct stListaD * sigNodo;
+  struct stListaD * antNodo;
 }stListaD;
 
 

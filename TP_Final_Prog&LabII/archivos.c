@@ -57,7 +57,7 @@ void muestraArchiCartasPorNombre(char nombrePokemonAMostrar[]) //Muestra Base de
         while(!feof(archi))
         {
             fread(&cartitaAMostrar, sizeof(stCarta), 1, archi);
-            if(!feof(archi) && strstr(cartitaAMostrar.nombre , nombrePokemonAMostrar) != NULL)
+            if(!feof(archi) && strstr(cartitaAMostrar.nombre, nombrePokemonAMostrar) != NULL)
                 muestraCarta(cartitaAMostrar);
         }
         fclose(archi);
@@ -73,7 +73,7 @@ void muestraArchiCartasPorRareza(char rarezaAMostrar[]) //Muestra Base de datos 
         while(!feof(archi))
         {
             fread(&cartitaAMostrar, sizeof(stCarta), 1, archi);
-            if(!feof(archi) && strcmp(cartitaAMostrar.rareza , rarezaAMostrar) == 0)
+            if(!feof(archi) && strcmp(cartitaAMostrar.rareza, rarezaAMostrar) == 0)
                 muestraCarta(cartitaAMostrar);
         }
         fclose(archi);
@@ -89,7 +89,7 @@ void muestraArchiCartasPorExpansion(char expancionAMostrar[]) //Muestra Base de 
         while(!feof(archi))
         {
             fread(&cartitaAMostrar, sizeof(stCarta), 1, archi);
-            if(!feof(archi) && strcmp(cartitaAMostrar.expansionCarta.expansionTitulo , expancionAMostrar) == 0 )
+            if(!feof(archi) && strcmp(cartitaAMostrar.expansionCarta.expansionTitulo, expancionAMostrar) == 0 )
                 muestraCarta(cartitaAMostrar);
         }
         fclose(archi);
@@ -105,7 +105,67 @@ void muestraArchiCartasPorSubExpansion(char subExpancionAMostrar[]) //Muestra Ba
         while(!feof(archi))
         {
             fread(&cartitaAMostrar, sizeof(stCarta), 1, archi);
-            if(!feof(archi) && strcmp(cartitaAMostrar.expansionCarta.expansionSubTit , subExpancionAMostrar) == 0)
+            if(!feof(archi) && strcmp(cartitaAMostrar.expansionCarta.expansionSubTit, subExpancionAMostrar) == 0)
+                muestraCarta(cartitaAMostrar);
+        }
+        fclose(archi);
+    }
+}
+
+void muestraArchiCartasPorClase(char claseAMostrar[])
+{
+    if(strcmp(claseAMostrar, "Pokemon") == 0)
+        muestraArchiCartasPokemon();
+    else if(strcmp(claseAMostrar, "Energia") == 0)
+        muestraArchiCartasEnergia();
+    else if(strcmp(claseAMostrar, "Entrenador") == 0)
+        muestraArchiCartasEntrenador();
+    else
+        printf("\n Esa clase no existe ");
+}
+
+void muestraArchiCartasPokemon()
+{
+    FILE * archi = fopen(ARCHI_CARTAS, "rb");
+    if(archi)
+    {
+        stCarta cartitaAMostrar;
+        while(!feof(archi))
+        {
+            fread(&cartitaAMostrar, sizeof(stCarta), 1, archi);
+            if(!feof(archi) && cartitaAMostrar.claseCarta.datosPokemon.estado == 1)
+                muestraCarta(cartitaAMostrar);
+        }
+        fclose(archi);
+    }
+}
+
+void muestraArchiCartasEnergia()
+{
+    FILE * archi = fopen(ARCHI_CARTAS, "rb");
+    if(archi)
+    {
+        stCarta cartitaAMostrar;
+        while(!feof(archi))
+        {
+            fread(&cartitaAMostrar, sizeof(stCarta), 1, archi);
+            if(!feof(archi) && cartitaAMostrar.claseCarta.datosEnergia.estado == 1)
+                muestraCarta(cartitaAMostrar);
+        }
+        fclose(archi);
+    }
+}
+
+void muestraArchiCartasEntrenador()
+{
+    FILE * archi = fopen(ARCHI_CARTAS, "rb");
+    if(archi)
+    {
+        stCarta cartitaAMostrar;
+        while(!feof(archi))
+        {
+            fread(&cartitaAMostrar, sizeof(stCarta), 1, archi);
+            if(!feof(archi) && cartitaAMostrar.claseCarta.datosEntrenador.estado == 1)
                 muestraCarta(cartitaAMostrar);
         }
         fclose(archi);
@@ -228,14 +288,14 @@ stListaD * cargaColeccionPorParametro(datosUsuario datosUsuarioACargar)
     return coleccionACargar;
 }
 
-void cargaBuzonPorParametro(datosUsuario datosUsuarioACargar , stBuzon * buzonACargar)
+void cargaBuzonPorParametro(datosUsuario datosUsuarioACargar, stBuzon * buzonACargar)
 {
     int datosCargados = 0;
     stNotificacion * notificacionAGuardar = setNULL();
     while(datosCargados < datosUsuarioACargar.validosDatosBuzon)
     {
         notificacionAGuardar = creaNodoNotificacion(datosUsuarioACargar.datosBuzon[datosCargados]);
-        agregarAlFinalBuzon(buzonACargar , notificacionAGuardar);
+        agregarAlFinalBuzon(buzonACargar, notificacionAGuardar);
         datosCargados++;
     }
 }
