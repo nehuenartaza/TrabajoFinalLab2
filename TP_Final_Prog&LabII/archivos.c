@@ -1,6 +1,7 @@
 #include "archivos.h"
 
 ///Archivos de Cartas
+//Carga
 void cargaArchiCartas(stCarta cartaAGuardar) //carga el archivo
 {
     FILE * archi = fopen(ARCHI_CARTAS, "ab");
@@ -11,38 +12,6 @@ void cargaArchiCartas(stCarta cartaAGuardar) //carga el archivo
     }
     else
         printf("\n El archivo no se abrio correctamente. ");
-}
-
-void muestraArchiCartas()
-{
-    FILE * archi = fopen(ARCHI_CARTAS, "rb");
-    if(archi)
-    {
-        stCarta cartitaAMostrar;
-        while(!feof(archi))
-        {
-            fread(&cartitaAMostrar, sizeof(stCarta), 1, archi);
-            if(!feof(archi))
-                muestraCarta(cartitaAMostrar);
-        }
-        fclose(archi);
-    }
-}
-
-int buscaUltimoIDEnArchi()
-{
-    FILE * archi = fopen(ARCHI_CARTAS, "rb");
-    int ultimoID = 0;
-    if(archi)
-    {
-        stCarta cartitaEnArchi;
-        fseek(archi, -sizeof(stCarta), SEEK_END);
-        fread(&cartitaEnArchi, sizeof(stCarta), 1, archi);
-        ultimoID = cartitaEnArchi.id;
-
-        fclose(archi);
-    }
-    return ultimoID;
 }
 
 arbolDeListasCartas * cargaCartasArchiToArbolDL(arbolDeListasCartas * arbolACargar)
@@ -60,6 +29,40 @@ arbolDeListasCartas * cargaCartasArchiToArbolDL(arbolDeListasCartas * arbolACarg
         fclose(archi);
     }
     return arbolACargar;
+}
+
+//Muestra
+void muestraArchiCartas()
+{
+    FILE * archi = fopen(ARCHI_CARTAS, "rb");
+    if(archi)
+    {
+        stCarta cartitaAMostrar;
+        while(!feof(archi))
+        {
+            fread(&cartitaAMostrar, sizeof(stCarta), 1, archi);
+            if(!feof(archi))
+                muestraCarta(cartitaAMostrar);
+        }
+        fclose(archi);
+    }
+}
+
+//Busqueda
+int buscaUltimoIDEnArchi()
+{
+    FILE * archi = fopen(ARCHI_CARTAS, "rb");
+    int ultimoID = 0;
+    if(archi)
+    {
+        stCarta cartitaEnArchi;
+        fseek(archi, -sizeof(stCarta), SEEK_END);
+        fread(&cartitaEnArchi, sizeof(stCarta), 1, archi);
+        ultimoID = cartitaEnArchi.id;
+
+        fclose(archi);
+    }
+    return ultimoID;
 }
 
 stCarta buscaCartaPorIdEnArchi(int idAbuscar) //Buscca y retorna datos de carta pedidos apartir de un id //////////////////////////// Falta testear
@@ -82,27 +85,13 @@ stCarta buscaCartaPorIdEnArchi(int idAbuscar) //Buscca y retorna datos de carta 
 }
 
 ///Archivo de Usuarios
-int buscaUltimoIDEnArchiUsuarios()
-{
-    FILE * archi = fopen(ARCHI_USUARIOS, "rb");
-    int ultimoID = 0;
-    if(archi)
-    {
-        datosUsuario usuarioEnArchi;
-        fseek(archi, -sizeof(datosUsuario), SEEK_END);
-        fread(&usuarioEnArchi, sizeof(datosUsuario), 1, archi);
-        ultimoID = usuarioEnArchi.id;
-
-        fclose(archi);
-    }
-    return ultimoID;
-}
-
+//Carga Del Usuario
 void cargaArchiUsuarios(datosUsuario usuarioAGuardar)
 {
     FILE * archi = fopen(ARCHI_USUARIOS, "ab");
 
-    if(archi){
+    if(archi)
+    {
         fwrite(&usuarioAGuardar, sizeof(datosUsuario), 1, archi);
         fclose(archi);
     }
@@ -157,25 +146,25 @@ datosUsuario cerrarSesion(int * login)
     return usuario;
 }
 
-datosUsuario buscaUsuarioPorIdEnArchi(int idAbuscar) //Buscca y retorna datos de usuario pedidos apartir de un id //////////////////////////// Falta testear
+//Carga Datos del Usuario
+stListaD * cargaColeccionPorParametro(datosUsuario datosUsuarioACargar)
 {
-    int estado = 0;
-    datosUsuario usuarioBuscado;
-
-    FILE * archi = fopen(ARCHI_USUARIOS, "rb");
-    if(archi)
+    int idABuscar;
+    int datosCargados = 0;
+    stListaD * coleccionACargar = setNULL();
+    stCarta cartaACargar;
+    while(datosCargados < datosUsuarioACargar.validosDatosColeccion)
     {
-        while(!feof(archi) && estado == 0)
-        {
-            fread(&usuarioBuscado, sizeof(datosUsuario), 1, archi);
-            if(!feof(archi) && usuarioBuscado.id == idAbuscar)
-                estado = 1;
-        }
-        fclose(archi);
+        idABuscar = datosUsuarioACargar.datosColeccion[datosCargados].idCartaEnColeccion;
+        cartaACargar = buscaCartaPorIdEnArchi(idABuscar);
+        cartaACargar.cant = datosUsuarioACargar.datosColeccion[datosCargados].cantCartaEnColeccion;
+        coleccionACargar = agregarPorIDColeccion(coleccionACargar, creaNodoColeccion(cartaACargar));
+        datosCargados++;
     }
-    return usuarioBuscado;
+    return coleccionACargar;
 }
 
+//Muestra Datos Usuario
 void muestraUsuariosEnArchi()
 {
     FILE * archi = fopen(ARCHI_USUARIOS, "rb");
@@ -204,23 +193,43 @@ void muestraColeccionIntercambioUsuarioEnArchi(int idDeUsuarioAMostrar)
     muestraMazoIntercambio(coleccionDeUsuarioAMostrar);
 }
 
-stListaD * cargaColeccionPorParametro(datosUsuario datosUsuarioACargar)
+//Busqueda
+int buscaUltimoIDEnArchiUsuarios()
 {
-    int idABuscar;
-    int datosCargados = 0;
-    stListaD * coleccionACargar = setNULL();
-    stCarta cartaACargar;
-    while(datosCargados < datosUsuarioACargar.validosDatosColeccion)
+    FILE * archi = fopen(ARCHI_USUARIOS, "rb");
+    int ultimoID = 0;
+    if(archi)
     {
-        idABuscar = datosUsuarioACargar.datosColeccion[datosCargados].idCartaEnColeccion;
-        cartaACargar = buscaCartaPorIdEnArchi(idABuscar);
-        cartaACargar.cant = datosUsuarioACargar.datosColeccion[datosCargados].cantCartaEnColeccion;
-        coleccionACargar = agregarPorIDColeccion(coleccionACargar, creaNodoColeccion(cartaACargar));
-        datosCargados++;
+        datosUsuario usuarioEnArchi;
+        fseek(archi, -sizeof(datosUsuario), SEEK_END);
+        fread(&usuarioEnArchi, sizeof(datosUsuario), 1, archi);
+        ultimoID = usuarioEnArchi.id;
+
+        fclose(archi);
     }
-    return coleccionACargar;
+    return ultimoID;
 }
 
+datosUsuario buscaUsuarioPorIdEnArchi(int idAbuscar) //Buscca y retorna datos de usuario pedidos apartir de un id //////////////////////////// Falta testear
+{
+    int estado = 0;
+    datosUsuario usuarioBuscado;
+
+    FILE * archi = fopen(ARCHI_USUARIOS, "rb");
+    if(archi)
+    {
+        while(!feof(archi) && estado == 0)
+        {
+            fread(&usuarioBuscado, sizeof(datosUsuario), 1, archi);
+            if(!feof(archi) && usuarioBuscado.id == idAbuscar)
+                estado = 1;
+        }
+        fclose(archi);
+    }
+    return usuarioBuscado;
+}
+
+//Manejo Del Sistema
 void hacerIntercambio(stUsuario * usuarioActual)
 {
     int idDemandado;
@@ -230,19 +239,21 @@ void hacerIntercambio(stUsuario * usuarioActual)
     char control = 'n';
     stNotificacion * nuevaNotificacionDeIntercambio;
 
-    do{
-    printf("\n Los usuarios Disponibles para intercambio son : ");
-    muestraUsuariosEnArchi();
+    do
+    {
+        printf("\n Los usuarios Disponibles para intercambio son : ");
+        muestraUsuariosEnArchi();
 
-    printf("\n Ingrese Id de Usuario que desea ver coleccion disponible a intercambiar : ");
-    scanf("%d", &idDemandado);
+        printf("\n Ingrese Id de Usuario que desea ver coleccion disponible a intercambiar : ");
+        scanf("%d", &idDemandado);
 
-    muestraColeccionIntercambioUsuarioEnArchi(idDemandado);
+        muestraColeccionIntercambioUsuarioEnArchi(idDemandado);
 
-    printf("\n Desea Continuar con este Usuario? s/n ");
-    fflush(stdin);
-    scanf("%c" , &control);
-    }while(control == 'n');
+        printf("\n Desea Continuar con este Usuario? s/n ");
+        fflush(stdin);
+        scanf("%c", &control);
+    }
+    while(control == 'n');
 
     datosUsuario parteDemandada = buscaUsuarioPorIdEnArchi(idDemandado);
     stListaD * coleccionDemandado = cargaColeccionPorParametro(parteDemandada);
@@ -253,15 +264,15 @@ void hacerIntercambio(stUsuario * usuarioActual)
     printf("\n Elija el ID de la carta que Ofrece a intercambiar: ");
     scanf("%d", &cartaOfrecida);
 
-    stCarta demanda = buscarCartaPorIDYLaRetorna(coleccionDemandado , cartaDemandada);
-    stCarta oferta = buscarCartaPorIDYLaRetorna(usuarioActual->coleccion , cartaOfrecida);
+    stCarta demanda = buscarCartaPorIDYLaRetorna(coleccionDemandado, cartaDemandada);
+    stCarta oferta = buscarCartaPorIDYLaRetorna(usuarioActual->coleccion, cartaOfrecida);
 
-    usuarioActual->dato = guardaIndicadorBuzon(usuarioActual->dato , usuarioActual->dato , parteDemandada , oferta , demanda);
-    parteDemandada = guardaIndicadorBuzon(parteDemandada , usuarioActual->dato , parteDemandada , oferta , demanda);
+    usuarioActual->dato = guardaIndicadorBuzon(usuarioActual->dato, usuarioActual->dato, parteDemandada, oferta, demanda);
+    parteDemandada = guardaIndicadorBuzon(parteDemandada, usuarioActual->dato, parteDemandada, oferta, demanda);
 
-    nuevaNotificacionDeIntercambio = intercambio(&usuarioActual->coleccion , &coleccionDemandado , usuarioActual->dato.datosBuzon[usuarioActual->dato.validosDatosBuzon-1]);
+    nuevaNotificacionDeIntercambio = intercambio(&usuarioActual->coleccion, &coleccionDemandado, usuarioActual->dato.datosBuzon[usuarioActual->dato.validosDatosBuzon-1]);
 
-    agregarAlFinalBuzon(usuarioActual->buzon , nuevaNotificacionDeIntercambio);
+    agregarAlFinalBuzon(usuarioActual->buzon, nuevaNotificacionDeIntercambio);
     FILE * archi = fopen(ARCHI_USUARIOS, "r+b");
     if(archi)
     {
@@ -270,13 +281,35 @@ void hacerIntercambio(stUsuario * usuarioActual)
         {
             fread(&usuarioEnArchi, sizeof(datosUsuario), 1, archi);
             if(!feof(archi) && usuarioEnArchi.id == idDemandado)
-                {
-                    fseek(archi, -sizeof(stCarta), SEEK_CUR);
-                    fread(&usuarioEnArchi, sizeof(datosUsuario), 1, archi);
-                    usuarioEnArchi = parteDemandada;
-                    fwrite(&usuarioEnArchi , sizeof(datosUsuario) , 1 , archi);
-                    estado = 1;
-                }
+            {
+                fseek(archi, -sizeof(stCarta), SEEK_CUR);
+                usuarioEnArchi = parteDemandada;
+                fwrite(&usuarioEnArchi, sizeof(datosUsuario), 1, archi);
+                estado = 1;
+            }
+        }
+        fclose(archi);
+    }
+}
+
+//Guardado De Datos
+void guardaDatosNuevos(datosUsuario usuarioACambiar) // guarda los datos del usuario
+{
+    int estado = 0;
+    FILE * archi = fopen(ARCHI_USUARIOS, "r+b");
+    if(archi)
+    {
+        datosUsuario usuarioEnArchi;
+        while(!feof(archi) && estado == 0)
+        {
+            fread(&usuarioEnArchi, sizeof(datosUsuario), 1, archi);
+            if(!feof(archi) && usuarioEnArchi.id == usuarioACambiar.id)
+            {
+                fseek(archi, -sizeof(stCarta), SEEK_CUR);
+                usuarioEnArchi = usuarioACambiar;
+                fwrite(&usuarioEnArchi, sizeof(datosUsuario), 1, archi);
+                estado = 1;
+            }
         }
         fclose(archi);
     }

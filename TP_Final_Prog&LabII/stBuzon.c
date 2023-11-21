@@ -120,17 +120,3 @@ stNotificacion * extraerNotificacionDeBuzon(stBuzon * buzonAExtraer)
     }
     return notificacionExtraida;
 }
-
-/*
-void realizarIntercambio()
-{
-    //Supongo que ya tengo los datos de mi usuarioActual
-    //Abro archibo de usuarios
-    //Muestro los id nombre y coleccionDeIntercambio de todos
-    //doy a elegir id de usuario
-    //elijo id de carta a intercambiar de su coleccion
-    //elijo id de carta en mi coleccion de intercambio
-    // uso funcion intercambio
-    // envio lo que retorna al buzon de cada usuario
-    // guardo indicadores para cada uno
-}*/

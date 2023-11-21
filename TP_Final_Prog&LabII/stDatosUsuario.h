@@ -53,12 +53,15 @@ typedef struct
 
 } datosUsuario;
 
+//Carga
 datosUsuario creaUsuario(); //inicializa los dato del usuario
-datosUsuario guardaIndicadorMazo(datosUsuario, stCarta); // guarda datos de 1 carta en el indicador de un usuario
-datosUsuario guardaIndicadorColeccion(datosUsuario, stCarta); // guarda datos de las cartas en coleccion
 datosOferta creaOferta(datosUsuario ofertante , stCarta cartaOfrecida);
 datosDemanda creaDemanda(datosUsuario demandante , stCarta cartaDemandada);
-datosUsuario guardaIndicadorBuzon(datosUsuario datosBuzonACambiar , datosUsuario ofertante , datosUsuario demandante , stCarta cartaOfrecida , stCarta cartaDemandada); // guarda datos del intercambio en buzon
+//Guarda
+datosUsuario guardaIndicadorMazo(datosUsuario, stCarta); // guarda datos de 1 carta en el indicador de un usuario
+datosUsuario guardaIndicadorColeccion(datosUsuario, stCarta); // guarda datos de las cartas en coleccion
+datosUsuario guardaIndicadorBuzon(datosUsuario , datosUsuario , datosUsuario , stCarta , stCarta); // guarda datos del intercambio en buzon
+//Maneja
 datosUsuario eliminaUsuario(datosUsuario usuarioAEliminar); // "elimina" un usuario
 datosUsuario vaciarDatosUsuario();
 
