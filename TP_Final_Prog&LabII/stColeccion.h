@@ -31,5 +31,6 @@ stCarta buscarCartaPorIDYLaRetorna(stListaD * lista, int id);
 stListaD * creaNodoColeccion(stCarta cartaAGuardar);
 stListaD * buscaNodoEnColeccionPorId(stListaD * coleccionARevisar , stCarta cartaABuscar);
 stListaD * altaCartaEnColeccion(stListaD * coleccionACargar , stCarta cartaACargar);
+datosUsuario cargaIndicadoresDeColeccion(stListaD * coleccionAGuardar, datosUsuario usuarioAEditar);
 
 #endif // STCOLECCION_H_INCLUDED
