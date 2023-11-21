@@ -176,6 +176,7 @@ void menuFINAL()
         {
             do
             {
+                usuario.coleccion = cargaColeccionPorParametro(usuario.dato);
                 system("cls");
                 menuPrincipal();
                 scanf("%d", &opcion);
@@ -428,6 +429,8 @@ void menuFINAL()
                             system("pause");
                             break;
                         case 9:
+                            usuario.dato = guardaIndicadoresDeColeccion(usuario.coleccion, usuario.dato);
+                            guardaDatosNuevos(usuario.dato);
                             break;
                         default:
                             system("cls");
