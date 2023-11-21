@@ -277,6 +277,7 @@ void menuFINAL()
                             {
                                 system("cls");
                                 menuColeccion2();
+
                                 cartasTotales = contadorCartasTotalesEnColeccion(usuario.coleccion);
                                 pokemon = contadorCartasPokemonEnColeccion(usuario.coleccion);
                                 entrenador = contadorCartasEntrenadorEnColeccion(usuario.coleccion);
@@ -286,8 +287,9 @@ void menuFINAL()
                                 promEntrenador = (float) (entrenador/cartasTotales)*100;
                                 promEnergia = (float) (energia/cartasTotales)*100;
 
+
                                 printf("\nActualmente contiene %d cartas en su coleccion.", cartasTotales);
-                                printf("\nContiene %d de %d (%.1f%)cartas de clase Pokemon.", pokemon, cartasTotales, promPokemon);
+                                printf("\nContiene %d de %d (%.1f) cartas de clase Pokemon.", pokemon, cartasTotales, promPokemon);
                                 printf("\nContiene %d de %d (%.1f) cartas de clase Entrenador.", entrenador, cartasTotales, promEntrenador);
                                 printf("\nContiene %d de %d (%.1f) cartas de clase Energia.\n", energia, cartasTotales, promEnergia);
                                 scanf("%d", &opcion);

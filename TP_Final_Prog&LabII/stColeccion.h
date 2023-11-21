@@ -48,4 +48,6 @@ int contadorCartasPokemonEnColeccion(stListaD *);
 int contadorCartasEntrenadorEnColeccion(stListaD *);
 int contadorCartasEnergiaEnColeccion(stListaD *);
 
+
+
 #endif // STCOLECCION_H_INCLUDED
