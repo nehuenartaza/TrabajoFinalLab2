@@ -1076,7 +1076,7 @@
 1700431533 source:h:\documentos\utn\primer año\segundo cuatrimestre\progra-labo 2\tp final pokemon\tp final\tp_final_prog&labii\constantes.c
 	"constantes.h"
 
-1700419370 h:\documentos\utn\primer año\segundo cuatrimestre\progra-labo 2\tp final pokemon\tp final\tp_final_prog&labii\constantes.h
+1700525442 h:\documentos\utn\primer año\segundo cuatrimestre\progra-labo 2\tp final pokemon\tp final\tp_final_prog&labii\constantes.h
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -1100,7 +1100,7 @@
 	"stMazo.h"
 	"stBuzon.h"
 
-1700189576 h:\documentos\utn\primer año\segundo cuatrimestre\progra-labo 2\tp final pokemon\tp final\tp_final_prog&labii\stmazo.h
+1700518366 h:\documentos\utn\primer año\segundo cuatrimestre\progra-labo 2\tp final pokemon\tp final\tp_final_prog&labii\stmazo.h
 	"stColeccion.h"
 
 1700431533 h:\documentos\utn\primer año\segundo cuatrimestre\progra-labo 2\tp final pokemon\tp final\tp_final_prog&labii\stcoleccion.h
@@ -1109,7 +1109,7 @@
 1700189576 h:\documentos\utn\primer año\segundo cuatrimestre\progra-labo 2\tp final pokemon\tp final\tp_final_prog&labii\stcarta.h
 	"stClase.h"
 
-1700189576 h:\documentos\utn\primer año\segundo cuatrimestre\progra-labo 2\tp final pokemon\tp final\tp_final_prog&labii\stclase.h
+1700525442 h:\documentos\utn\primer año\segundo cuatrimestre\progra-labo 2\tp final pokemon\tp final\tp_final_prog&labii\stclase.h
 	"constantes.h"
 
 1700189576 h:\documentos\utn\primer año\segundo cuatrimestre\progra-labo 2\tp final pokemon\tp final\tp_final_prog&labii\stnotificaciones.h
@@ -1130,7 +1130,7 @@
 1700448244 source:h:\documentos\utn\primer año\segundo cuatrimestre\progra-labo 2\tp final pokemon\tp final\tp_final_prog&labii\stcoleccion.c
 	"stColeccion.h"
 
-1700189576 source:h:\documentos\utn\primer año\segundo cuatrimestre\progra-labo 2\tp final pokemon\tp final\tp_final_prog&labii\stmazo.c
+1700518366 source:h:\documentos\utn\primer año\segundo cuatrimestre\progra-labo 2\tp final pokemon\tp final\tp_final_prog&labii\stmazo.c
 	"stMazo.h"
 
 1700189576 source:h:\documentos\utn\primer año\segundo cuatrimestre\progra-labo 2\tp final pokemon\tp final\tp_final_prog&labii\stnotificaciones.c
@@ -1141,7 +1141,7 @@
 1700517951 source:h:\documentos\utn\primer año\segundo cuatrimestre\progra-labo 2\tp final pokemon\tp final\tp_final_prog&labii\archivos.c
 	"archivos.h"
 
-1700499276 source:h:\documentos\utn\primer año\segundo cuatrimestre\progra-labo 2\tp final pokemon\tp final\tp_final_prog&labii\stdatosusuario.c
+1700518147 source:h:\documentos\utn\primer año\segundo cuatrimestre\progra-labo 2\tp final pokemon\tp final\tp_final_prog&labii\stdatosusuario.c
 	"stDatosUsuario.h"
 
 1700438660 source:c:\users\diego\documents\github\trabajofinallab2\tp_final_prog&labii\constantes.c
