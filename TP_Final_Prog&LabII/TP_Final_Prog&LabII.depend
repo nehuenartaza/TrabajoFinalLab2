@@ -325,7 +325,7 @@
 	"stColeccion.h"
 	"stMazo.h"
 
-1700560258 c:\users\diego\documents\github\trabajofinallab2\tp_final_prog&labii\stcoleccion.h
+1700576772 c:\users\diego\documents\github\trabajofinallab2\tp_final_prog&labii\stcoleccion.h
 	"stDatosUsuario.h"
 
 1700560342 source:c:\users\diego\documents\github\trabajofinallab2\tp_final_prog&labii\archivos.c
@@ -627,7 +627,7 @@
 	<stdio.h>
 	<stdlib.h>
 
-1700559840 c:\users\diego\documents\github\trabajofinallab2\tp_final_prog&labii\archivos.h
+1700576772 c:\users\diego\documents\github\trabajofinallab2\tp_final_prog&labii\archivos.h
 	"stUsuario.h"
 
 1700559577 c:\users\diego\documents\github\trabajofinallab2\tp_final_prog&labii\stusuario.h
@@ -1151,7 +1151,7 @@
 	"stColeccion.h"
 	"stDatosUsuario.h"
 
-1700559552 c:\users\diego\documents\github\trabajofinallab2\tp_final_prog&labii\stdatosusuario.h
+1700560773 c:\users\diego\documents\github\trabajofinallab2\tp_final_prog&labii\stdatosusuario.h
 	"stCarta.h"
 
 1700559439 source:c:\users\diego\documents\github\trabajofinallab2\tp_final_prog&labii\stdatosusuario.c

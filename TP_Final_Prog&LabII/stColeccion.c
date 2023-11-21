@@ -196,23 +196,6 @@ bool verificaSiListaDobleEstaVacia(stListaD * listaD)  // Retorna false si esta 
 }
 
 ///Necesarias para Intercambio
-stListaD * cargaColeccionPorParametro(datosUsuario datosUsuarioACargar)
-{
-    int idABuscar;
-    int datosCargados = 0;
-    stListaD * coleccionACargar = setNULL();
-    stCarta cartaACargar;
-    while(datosCargados < datosUsuarioACargar.validosDatosColeccion)
-    {
-        idABuscar = datosUsuarioACargar.datosColeccion[datosCargados].idCartaEnColeccion;
-        cartaACargar = buscaCartaPorIdEnArchi(idABuscar);
-        cartaACargar.cant = datosUsuarioACargar.datosColeccion[datosCargados].cantCartaEnColeccion;
-        coleccionACargar = agregarPorIDColeccion(coleccionACargar, creaNodoColeccion(cartaACargar));
-        datosCargados++;
-    }
-    return coleccionACargar;
-}
-
 stCarta buscarCartaPorIDYLaRetorna(stListaD * lista, int id)
 {
     stCarta cartaBuscada;

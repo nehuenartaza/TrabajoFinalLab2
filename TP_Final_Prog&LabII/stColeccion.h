@@ -27,7 +27,6 @@ bool rarezasCartasCoinciden(char[], char[]);
 void buscarCartaPorID(stListaD *, int);
 bool verificaSiListaDobleEstaVacia(stListaD *); // Retorna false si esta vacia, o true si tiene algun nodo cargado
 ///Necesarias para Intercambio
-stListaD * cargaColeccionPorParametro(datosUsuario datosUsuarioACargar);
 stCarta buscarCartaPorIDYLaRetorna(stListaD * lista, int id);
 stListaD * creaNodoColeccion(stCarta cartaAGuardar);
 stListaD * buscaNodoEnColeccionPorId(stListaD * coleccionARevisar , stCarta cartaABuscar);

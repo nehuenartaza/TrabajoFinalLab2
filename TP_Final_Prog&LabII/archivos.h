@@ -20,6 +20,7 @@ datosUsuario iniciarSesion(int*); // pide nombre de usuario y contraseña, busca 
 datosUsuario cerrarSesion(int*);  // vacia los datos de variable usuario y los retorna. Modifica la variable login por puntero
 datosUsuario buscaUsuarioPorIdEnArchi(int idAbuscar); //Buscca y retorna datos de usuario pedidos apartir de un id //////////////////////////// Falta testear
 void muestraUsuariosEnArchi();
+stListaD * cargaColeccionPorParametro(datosUsuario datosUsuarioACargar);
 void muestraColeccionIntercambioUsuarioEnArchi(int idDeUsuarioAMostrar);
 void hacerIntercambio(stUsuario * usuarioActual);
 datosUsuario guardaIndicadores(datosUsuario); // guarda los datos del usuario
