@@ -431,6 +431,7 @@ void menuFINAL()
                         case 9:
                             usuario.dato = guardaIndicadoresDeColeccion(usuario.coleccion, usuario.dato);
                             guardaDatosNuevos(usuario.dato);
+                            muestraIndicadoresColeccion(usuario.dato);
                             break;
                         default:
                             system("cls");

@@ -92,3 +92,11 @@ datosUsuario vaciarDatosUsuario()
 
     return usuario;
 }
+
+void muestraIndicadoresColeccion(datosUsuario usuarioAMostrar)
+{
+    for(int i; i<usuarioAMostrar.validosDatosColeccion ; i++)
+    {
+        printf("\n %d Id Carta ---- %d Cant Canta");
+    }
+}

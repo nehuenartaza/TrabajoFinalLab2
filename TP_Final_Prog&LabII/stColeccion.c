@@ -384,7 +384,7 @@ datosUsuario guardaIndicadoresDeColeccion(stListaD * coleccionAGuardar, datosUsu
 
     while(coleccionAGuardar !=NULL)
     {
-        guardaIndicadorColeccion(usuarioAEditar, coleccionAGuardar->dataColecc);
+        usuarioAEditar = guardaIndicadorColeccion(usuarioAEditar, coleccionAGuardar->dataColecc);
         coleccionAGuardar = coleccionAGuardar->sigNodo;
     }
     return usuarioAEditar;

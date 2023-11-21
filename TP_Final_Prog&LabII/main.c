@@ -4,7 +4,7 @@
 #include <time.h>
 int main()
 {
-
+    //muestraUsuariosEnArchi();
     menuFINAL();
 
 

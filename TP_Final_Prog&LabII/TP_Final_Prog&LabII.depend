@@ -325,16 +325,16 @@
 	"stColeccion.h"
 	"stMazo.h"
 
-1700587784 c:\users\diego\documents\github\trabajofinallab2\tp_final_prog&labii\stcoleccion.h
+1700605099 c:\users\diego\documents\github\trabajofinallab2\tp_final_prog&labii\stcoleccion.h
 	"stDatosUsuario.h"
 
-1700582988 source:c:\users\diego\documents\github\trabajofinallab2\tp_final_prog&labii\archivos.c
+1700606850 source:c:\users\diego\documents\github\trabajofinallab2\tp_final_prog&labii\archivos.c
 	"archivos.h"
 
 1699656358 source:c:\users\diego\documents\github\trabajofinallab2\tp_final_prog&labii\listadoble.c
 	"listaDoble.h"
 
-1700507394 source:c:\users\diego\documents\github\trabajofinallab2\tp_final_prog&labii\main.c
+1700606850 source:c:\users\diego\documents\github\trabajofinallab2\tp_final_prog&labii\main.c
 	"menu.h"
 	"stCarta.h"
 	"Constantes.h"
@@ -379,13 +379,13 @@
 	<string.h>
 	"Constantes.h"
 
-1700507394 source:c:\users\diego\documents\github\trabajofinallab2\tp_final_prog&labii\menu.c
+1700606388 source:c:\users\diego\documents\github\trabajofinallab2\tp_final_prog&labii\menu.c
 	"menu.h"
 
 1700082869 source:c:\users\diego\documents\github\trabajofinallab2\tp_final_prog&labii\stclase.c
 	"stClase.h"
 
-1700583236 source:c:\users\diego\documents\github\trabajofinallab2\tp_final_prog&labii\stcoleccion.c
+1700606051 source:c:\users\diego\documents\github\trabajofinallab2\tp_final_prog&labii\stcoleccion.c
 	"stColeccion.h"
 
 1699909878 source:c:\users\diego\documents\github\trabajofinallab2\tp_final_prog&labii\stenergia.c
@@ -406,7 +406,7 @@
 1699884326 source:c:\users\diego\documents\github\trabajofinallab2\tp_final_prog&labii\stpokemon.c
 	"stPokemon.h"
 
-1700583236 source:c:\users\diego\documents\github\trabajofinallab2\tp_final_prog&labii\stusuario.c
+1700589595 source:c:\users\diego\documents\github\trabajofinallab2\tp_final_prog&labii\stusuario.c
 	"stUsuario.h"
 
 1700424494 source:c:\users\diego\documents\github\trabajofinallab2\tp_final_prog&labii\stcarta.c
@@ -627,7 +627,7 @@
 	<stdio.h>
 	<stdlib.h>
 
-1700583307 c:\users\diego\documents\github\trabajofinallab2\tp_final_prog&labii\archivos.h
+1700605099 c:\users\diego\documents\github\trabajofinallab2\tp_final_prog&labii\archivos.h
 	"stUsuario.h"
 
 1700582951 c:\users\diego\documents\github\trabajofinallab2\tp_final_prog&labii\stusuario.h
@@ -1151,10 +1151,10 @@
 	"stColeccion.h"
 	"stDatosUsuario.h"
 
-1700584388 c:\users\diego\documents\github\trabajofinallab2\tp_final_prog&labii\stdatosusuario.h
+1700605537 c:\users\diego\documents\github\trabajofinallab2\tp_final_prog&labii\stdatosusuario.h
 	"stCarta.h"
 
-1700584388 source:c:\users\diego\documents\github\trabajofinallab2\tp_final_prog&labii\stdatosusuario.c
+1700605537 source:c:\users\diego\documents\github\trabajofinallab2\tp_final_prog&labii\stdatosusuario.c
 	"stDatosUsuario.h"
 
 1700585808 h:\documentos\utn\primer año\segundo cuatrimestre\progra-labo 2\tp final pokemon\tp final\tp_final_prog&labii\stbuzon.h

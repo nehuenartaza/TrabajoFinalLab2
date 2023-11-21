@@ -431,20 +431,19 @@ void hacerIntercambio(stUsuario * usuarioActual)
 //Guardado De Datos
 void guardaDatosNuevos(datosUsuario usuarioACambiar) // guarda los datos del usuario
 {
-    int estado = 0;
     FILE * archi = fopen(ARCHI_USUARIOS, "r+b");
     if(archi)
     {
         datosUsuario usuarioEnArchi;
-        while(!feof(archi) && estado == 0)
+        while(!feof(archi))
         {
             fread(&usuarioEnArchi, sizeof(datosUsuario), 1, archi);
             if(!feof(archi) && usuarioEnArchi.id == usuarioACambiar.id)
             {
-                fseek(archi, -sizeof(stCarta), SEEK_CUR);
+                fseek(archi, -sizeof(datosUsuario), SEEK_CUR);
                 usuarioEnArchi = usuarioACambiar;
                 fwrite(&usuarioEnArchi, sizeof(datosUsuario), 1, archi);
-                estado = 1;
+                break;
             }
         }
         fclose(archi);
