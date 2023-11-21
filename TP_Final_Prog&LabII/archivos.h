@@ -12,11 +12,11 @@ void cargaArchiCartas(stCarta cartaAGuardar);
 arbolDeListasCartas * cargaCartasArchiToArbolDL(arbolDeListasCartas * arbolACargar);
 //Muestra
 void muestraArchiCartas(); //Muestra Base de datos completa
-void muestraArchiCartasPorNombre(); //Muestra Base de datos completa
-void muestraArchiCartasPorRareza(); //Muestra Base de datos completa
-void muestraArchiCartasPorExpansion(); //Muestra Base de datos completa
-void muestraArchiCartasPorSubExpansion(); //Muestra Base de datos completa
-void muestraArchiCartasPorClase(char claseAMostrar[]);
+void muestraArchiCartasPorNombre(char[]); //Muestra Base de datos por nombre recibido por parametro
+void muestraArchiCartasPorRareza(char[]); //Muestra Base de datos Por rarezas Recibidas por parametro
+void muestraArchiCartasPorExpansion(char[]); //Muestra Base de datos Por Expansion
+void muestraArchiCartasPorSubExpansion(char[]); //Muestra Base de datos Por SubExpansion
+void muestraArchiCartasPorClase(char[]);
 void muestraArchiCartasPokemon();
 void muestraArchiCartasEnergia();
 void muestraArchiCartasEntrenador();

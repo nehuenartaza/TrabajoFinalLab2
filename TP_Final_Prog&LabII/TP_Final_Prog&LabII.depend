@@ -1083,7 +1083,7 @@
 	<time.h>
 	<stdbool.h>
 
-1700586015 source:h:\documentos\utn\primer año\segundo cuatrimestre\progra-labo 2\tp final pokemon\tp final\tp_final_prog&labii\main.c
+1700593452 source:h:\documentos\utn\primer año\segundo cuatrimestre\progra-labo 2\tp final pokemon\tp final\tp_final_prog&labii\main.c
 	"menu.h"
 	"stCarta.h"
 	"Constantes.h"
@@ -1093,7 +1093,7 @@
 	"constantes.h"
 	"archivos.h"
 
-1700591731 h:\documentos\utn\primer año\segundo cuatrimestre\progra-labo 2\tp final pokemon\tp final\tp_final_prog&labii\archivos.h
+1700595486 h:\documentos\utn\primer año\segundo cuatrimestre\progra-labo 2\tp final pokemon\tp final\tp_final_prog&labii\archivos.h
 	"stUsuario.h"
 
 1700585808 h:\documentos\utn\primer año\segundo cuatrimestre\progra-labo 2\tp final pokemon\tp final\tp_final_prog&labii\stusuario.h
@@ -1103,7 +1103,7 @@
 1700518366 h:\documentos\utn\primer año\segundo cuatrimestre\progra-labo 2\tp final pokemon\tp final\tp_final_prog&labii\stmazo.h
 	"stColeccion.h"
 
-1700591909 h:\documentos\utn\primer año\segundo cuatrimestre\progra-labo 2\tp final pokemon\tp final\tp_final_prog&labii\stcoleccion.h
+1700600502 h:\documentos\utn\primer año\segundo cuatrimestre\progra-labo 2\tp final pokemon\tp final\tp_final_prog&labii\stcoleccion.h
 	"stDatosUsuario.h"
 
 1700189576 h:\documentos\utn\primer año\segundo cuatrimestre\progra-labo 2\tp final pokemon\tp final\tp_final_prog&labii\stcarta.h
@@ -1118,7 +1118,7 @@
 1700585808 h:\documentos\utn\primer año\segundo cuatrimestre\progra-labo 2\tp final pokemon\tp final\tp_final_prog&labii\stdatosusuario.h
 	"stCarta.h"
 
-1700499767 source:h:\documentos\utn\primer año\segundo cuatrimestre\progra-labo 2\tp final pokemon\tp final\tp_final_prog&labii\menu.c
+1700603699 source:h:\documentos\utn\primer año\segundo cuatrimestre\progra-labo 2\tp final pokemon\tp final\tp_final_prog&labii\menu.c
 	"menu.h"
 
 1700419370 source:h:\documentos\utn\primer año\segundo cuatrimestre\progra-labo 2\tp final pokemon\tp final\tp_final_prog&labii\stcarta.c
@@ -1127,7 +1127,7 @@
 1700189576 source:h:\documentos\utn\primer año\segundo cuatrimestre\progra-labo 2\tp final pokemon\tp final\tp_final_prog&labii\stclase.c
 	"stClase.h"
 
-1700448244 source:h:\documentos\utn\primer año\segundo cuatrimestre\progra-labo 2\tp final pokemon\tp final\tp_final_prog&labii\stcoleccion.c
+1700603368 source:h:\documentos\utn\primer año\segundo cuatrimestre\progra-labo 2\tp final pokemon\tp final\tp_final_prog&labii\stcoleccion.c
 	"stColeccion.h"
 
 1700518366 source:h:\documentos\utn\primer año\segundo cuatrimestre\progra-labo 2\tp final pokemon\tp final\tp_final_prog&labii\stmazo.c
@@ -1138,7 +1138,7 @@
 1700591731 source:h:\documentos\utn\primer año\segundo cuatrimestre\progra-labo 2\tp final pokemon\tp final\tp_final_prog&labii\stusuario.c
 	"stUsuario.h"
 
-1700591731 source:h:\documentos\utn\primer año\segundo cuatrimestre\progra-labo 2\tp final pokemon\tp final\tp_final_prog&labii\archivos.c
+1700599285 source:h:\documentos\utn\primer año\segundo cuatrimestre\progra-labo 2\tp final pokemon\tp final\tp_final_prog&labii\archivos.c
 	"archivos.h"
 
 1700585808 source:h:\documentos\utn\primer año\segundo cuatrimestre\progra-labo 2\tp final pokemon\tp final\tp_final_prog&labii\stdatosusuario.c

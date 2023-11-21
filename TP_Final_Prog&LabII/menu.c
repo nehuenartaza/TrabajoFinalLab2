@@ -35,45 +35,34 @@ void menuBaseDeDatos()
 
 void menuOpcionDeFiltradoBaseDeDatos()
 {
-    printf("\nQué caracteristica desea filtrar?");
-    printf("\n\n1- Nombre");
-    printf("\n2- Rareza");
-    printf("\n3- Expansion");
-    printf("\n4- Subexpansion");
+    printf("\nQue caracteristica desea filtrar?\n");
+    printf("\n1- Nombre");
+    printf("\n2- Clase: Pokemon");
+    printf("\n3- Clase: Entrenador");
+    printf("\n4- Clase: Energia");
+    printf("\n5- Rareza");
+    printf("\n6- Expansion");
+    printf("\n7- Subexpansion");
     printf("\n8- Volver.");
     printf("\n\n");
 }
 
 void menuOpcionDeFiltradoColeccion()
 {
-    printf("\nQué caracteristica desea filtrar?");
-    printf("\n\n1- Nombre");
-    printf("\n2- Rareza");
-    printf("\n3- Expansion");
-    printf("\n4- Subexpansion");
-    printf("\n7- Volver.");
+    printf("\nQue caracteristica desea filtrar?\n");
+    printf("\n1- Nombre");
+    printf("\n2- Clase: Pokemon");
+    printf("\n3- Clase: Entrenador");
+    printf("\n4- Clase: Energia");
+    printf("\n5- Rareza");
+    printf("\n6- Expansion");
+    printf("\n7- Subexpansion");
+    printf("\n10- Volver.");
     printf("\n\n");
 }
 
 void menuColeccion1()
 {
-    /*  AGREGAR PARAMETRO COLECCION PARA QUE FUNCIONEN
-    int cartasTotales = contadorCartasTotalesEnColeccion();
-    int pokemon = contadorCartasPokemonEnColeccion();
-    int entrenador = contadorCartasEntrenadorEnColeccion();
-    int energia = contadorCartasEnergiaEnColeccion();
-
-    float promPokemon = (float) (pokemon/cartasTotales)*100;
-    float promEntrenador = (float) (entrenador/cartasTotales)*100;
-    float promEnergia = (float) (energia/cartasTotales)*100;
-
-    printf("\nActualmente contiene %d cartas en su coleccion.", cartasTotales);
-    printf("\nContiene %d de %.1f cartas de clase Pokemon.", pokemon, promPokemon);
-    printf("\nContiene %d de %.1f cartas de clase Entrenador.", entrenador, promEntrenador);
-    printf("\nContiene %d de %.1f cartas de clase Energia.", energia, promEnergia);
-
-    */
-
     printf("\n1- Ver mi coleccion.");
     printf("\n2- Agregar cartas a mi coleccion (por ID).");
     printf("\n3- Remover cartas de mi coleccion (por ID).");  // esta opcion la ponemos junto al menu de agregar carta o la dejamos separada en su propio menu??
@@ -87,6 +76,23 @@ void menuColeccion2()
     printf("\n2- Filtrar y mostrar coleccion por parametro.");
     printf("\n8- Volver.");
     printf("\n\n");
+
+    /*  AGREGAR PARAMETRO COLECCION PARA QUE FUNCIONEN
+    int cartasTotales = contadorCartasTotalesEnColeccion();
+    int pokemon = contadorCartasPokemonEnColeccion();
+    int entrenador = contadorCartasEntrenadorEnColeccion();
+    int energia = contadorCartasEnergiaEnColeccion();
+
+    float promPokemon = (float) (pokemon/cartasTotales)*100;
+    float promEntrenador = (float) (entrenador/cartasTotales)*100;
+    float promEnergia = (float) (energia/cartasTotales)*100;
+
+    printf("\nActualmente contiene %d cartas en su coleccion.", cartasTotales);
+    printf("\nContiene %d de %d (%.1f)cartas de clase Pokemon.", pokemon, cartasTotales, promPokemon);
+    printf("\nContiene %d de %d (%.1f) cartas de clase Entrenador.", entrenador, cartasTotales, promEntrenador);
+    printf("\nContiene %d de %d (%.1f) cartas de clase Energia.\n", energia, cartasTotales, promEnergia);
+
+    */
 }
 
 void menuIntercambio()      // prototipo super prototipo SUJETO A CAMBIOS
@@ -118,9 +124,20 @@ void menuMazo()
 
 void menuFINAL()
 {
-    datosUsuario usuario;
+    stUsuario usuario;
+    datosUsuario usuarioACargar;
     int login = 0;  // valor 0 indica que no está logueado y se usa para mandar al menu de inicio, valor 1 significa que hay un usuario logueado y se abre el programa.
     int opcion = 0; // variable para navegar por los menues/switch
+    arbolDeListasCartas * baseDeDatos = setNULL();
+    baseDeDatos = cargaCartasArchiToArbolDL(baseDeDatos);
+    char parametroDeBusqueda[DIM2];
+    int idBuscado = 0;
+    stListaD * aux = setNULL();
+
+
+
+
+
     do
     {
         system("cls");
@@ -131,12 +148,14 @@ void menuFINAL()
         {
         case 1:
             system("cls");
-            usuario = iniciarSesion(&login);
+            usuario.dato = iniciarSesion(&login);
             system("pause");
             break;
         case 2:
             system("cls");
-            cargaArchiUsuarios(creaUsuario());
+            usuarioACargar = creaUsuario();
+            usuarioACargar.id = buscaUltimoIDEnArchiUsuarios() + 1;
+            cargaArchiUsuarios(usuarioACargar);
             printf("\n Cuenta creada satisfactoriamente!\n");
             system("pause");
             break;
@@ -174,7 +193,7 @@ void menuFINAL()
                         {
                         case 1:
                             system("cls");
-                            // agregar funcion para mostrar base de datos completa
+                            muestraArbolDeCartas(baseDeDatos);
                             system("pause");
                             break;
                         case 2:
@@ -188,22 +207,54 @@ void menuFINAL()
                                 {
                                 case 1:
                                     system("cls");
-                                    // agregar funcion para filtrar y mostrar cartas por nombre de la base de datos (usar "strstr")
+                                    printf("\nIntroduzca el nombre de carta que busca: ");
+                                    fflush(stdin);
+                                    fgets(parametroDeBusqueda, DIM2, stdin);
+                                    buscaSaltoLinea(parametroDeBusqueda);
+                                    muestraArchiCartasPorNombre(parametroDeBusqueda);
                                     system("pause");
                                     break;
                                 case 2:
                                     system("cls");
-                                    // agregar funcion para filtrar y mostrar cartas por rareza de la base de datos
+                                    muestraArchiCartasPokemon();
                                     system("pause");
                                     break;
                                 case 3:
                                     system("cls");
-                                    // agregar funcion para filtrar y mostrar cartas de una expansion de la base de datos
+                                    muestraArchiCartasEntrenador();
                                     system("pause");
                                     break;
                                 case 4:
                                     system("cls");
-                                    // agregar funcion para filtrar y mostrar cartas de una SUBexpansion de la base de datos
+                                    muestraArchiCartasEnergia();
+                                    system("pause");
+                                    break;
+                                case 5:
+                                    system("cls");
+                                    printf("\nIntroduzca la rareza de carta que busca: ");
+                                    printf("\nOpciones validas: 'Comun'; 'Poco Comun';'Rara'\n");
+                                    fflush(stdin);
+                                    fgets(parametroDeBusqueda, DIM2, stdin);
+                                    buscaSaltoLinea(parametroDeBusqueda);
+                                    muestraArchiCartasPorRareza(parametroDeBusqueda);
+                                    system("pause");
+                                    break;
+                                case 6:
+                                    system("cls");
+                                    printf("\nIntroduzca el nombre de expansion que busca: ");
+                                    fflush(stdin);
+                                    fgets(parametroDeBusqueda, DIM2, stdin);
+                                    buscaSaltoLinea(parametroDeBusqueda);
+                                    muestraArchiCartasPorExpansion(parametroDeBusqueda);
+                                    system("pause");
+                                    break;
+                                case 7:
+                                    system("cls");
+                                    printf("\nIntroduzca el nombre de subexpansion que busca: ");
+                                    fflush(stdin);
+                                    fgets(parametroDeBusqueda, DIM2, stdin);
+                                    buscaSaltoLinea(parametroDeBusqueda);
+                                    muestraArchiCartasPorSubExpansion(parametroDeBusqueda); // teniamos el problema en esta
                                     system("pause");
                                     break;
                                 case 8:
@@ -230,6 +281,7 @@ void menuFINAL()
                     while(opcion != 9);
                     break;
                 case 2:
+                    system("cls");
                     do
                     {
                         system("cls");
@@ -239,6 +291,13 @@ void menuFINAL()
                         switch(opcion)
                         {
                         case 1:
+                            system("cls");
+                            if(usuario.coleccion == NULL)
+                            {
+                                printf("\nSu coleccion esta vacia.\n");
+                                system("pause");
+                                break;
+                            }
                             do
                             {
                                 system("cls");
@@ -249,7 +308,7 @@ void menuFINAL()
                                 {
                                 case 1:
                                     system("cls");
-                                    // agregar funcion mostrar coleccion completa
+                                    mostrarListaDoble(usuario.coleccion);
                                     system("pause");
                                     break;
                                 case 2:
@@ -263,25 +322,57 @@ void menuFINAL()
                                         {
                                         case 1:
                                             system("cls");
-                                            // agregar funcion para filtrar y mostrar cartas por nombre de la coleccion (usar "strstr")
+                                            printf("\nIntroduzca el nombre de la carta que busca: ");
+                                            fflush(stdin);
+                                            fgets(parametroDeBusqueda, DIM2, stdin);
+                                            buscaSaltoLinea(parametroDeBusqueda);
+                                            mostrarCartasPorStringAproximado(usuario.coleccion, parametroDeBusqueda);
                                             system("pause");
                                             break;
                                         case 2:
                                             system("cls");
-                                            // agregar funcion para filtrar y mostrar cartas por rareza de la coleccion
+                                            mostrarCartasPorClasePokemon(usuario.coleccion);
                                             system("pause");
                                             break;
                                         case 3:
                                             system("cls");
-                                            // agregar funcion para filtrar y mostrar cartas de una expansion de la coleccion
+                                            mostrarCartasPorClaseEntrenador(usuario.coleccion);
                                             system("pause");
                                             break;
                                         case 4:
                                             system("cls");
-                                            // agregar funcion para filtrar y mostrar cartas de una SUBexpansion de la coleccion
+                                            mostrarCartasPorClaseEnergia(usuario.coleccion);
+                                            system("pause");
+                                            break;
+                                        case 5:
+                                            system("cls");
+                                            printf("\nIntroduzca la rareza de la carta que busca: ");
+                                            printf("\nOpciones validas: 'Comun'; 'Poco Comun';'Rara'\n");
+                                            fflush(stdin);
+                                            fgets(parametroDeBusqueda, DIM2, stdin);
+                                            buscaSaltoLinea(parametroDeBusqueda);
+                                            mostrarCartasPorRareza(usuario.coleccion, parametroDeBusqueda);
+                                            system("pause");
+                                            break;
+                                        case 6:
+                                            system("cls");
+                                            printf("\nIntroduzca el nombre de expansion que busca: ");
+                                            fflush(stdin);
+                                            fgets(parametroDeBusqueda, DIM2, stdin);
+                                            buscaSaltoLinea(parametroDeBusqueda);
+                                            mostrarCartasPorExpansion(usuario.coleccion, parametroDeBusqueda);
                                             system("pause");
                                             break;
                                         case 7:
+                                            system("cls");
+                                            printf("\nIntroduzca el nombre de subexpansion que busca: ");
+                                            fflush(stdin);
+                                            fgets(parametroDeBusqueda, DIM2, stdin);
+                                            buscaSaltoLinea(parametroDeBusqueda);
+                                            mostrarCartasPorExpansionAuxiliar(usuario.coleccion, parametroDeBusqueda);
+                                            system("pause");
+                                            break;
+                                        case 10:
                                             break;
                                         default:
                                             system("cls");
@@ -289,7 +380,8 @@ void menuFINAL()
                                             system("pause");
                                             break;
                                         }
-                                    }while(opcion != 7);
+                                    }
+                                    while(opcion != 10);
                                     break;
                                 case 8:
                                     break;
@@ -299,15 +391,40 @@ void menuFINAL()
                                     system("pause");
                                     break;
                                 }
-                            }while(opcion != 8);
+                            }
+                            while(opcion != 8);
+                            break;
                         case 2:
                             system("cls");
-                            // agregar funcion para agregar cartas a la coleccion desde base de datos (POR ID)
+                            printf("\nIngrese el numero de ID de la carta a agregar: ");
+                            scanf("%d", &idBuscado);
+                            if(buscaCartaPorIdEnArchi(idBuscado).id == idBuscado)
+                            {
+                                usuario.coleccion = agregarPorIDColeccion(usuario.coleccion, creaNodoColeccion(buscaCartaPorIdEnArchi(idBuscado)));
+                                printf("\nCarta cargada exitosamente.");
+                            }
+                            else
+                                printf("\nNo se encontro una carta con ese ID\n");
                             system("pause");
                             break;
                         case 3:
                             system("cls");
-                            // agregar funcion para remover una carta de la coleccion (POR ID)
+                            if(usuario.coleccion == NULL)
+                            {
+                                printf("\nSu coleccion esta vacia.\n");
+                                system("pause");
+                                break;
+                            }
+                            printf("\nIngrese el numero de ID de la carta a remover: ");
+                            scanf("%d", &idBuscado);
+                            if(buscaNodoEnColeccionPorId(usuario.coleccion, buscarCartaPorIDYLaRetorna(usuario.coleccion, idBuscado)) != NULL)
+                            {
+                                stCarta cartaAux = buscarCartaPorIDYLaRetorna(usuario.coleccion, idBuscado);
+                                usuario.coleccion = eliminarYRetirarCartaDeColeccion(usuario.coleccion, &cartaAux);
+                                printf("\nCarta borrada exitosamente.\n");
+                            }
+                            else
+                                printf("\nNo se encontro una carta con ese ID\n");
                             system("pause");
                             break;
                         case 9:
@@ -318,7 +435,8 @@ void menuFINAL()
                             system("pause");
                             break;
                         }
-                    }while(opcion != 9);
+                    }
+                    while(opcion != 9);
                     break;
                 case 3:
                     do
@@ -362,7 +480,8 @@ void menuFINAL()
                             system("pause");
                             break;
                         }
-                    }while(opcion != 9);
+                    }
+                    while(opcion != 9);
                     break;
                 case 4:
                     do
@@ -401,10 +520,11 @@ void menuFINAL()
                             system("pause");
                             break;
                         }
-                    }while(opcion != 9);
+                    }
+                    while(opcion != 9);
                     break;
                 case 9:
-                    usuario = cerrarSesion(&login);
+                    usuario.dato = cerrarSesion(&login);
                     break;
                 default:
                     system("cls");
@@ -412,9 +532,11 @@ void menuFINAL()
                     system("pause");
                     break;
                 }
-            }while(opcion != 9 || login == 1);
+            }
+            while(opcion != 9 || login == 1);
 
         }
 
-    }while(opcion != 0 || login == 0);
+    }
+    while(opcion != 0 && login == 0);
 }

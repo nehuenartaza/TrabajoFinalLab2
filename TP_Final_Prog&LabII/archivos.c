@@ -73,14 +73,14 @@ void muestraArchiCartasPorRareza(char rarezaAMostrar[]) //Muestra Base de datos 
         while(!feof(archi))
         {
             fread(&cartitaAMostrar, sizeof(stCarta), 1, archi);
-            if(!feof(archi) && strcmp(cartitaAMostrar.rareza, rarezaAMostrar) == 0)
+            if(!feof(archi) && strcmpi(cartitaAMostrar.rareza, rarezaAMostrar) == 0)
                 muestraCarta(cartitaAMostrar);
         }
         fclose(archi);
     }
 }
 
-void muestraArchiCartasPorExpansion(char expancionAMostrar[]) //Muestra Base de datos Por Expansion
+void muestraArchiCartasPorExpansion(char expansionAMostrar[]) //Muestra Base de datos Por Expansion
 {
     FILE * archi = fopen(ARCHI_CARTAS, "rb");
     if(archi)
@@ -89,14 +89,14 @@ void muestraArchiCartasPorExpansion(char expancionAMostrar[]) //Muestra Base de 
         while(!feof(archi))
         {
             fread(&cartitaAMostrar, sizeof(stCarta), 1, archi);
-            if(!feof(archi) && strcmp(cartitaAMostrar.expansionCarta.expansionTitulo, expancionAMostrar) == 0 )
+            if(!feof(archi) && strcmpi(cartitaAMostrar.expansionCarta.expansionTitulo, expansionAMostrar) == 0 )
                 muestraCarta(cartitaAMostrar);
         }
         fclose(archi);
     }
 }
 
-void muestraArchiCartasPorSubExpansion(char subExpancionAMostrar[]) //Muestra Base de datos Por SubExpansion
+void muestraArchiCartasPorSubExpansion(char subExpansionAMostrar[]) //Muestra Base de datos Por SubExpansion
 {
     FILE * archi = fopen(ARCHI_CARTAS, "rb");
     if(archi)
@@ -105,7 +105,7 @@ void muestraArchiCartasPorSubExpansion(char subExpancionAMostrar[]) //Muestra Ba
         while(!feof(archi))
         {
             fread(&cartitaAMostrar, sizeof(stCarta), 1, archi);
-            if(!feof(archi) && strcmp(cartitaAMostrar.expansionCarta.expansionSubTit, subExpancionAMostrar) == 0)
+            if(!!feof(archi) && strcmpi(cartitaAMostrar.expansionCarta.expansionSubTit, subExpansionAMostrar) == 0 ) // por alguna razon nunca entra al "if"
                 muestraCarta(cartitaAMostrar);
         }
         fclose(archi);
@@ -220,7 +220,7 @@ void cargaArchiUsuarios(datosUsuario usuarioAGuardar)
         fclose(archi);
     }
     else
-        printf("\n El archivo no se abrio correctamente. ");
+        printf("\n El archivo no se abrio correctamente. \n");
 }
 
 datosUsuario iniciarSesion(int * login)

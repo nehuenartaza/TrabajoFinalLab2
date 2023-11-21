@@ -17,15 +17,24 @@ stListaD * romperEnlaces(stListaD*);
 stListaD * agregarInicioColeccion(stListaD *, stListaD *);
 stListaD * agregarFinalColeccion(stListaD *, stListaD *);
 stListaD * retornarUltimaCarta(stListaD *);
+
+stListaD * agregarPorIDColeccion(stListaD *, stListaD *);
 void mostrarListaDoble(stListaD *);
-void buscarCartasPorStringAproximado(stListaD *, char[]);
+void mostrarCartasPorStringAproximado(stListaD *, char[]);
 stListaD * eliminarYRetirarCartaDeColeccion(stListaD *, stCarta *); ///elimina 1 unidad de una carta en la colección pero se retorna el dato extraído para un intercambio (no setea la cantidad de la carta extraída en 1)
 bool IDsCartasCoinciden(stCarta, stCarta);
 stListaD * borrarNodoDeColeccion(stListaD *, stCarta *);    ///borra una carta de la colección, generalmente porque la cantidad de la carta es 0, va de la mano con eliminarYRetirar...
-void buscarCartasPorRareza(stListaD *, char[]);
+void mostrarCartasPorRareza(stListaD *, char[]);
 bool rarezasCartasCoinciden(char[], char[]);
-void buscarCartaPorID(stListaD *, int);
+void mostrarCartaPorID(stListaD *, int);
+stListaD * buscarYRetornarCartaPorID(stListaD *, int);
 bool verificaSiListaDobleEstaVacia(stListaD *); // Retorna false si esta vacia, o true si tiene algun nodo cargado
+void mostrarCartasPorClasePokemon(stListaD *);
+void mostrarCartasPorClaseEnergia(stListaD *);
+void mostrarCartasPorClaseEntrenador(stListaD *);
+void mostarCartasPorExpansion(stListaD *, char[]);
+void mostarCartasPorExpansionAuxiliar(stListaD *, char[]);
+
 ///Necesarias para Intercambio
 stCarta buscarCartaPorIDYLaRetorna(stListaD * lista, int id);
 stListaD * creaNodoColeccion(stCarta cartaAGuardar);

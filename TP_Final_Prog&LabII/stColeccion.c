@@ -46,7 +46,11 @@ stListaD * agregarPorIDColeccion(stListaD * coleccion, stListaD * nuevo)
 {
     if ( coleccion != NULL )
     {
-        if ( nuevo->dataColecc.id < coleccion->dataColecc.id )
+        if ( nuevo->dataColecc.id == coleccion->dataColecc.id )     //Si se encontró repetida se suma 1 a la cantidad
+        {
+            coleccion->dataColecc.cant++;
+        }
+        else if ( nuevo->dataColecc.id < coleccion->dataColecc.id )
         {
             nuevo->sigNodo = coleccion;
             coleccion->antNodo = nuevo;
@@ -56,18 +60,29 @@ stListaD * agregarPorIDColeccion(stListaD * coleccion, stListaD * nuevo)
         {
             stListaD * aux = coleccion;
             stListaD * seg = coleccion->sigNodo;
-            while ( seg != NULL && nuevo->dataColecc.id > seg->dataColecc.id )
+            while ( seg != NULL && ( nuevo->dataColecc.id > seg->dataColecc.id || nuevo->dataColecc.id != coleccion->dataColecc.id ) )
             {
-
                 aux = seg;
                 seg = seg->sigNodo;
             }
-            aux->sigNodo = nuevo;
-            nuevo->antNodo = aux;
             if(seg != NULL)
             {
-                nuevo->sigNodo = seg;
-                seg->antNodo = nuevo;
+                if ( nuevo->dataColecc.id == coleccion->dataColecc.id )     //si se repite se le suma 1, caso contrario hace los enlaces
+                {
+                    coleccion->dataColecc.cant++;
+                }
+                else
+                {
+                    nuevo->sigNodo = seg;
+                    seg->antNodo = nuevo;
+                    aux->sigNodo = nuevo;
+                    nuevo->antNodo = aux;
+                }
+            }
+            else
+            {
+                aux->sigNodo = nuevo;
+                nuevo->antNodo = aux;
             }
         }
     }
@@ -77,6 +92,7 @@ stListaD * agregarPorIDColeccion(stListaD * coleccion, stListaD * nuevo)
     }
     return coleccion;
 }
+
 
 stListaD * retornarUltimaCarta(stListaD * lista)    ///devuelve la última carta de la colección
 {
@@ -99,7 +115,7 @@ void mostrarListaDoble(stListaD * lista)
     }
 }
 
-void buscarCartasPorStringAproximado(stListaD * lista, char str[])
+void mostrarCartasPorStringAproximado(stListaD * lista, char str[])
 {
     while ( lista != NULL )
     {
@@ -190,7 +206,7 @@ stListaD * borrarNodoDeColeccion(stListaD * lista, stCarta * borrar)  ///Borra u
     return lista;
 }
 
-void buscarCartasPorRareza(stListaD * lista, char rareza[])
+void mostrarCartasPorRareza(stListaD * lista, char rareza[])
 {
     while ( lista != NULL )
     {
@@ -205,14 +221,14 @@ void buscarCartasPorRareza(stListaD * lista, char rareza[])
 bool rarezasCartasCoinciden(char arg1[], char arg2[])
 {
     bool coincidencia = false;
-    if ( strcmp(arg1, arg2) == 0 )
+    if ( strcmpi(arg1, arg2) == 0 )
     {
         coincidencia = true;
     }
     return coincidencia;
 }
 
-void buscarCartaPorID(stListaD * lista, int id)
+void mostrarCartaPorID(stListaD * lista, int id)
 {
     while ( lista != NULL )
     {
@@ -225,6 +241,21 @@ void buscarCartaPorID(stListaD * lista, int id)
     }
 }
 
+stListaD * buscarYRetornarNodoCartaPorID(stListaD * lista, int id)
+{
+    stListaD * aux = setNULL();
+    while ( lista != NULL )
+    {
+        if ( lista->dataColecc.id == id )
+        {
+            aux = lista;
+            break;
+        }
+        lista = lista->sigNodo;
+    }
+    return aux;
+}
+
 bool verificaSiListaDobleEstaVacia(stListaD * listaD)  // Retorna false si esta vacia, o true si tiene algun nodo cargado
 {
     bool rta = false;
@@ -232,6 +263,66 @@ bool verificaSiListaDobleEstaVacia(stListaD * listaD)  // Retorna false si esta 
         rta = true;
 
     return rta;
+}
+
+void mostrarCartasPorClasePokemon(stListaD * coleccion)
+{
+    while ( coleccion != NULL )
+    {
+        if ( coleccion->dataColecc.claseCarta.datosPokemon.estado == 1 )
+        {
+            muestraCarta(coleccion->dataColecc);
+        }
+        coleccion = coleccion->sigNodo;
+    }
+}
+
+void mostrarCartasPorClaseEnergia(stListaD * coleccion)
+{
+    while ( coleccion != NULL )
+    {
+        if ( coleccion->dataColecc.claseCarta.datosEnergia.estado == 1 )
+        {
+            muestraCarta(coleccion->dataColecc);
+        }
+        coleccion = coleccion->sigNodo;
+    }
+}
+
+void mostrarCartasPorClaseEntrenador(stListaD * coleccion)
+{
+    while ( coleccion != NULL )
+    {
+        if ( coleccion->dataColecc.claseCarta.datosEntrenador.estado == 1 )
+        {
+            muestraCarta(coleccion->dataColecc);
+        }
+        coleccion = coleccion->sigNodo;
+    }
+}
+
+void mostrarCartasPorExpansion(stListaD * coleccion, char expan[])
+{
+    while ( coleccion != NULL )
+    {
+        if ( strstr(coleccion->dataColecc.expansionCarta.expansionTitulo, expan) != NULL )
+        {
+            muestraCarta(coleccion->dataColecc);
+        }
+        coleccion = coleccion->sigNodo;
+    }
+}
+
+void mostrarCartasPorExpansionAuxiliar(stListaD * coleccion, char expan[])   ///muestra las cartas de la colección por subtítulo de la expansión
+{
+    while ( coleccion != NULL )
+    {
+        if ( strstr(coleccion->dataColecc.expansionCarta.expansionSubTit, expan) != NULL )
+        {
+            muestraCarta(coleccion->dataColecc);
+        }
+        coleccion = coleccion->sigNodo;
+    }
 }
 
 ///Necesarias para Intercambio
@@ -316,7 +407,8 @@ int contadorCartasPokemonEnColeccion(stListaD * coleccion)
 {
     int cont = 0;
 
-    while(coleccion != NULL){
+    while(coleccion != NULL)
+    {
         if(coleccion->dataColecc.claseCarta.datosPokemon.estado == 1)
             cont++;
         coleccion = coleccion->sigNodo;
@@ -329,7 +421,8 @@ int contadorCartasEntrenadorEnColeccion(stListaD * coleccion)
 {
     int cont = 0;
 
-    while(coleccion != NULL){
+    while(coleccion != NULL)
+    {
         if(coleccion->dataColecc.claseCarta.datosEntrenador.estado == 1)
             cont++;
         coleccion = coleccion->sigNodo;
@@ -342,7 +435,8 @@ int contadorCartasEnergiaEnColeccion(stListaD * coleccion)
 {
     int cont = 0;
 
-    while(coleccion != NULL){
+    while(coleccion != NULL)
+    {
         if(coleccion->dataColecc.claseCarta.datosEnergia.estado == 1)
             cont++;
         coleccion = coleccion->sigNodo;
@@ -350,4 +444,5 @@ int contadorCartasEnergiaEnColeccion(stListaD * coleccion)
 
     return cont;
 }
+
 
