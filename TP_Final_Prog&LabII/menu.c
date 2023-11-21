@@ -76,30 +76,11 @@ void menuColeccion2()
     printf("\n2- Filtrar y mostrar coleccion por parametro.");
     printf("\n8- Volver.");
     printf("\n\n");
-
-    /*  AGREGAR PARAMETRO COLECCION PARA QUE FUNCIONEN
-    int cartasTotales = contadorCartasTotalesEnColeccion();
-    int pokemon = contadorCartasPokemonEnColeccion();
-    int entrenador = contadorCartasEntrenadorEnColeccion();
-    int energia = contadorCartasEnergiaEnColeccion();
-
-    float promPokemon = (float) (pokemon/cartasTotales)*100;
-    float promEntrenador = (float) (entrenador/cartasTotales)*100;
-    float promEnergia = (float) (energia/cartasTotales)*100;
-
-    printf("\nActualmente contiene %d cartas en su coleccion.", cartasTotales);
-    printf("\nContiene %d de %d (%.1f)cartas de clase Pokemon.", pokemon, cartasTotales, promPokemon);
-    printf("\nContiene %d de %d (%.1f) cartas de clase Entrenador.", entrenador, cartasTotales, promEntrenador);
-    printf("\nContiene %d de %d (%.1f) cartas de clase Energia.\n", energia, cartasTotales, promEnergia);
-
-    */
 }
 
 void menuIntercambio()      // prototipo super prototipo SUJETO A CAMBIOS
 {
     printf("\n1- Ver mazo de intercambio.");
-    printf("\n2- Agregar cartas al mazo de intercambio.");
-    printf("\n3- Remover cartas del mazo de intercambio.");  // idem que con la coleccion, ponemos agregar/remover juntos o separados?
     printf("\n4- Realizar intercambio.");
     printf("\n5- Buzon de notificaciones.");
     printf("\n9- Volver.");
@@ -133,10 +114,8 @@ void menuFINAL()
     char parametroDeBusqueda[DIM2];
     int idBuscado = 0;
     stListaD * aux = setNULL();
-
-
-
-
+    int cartasTotales = 0, pokemon = 0, entrenador = 0, energia = 0;
+    float promPokemon = 0, promEntrenador = 0, promEnergia = 0;
 
     do
     {
@@ -303,6 +282,19 @@ void menuFINAL()
                             {
                                 system("cls");
                                 menuColeccion2();
+                                cartasTotales = contadorCartasTotalesEnColeccion(usuario.coleccion);
+                                pokemon = contadorCartasPokemonEnColeccion(usuario.coleccion);
+                                entrenador = contadorCartasEntrenadorEnColeccion(usuario.coleccion);
+                                energia = contadorCartasEnergiaEnColeccion(usuario.coleccion);
+
+                                promPokemon = (float) (pokemon/cartasTotales)*100;
+                                promEntrenador = (float) (entrenador/cartasTotales)*100;
+                                promEnergia = (float) (energia/cartasTotales)*100;
+
+                                printf("\nActualmente contiene %d cartas en su coleccion.", cartasTotales);
+                                printf("\nContiene %d de %d (%.1f%)cartas de clase Pokemon.", pokemon, cartasTotales, promPokemon);
+                                printf("\nContiene %d de %d (%.1f) cartas de clase Entrenador.", entrenador, cartasTotales, promEntrenador);
+                                printf("\nContiene %d de %d (%.1f) cartas de clase Energia.\n", energia, cartasTotales, promEnergia);
                                 scanf("%d", &opcion);
 
                                 switch(opcion)
