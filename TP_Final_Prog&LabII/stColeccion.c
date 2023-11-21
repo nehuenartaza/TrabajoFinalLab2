@@ -410,7 +410,7 @@ int contadorCartasPokemonEnColeccion(stListaD * coleccion)
     while(coleccion != NULL)
     {
         if(coleccion->dataColecc.claseCarta.datosPokemon.estado == 1)
-            cont++;
+            cont = cont + coleccion->dataColecc.cant;
         coleccion = coleccion->sigNodo;
     }
 
@@ -424,7 +424,7 @@ int contadorCartasEntrenadorEnColeccion(stListaD * coleccion)
     while(coleccion != NULL)
     {
         if(coleccion->dataColecc.claseCarta.datosEntrenador.estado == 1)
-            cont++;
+            cont = cont + coleccion->dataColecc.cant;
         coleccion = coleccion->sigNodo;
     }
 
@@ -438,11 +438,10 @@ int contadorCartasEnergiaEnColeccion(stListaD * coleccion)
     while(coleccion != NULL)
     {
         if(coleccion->dataColecc.claseCarta.datosEnergia.estado == 1)
-            cont++;
+            cont = cont + coleccion->dataColecc.cant;
         coleccion = coleccion->sigNodo;
     }
 
     return cont;
 }
-
 

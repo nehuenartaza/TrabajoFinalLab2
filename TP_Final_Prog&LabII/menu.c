@@ -87,12 +87,7 @@ void menuIntercambio()      // prototipo super prototipo SUJETO A CAMBIOS
     printf("\n\n");
 }
 
-/*
-void menuBuzonNotificacion()        // Esto habria que implementarlo o no??
-{
 
-}
-*/
 void menuMazo()
 {
     printf("\n1- Mostrar mazo.");
