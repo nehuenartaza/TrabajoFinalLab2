@@ -13,20 +13,20 @@ void muestraMazoIntercambio(stListaD * mazoIntercambioAMostrar) //Muestra Cartas
 
 void muestraCartaAIntercambiar(stCarta cartaInterAMostrar)
 {
-    printf("\n Id............: %d", cartaInterAMostrar.id);
-    printf("\n Nombre........: %s", cartaInterAMostrar.nombre);
-    printf("\n Rareza........: %s", cartaInterAMostrar.rareza);
+    printf("\n Id...............: %d", cartaInterAMostrar.id);
+    printf("\n Nombre...........: %s", cartaInterAMostrar.nombre);
+    printf("\n Rareza...........: %s", cartaInterAMostrar.rareza);
     muestraClase(cartaInterAMostrar.claseCarta);
     muestraExpansion(cartaInterAMostrar.expansionCarta);
 }
 
 void muestraNotificacion(stNotificacion * notificacionAMostrar)
 {
-    printf("\n Id Demandante: %d", notificacionAMostrar->datos.demanda.idDemandante);
+    printf("\n Id Demandante....: %d", notificacionAMostrar->datos.demanda.idDemandante);
     printf("\n Nombre Demandante: %s", notificacionAMostrar->datos.demanda.nombreDemandante);
     muestraCarta(notificacionAMostrar->datos.demanda.demanda);
-    printf("\n Id Ofertario: %d", notificacionAMostrar->datos.oferta.idOfertario);
-    printf("\n Nombre Ofertario: %s", notificacionAMostrar->datos.oferta.nombreOfertario);
+    printf("\n Id Ofertario.....: %d", notificacionAMostrar->datos.oferta.idOfertario);
+    printf("\n Nombre Ofertario.: %s", notificacionAMostrar->datos.oferta.nombreOfertario);
     muestraCarta(notificacionAMostrar->datos.oferta.oferta);
 }
 
@@ -40,12 +40,27 @@ void muestraTodasNotificaciones(stNotificacion * notificacionesAMostrar) //Muest
     }
 }
 
-void muestraBuzon(stBuzon * buzonAMostrar) //Muestra Buzon Entero //////////////////// Cambiarlo para que muestre de a 1 y cada que muestra se toma como "atiende" y va borrando
+void muestraBuzon(stBuzon * buzonAMostrar) //Muestra Buzon Entero
 {
-    muestraTodasNotificaciones(buzonAMostrar->primero);
+    stNotificacion * notificacionExtraida;
+    printf("\n ---------- BUZON ---------- ");
+    while(buzonAMostrar->primero != NULL)
+    {
+        notificacionExtraida = extraerNotificacionDeBuzon(buzonAMostrar);
+        muestraNotificacion(notificacionExtraida);
+        system("pause");
+        system("cls");
+    }
+    printf("\n ---------- BUZON VACIO ---------- "); ///// despues de mostrar todo el buzon establecer datoUsuario.validosDatosBuzon = 0
 }
 
 ///Logica
+void inicStBuzon(stBuzon * buzonAInicializar)
+{
+    buzonAInicializar->primero = setNULL();
+    buzonAInicializar->ultimo = setNULL();
+}
+
 stNotificacion * creaNodoNotificacion(indicadorBuzon informacion)
 {
     stNotificacion * nuevaNotifi = (stNotificacion*) malloc(sizeof(stNotificacion));
@@ -55,55 +70,58 @@ stNotificacion * creaNodoNotificacion(indicadorBuzon informacion)
 
     return nuevaNotifi;
 }
-stListaD * creaNodoColeccion(stCarta cartaAGuardar)
-{
-    stListaD * nuevoNodoColeccion = (stListaD*) malloc(sizeof(stListaD));
-
-    nuevoNodoColeccion->dataColecc = cartaAGuardar;
-    nuevoNodoColeccion->sigNodo = setNULL();
-    nuevoNodoColeccion->antNodo = setNULL();
-
-    return nuevoNodoColeccion;
-}
-
-stListaD * buscaNodoEnColeccionPorId(stListaD * coleccionARevisar , stCarta cartaABuscar)
-{
-    stListaD * nodoBuscado = setNULL();
-    stListaD * auxiliar = coleccionARevisar;
-
-    while(auxiliar != NULL && auxiliar->dataColecc.id != cartaABuscar.id)
-        auxiliar = auxiliar->sigNodo;
-
-    if(auxiliar->dataColecc.id == cartaABuscar.id)
-        nodoBuscado = auxiliar;
-
-    return nodoBuscado;
-}
-
-stListaD * altaCartaEnColeccion(stListaD * coleccionACargar , stCarta cartaACargar)
-{
-    stListaD * auxiliar = buscaNodoEnColeccionPorId(coleccionACargar , cartaACargar);
-    if(auxiliar == NULL)
-    {
-        auxiliar = creaNodoColeccion(cartaACargar);
-        auxiliar->dataColecc.cant = 0;
-        coleccionACargar = agregarPorIDColeccion(coleccionACargar , auxiliar);
-    }
-    auxiliar->dataColecc.cant += 1;
-    return coleccionACargar;
-}
 
 stNotificacion * intercambio(stListaD ** coleccionDemanda , stListaD ** ColeccionOferta , indicadorBuzon datosDeIntercambio) //Intercambia 2 cartas en colecciones distintas
 {
     stNotificacion * nuevaNotificacion = creaNodoNotificacion(datosDeIntercambio);
 
-    (*coleccionDemanda) = altaCarta((*coleccionDemanda) , datosDeIntercambio.oferta.oferta);
-    (*ColeccionOferta) = altaCarta((*ColeccionOferta) , datosDeIntercambio.demanda.demanda);
+    (*coleccionDemanda) = altaCartaEnColeccion((*coleccionDemanda) , datosDeIntercambio.oferta.oferta);
+    (*coleccionDemanda) = eliminarYRetirarCartaDeColeccion((*coleccionDemanda) , &datosDeIntercambio.demanda.demanda);
+
+    (*ColeccionOferta) = altaCartaEnColeccion((*ColeccionOferta) , datosDeIntercambio.demanda.demanda);
+    (*ColeccionOferta) = eliminarYRetirarCartaDeColeccion((*ColeccionOferta) , &datosDeIntercambio.oferta.oferta);
 
     return nuevaNotificacion;
 }
 
-/* Idea General del realizar un intercambio
+void agregarAlFinalBuzon(stBuzon * buzonACargar , stNotificacion * notificacionAGuardar)
+{
+    if(buzonACargar->primero == NULL)
+    {
+        buzonACargar->primero = notificacionAGuardar;
+        buzonACargar->ultimo = notificacionAGuardar;
+    }else
+    {
+        buzonACargar->ultimo->siguiente = notificacionAGuardar;
+        buzonACargar->ultimo = notificacionAGuardar;
+    }
+}
+
+void eliminaPrimeroDeBuzon(stBuzon * buzonAElimnar)
+{
+    if(buzonAElimnar->primero != NULL)
+    {
+        stNotificacion * auxiliar = buzonAElimnar->primero;
+        buzonAElimnar->primero = buzonAElimnar->primero->siguiente;
+        free(auxiliar);
+
+        if(buzonAElimnar->primero == NULL)
+            inicStBuzon(buzonAElimnar);
+    }
+}
+
+stNotificacion * extraerNotificacionDeBuzon(stBuzon * buzonAExtraer)
+{
+    stNotificacion * notificacionExtraida = setNULL();
+    if(buzonAExtraer->primero != NULL)
+    {
+        notificacionExtraida = buzonAExtraer->primero;
+        eliminaPrimeroDeBuzon(buzonAExtraer);
+    }
+    return notificacionExtraida;
+}
+
+/*
 void realizarIntercambio()
 {
     //Supongo que ya tengo los datos de mi usuarioActual
@@ -114,5 +132,5 @@ void realizarIntercambio()
     //elijo id de carta en mi coleccion de intercambio
     // uso funcion intercambio
     // envio lo que retorna al buzon de cada usuario
-}
-*/
+    // guardo indicadores para cada uno
+}*/

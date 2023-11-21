@@ -32,14 +32,35 @@ datosUsuario guardaIndicadorMazo(datosUsuario datosMazoACambiar, stCarta cartaAA
     return datosMazoACambiar;
 }
 
-datosUsuario guardaIndicadorColeccion(datosUsuario datosColeccionACambiar, stCarta cartaAAgregar) // guarda datos de las cartas en coleccion
+datosOferta creaOferta(datosUsuario ofertante , stCarta cartaOfrecida)
 {
-    datosColeccionACambiar.datosColeccion[datosColeccionACambiar.validosDatosColeccion].idCartaEnColeccion = cartaAAgregar.id;
-    datosColeccionACambiar.datosColeccion[datosColeccionACambiar.validosDatosColeccion].cantCartaEnColeccion = cartaAAgregar.cant;
+    datosOferta nuevaOferta;
 
-    datosColeccionACambiar.validosDatosColeccion++;
+    nuevaOferta.idOfertario = ofertante.id;
+    nuevaOferta.oferta = cartaOfrecida;
+    strcpy(nuevaOferta.nombreOfertario , ofertante.nombre);
 
-    return datosColeccionACambiar;
+    return nuevaOferta;
+}
+
+datosDemanda creaDemanda(datosUsuario demandante , stCarta cartaDemandada)
+{
+    datosDemanda nuevaDemanda;
+
+    nuevaDemanda.demanda = cartaDemandada;
+    nuevaDemanda.idDemandante = demandante.id;
+    strcpy(nuevaDemanda.nombreDemandante , demandante.nombre);
+
+    return nuevaDemanda;
+}
+
+datosUsuario guardaIndicadorBuzon(datosUsuario datosBuzonACambiar , datosUsuario ofertante , datosUsuario demandante , stCarta cartaOfrecida , stCarta cartaDemandada) // guarda datos del intercambio en buzon
+{
+    datosBuzonACambiar.datosBuzon[datosBuzonACambiar.validosDatosBuzon].oferta = creaOferta(ofertante , cartaOfrecida);
+    datosBuzonACambiar.datosBuzon[datosBuzonACambiar.validosDatosBuzon].demanda = creaDemanda(demandante , cartaDemandada);
+    datosBuzonACambiar.validosDatosBuzon++;
+
+    return datosBuzonACambiar;
 }
 
 datosUsuario eliminaUsuario(datosUsuario usuarioAEliminar) // "elimina" un usuario

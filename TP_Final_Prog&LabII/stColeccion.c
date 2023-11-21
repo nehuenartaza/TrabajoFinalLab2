@@ -195,4 +195,71 @@ bool verificaSiListaDobleEstaVacia(stListaD * listaD)  // Retorna false si esta 
     return rta;
 }
 
+///Necesarias para Intercambio
+stListaD * cargaColeccionPorParametro(datosUsuario datosUsuarioACargar)
+{
+    int idABuscar;
+    int datosCargados = 0;
+    stListaD * coleccionACargar = setNULL();
+    stCarta cartaACargar;
+    while(datosCargados < datosUsuarioACargar.validosDatosColeccion)
+    {
+        idABuscar = datosUsuarioACargar.datosColeccion[datosCargados].idCartaEnColeccion;
+        cartaACargar = buscaCartaPorIdEnArchi(idABuscar);
+        cartaACargar.cant = datosUsuarioACargar.datosColeccion[datosCargados].cantCartaEnColeccion;
+        coleccionACargar = agregarPorIDColeccion(coleccionACargar, creaNodoColeccion(cartaACargar));
+        datosCargados++;
+    }
+    return coleccionACargar;
+}
+
+stCarta buscarCartaPorIDYLaRetorna(stListaD * lista, int id)
+{
+    stCarta cartaBuscada;
+    while ( lista != NULL ) {
+        if ( lista->dataColecc.id == id ) {
+            cartaBuscada = lista->dataColecc;
+        }
+        lista = lista->sigNodo;
+    }
+    return cartaBuscada;
+}
+
+stListaD * creaNodoColeccion(stCarta cartaAGuardar)
+{
+    stListaD * nuevoNodoColeccion = (stListaD*) malloc(sizeof(stListaD));
+
+    nuevoNodoColeccion->dataColecc = cartaAGuardar;
+    nuevoNodoColeccion->sigNodo = setNULL();
+    nuevoNodoColeccion->antNodo = setNULL();
+
+    return nuevoNodoColeccion;
+}
+
+stListaD * buscaNodoEnColeccionPorId(stListaD * coleccionARevisar , stCarta cartaABuscar)
+{
+    stListaD * nodoBuscado = setNULL();
+    stListaD * auxiliar = coleccionARevisar;
+
+    while(auxiliar != NULL && auxiliar->dataColecc.id != cartaABuscar.id)
+        auxiliar = auxiliar->sigNodo;
+
+    if(auxiliar->dataColecc.id == cartaABuscar.id)
+        nodoBuscado = auxiliar;
+
+    return nodoBuscado;
+}
+
+stListaD * altaCartaEnColeccion(stListaD * coleccionACargar , stCarta cartaACargar)
+{
+    stListaD * auxiliar = buscaNodoEnColeccionPorId(coleccionACargar , cartaACargar);
+    if(auxiliar == NULL)
+    {
+        auxiliar = creaNodoColeccion(cartaACargar);
+        auxiliar->dataColecc.cant = 0;
+        coleccionACargar = agregarPorIDColeccion(coleccionACargar , auxiliar);
+    }
+    auxiliar->dataColecc.cant += 1;
+    return coleccionACargar;
+}
 

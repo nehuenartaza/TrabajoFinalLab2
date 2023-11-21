@@ -10,7 +10,6 @@ typedef struct
 
     stMazo * mazo;
     stListaD * coleccion;
-    stListaD * mazoIntercambio;
     stBuzon * buzon;
 } stUsuario;
 

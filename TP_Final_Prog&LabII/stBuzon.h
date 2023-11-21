@@ -14,7 +14,7 @@ typedef struct
 typedef struct
 {
     stNotificacion * primero;
-    stNotificacion * segundo;
+    stNotificacion * ultimo;
 } stBuzon;
 
 ///Muestra
@@ -25,6 +25,11 @@ void muestraTodasNotificaciones(stNotificacion*); //Muestra la Notificacion
 void muestraBuzon(stBuzon*); //Muestra Buzon Entero
 
 ///Logica
-stNotificacion * intercambio(stListaD** , stListaD** , indicadorBuzon datosDeIntercambio); //Intercambia 2 cartas en colecciones distintas
+void inicStBuzon(stBuzon * buzonAInicializar);
+stNotificacion * creaNodoNotificacion(indicadorBuzon informacion);
+stNotificacion * intercambio(stListaD ** coleccionDemanda , stListaD ** ColeccionOferta , indicadorBuzon datosDeIntercambio); //Intercambia 2 cartas en colecciones distintas
+void agregarAlFinalBuzon(stBuzon * buzonACargar , stNotificacion * notificacionAGuardar);
+void eliminaPrimeroDeBuzon(stBuzon * buzonAElimnar);
+stNotificacion * extraerNotificacionDeBuzon(stBuzon * buzonAExtraer);
 
 #endif // STBUZON_H_INCLUDED

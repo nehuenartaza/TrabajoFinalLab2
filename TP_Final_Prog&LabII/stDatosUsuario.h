@@ -33,7 +33,6 @@ typedef struct
 {
     datosOferta oferta;
     datosDemanda demanda;
-    int resultado; // 0 espera 1 realizado
 } indicadorBuzon;
 
 typedef struct
@@ -57,8 +56,10 @@ typedef struct
 datosUsuario creaUsuario(); //inicializa los dato del usuario
 datosUsuario guardaIndicadorMazo(datosUsuario, stCarta); // guarda datos de 1 carta en el indicador de un usuario
 datosUsuario guardaIndicadorColeccion(datosUsuario, stCarta); // guarda datos de las cartas en coleccion
-datosUsuario guardaIndicadorBuzon(datosUsuario, stCarta , stCarta , int , int , char[] , char[]); // guarda datos del intercambio en buzon
-datosUsuario eliminaUsuario(datosUsuario); // "elimina" un usuario
+datosOferta creaOferta(datosUsuario ofertante , stCarta cartaOfrecida);
+datosDemanda creaDemanda(datosUsuario demandante , stCarta cartaDemandada);
+datosUsuario guardaIndicadorBuzon(datosUsuario datosBuzonACambiar , datosUsuario ofertante , datosUsuario demandante , stCarta cartaOfrecida , stCarta cartaDemandada); // guarda datos del intercambio en buzon
+datosUsuario eliminaUsuario(datosUsuario usuarioAEliminar); // "elimina" un usuario
 datosUsuario vaciarDatosUsuario();
 
 
