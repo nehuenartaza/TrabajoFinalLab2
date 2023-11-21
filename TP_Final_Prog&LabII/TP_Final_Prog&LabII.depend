@@ -1083,7 +1083,7 @@
 	<time.h>
 	<stdbool.h>
 
-1700499669 source:h:\documentos\utn\primer año\segundo cuatrimestre\progra-labo 2\tp final pokemon\tp final\tp_final_prog&labii\main.c
+1700586015 source:h:\documentos\utn\primer año\segundo cuatrimestre\progra-labo 2\tp final pokemon\tp final\tp_final_prog&labii\main.c
 	"menu.h"
 	"stCarta.h"
 	"Constantes.h"
@@ -1093,18 +1093,18 @@
 	"constantes.h"
 	"archivos.h"
 
-1700448009 h:\documentos\utn\primer año\segundo cuatrimestre\progra-labo 2\tp final pokemon\tp final\tp_final_prog&labii\archivos.h
+1700591731 h:\documentos\utn\primer año\segundo cuatrimestre\progra-labo 2\tp final pokemon\tp final\tp_final_prog&labii\archivos.h
 	"stUsuario.h"
 
-1700499276 h:\documentos\utn\primer año\segundo cuatrimestre\progra-labo 2\tp final pokemon\tp final\tp_final_prog&labii\stusuario.h
+1700585808 h:\documentos\utn\primer año\segundo cuatrimestre\progra-labo 2\tp final pokemon\tp final\tp_final_prog&labii\stusuario.h
 	"stMazo.h"
 	"stBuzon.h"
 
 1700518366 h:\documentos\utn\primer año\segundo cuatrimestre\progra-labo 2\tp final pokemon\tp final\tp_final_prog&labii\stmazo.h
 	"stColeccion.h"
 
-1700431533 h:\documentos\utn\primer año\segundo cuatrimestre\progra-labo 2\tp final pokemon\tp final\tp_final_prog&labii\stcoleccion.h
-	"stCarta.h"
+1700591909 h:\documentos\utn\primer año\segundo cuatrimestre\progra-labo 2\tp final pokemon\tp final\tp_final_prog&labii\stcoleccion.h
+	"stDatosUsuario.h"
 
 1700189576 h:\documentos\utn\primer año\segundo cuatrimestre\progra-labo 2\tp final pokemon\tp final\tp_final_prog&labii\stcarta.h
 	"stClase.h"
@@ -1115,7 +1115,7 @@
 1700189576 h:\documentos\utn\primer año\segundo cuatrimestre\progra-labo 2\tp final pokemon\tp final\tp_final_prog&labii\stnotificaciones.h
 	"stDatosUsuario.h"
 
-1700517923 h:\documentos\utn\primer año\segundo cuatrimestre\progra-labo 2\tp final pokemon\tp final\tp_final_prog&labii\stdatosusuario.h
+1700585808 h:\documentos\utn\primer año\segundo cuatrimestre\progra-labo 2\tp final pokemon\tp final\tp_final_prog&labii\stdatosusuario.h
 	"stCarta.h"
 
 1700499767 source:h:\documentos\utn\primer año\segundo cuatrimestre\progra-labo 2\tp final pokemon\tp final\tp_final_prog&labii\menu.c
@@ -1135,13 +1135,13 @@
 
 1700189576 source:h:\documentos\utn\primer año\segundo cuatrimestre\progra-labo 2\tp final pokemon\tp final\tp_final_prog&labii\stnotificaciones.c
 
-1700189576 source:h:\documentos\utn\primer año\segundo cuatrimestre\progra-labo 2\tp final pokemon\tp final\tp_final_prog&labii\stusuario.c
+1700591731 source:h:\documentos\utn\primer año\segundo cuatrimestre\progra-labo 2\tp final pokemon\tp final\tp_final_prog&labii\stusuario.c
 	"stUsuario.h"
 
-1700517951 source:h:\documentos\utn\primer año\segundo cuatrimestre\progra-labo 2\tp final pokemon\tp final\tp_final_prog&labii\archivos.c
+1700591731 source:h:\documentos\utn\primer año\segundo cuatrimestre\progra-labo 2\tp final pokemon\tp final\tp_final_prog&labii\archivos.c
 	"archivos.h"
 
-1700518147 source:h:\documentos\utn\primer año\segundo cuatrimestre\progra-labo 2\tp final pokemon\tp final\tp_final_prog&labii\stdatosusuario.c
+1700585808 source:h:\documentos\utn\primer año\segundo cuatrimestre\progra-labo 2\tp final pokemon\tp final\tp_final_prog&labii\stdatosusuario.c
 	"stDatosUsuario.h"
 
 1700438660 source:c:\users\diego\documents\github\trabajofinallab2\tp_final_prog&labii\constantes.c
@@ -1157,11 +1157,11 @@
 1700584388 source:c:\users\diego\documents\github\trabajofinallab2\tp_final_prog&labii\stdatosusuario.c
 	"stDatosUsuario.h"
 
-1700499276 h:\documentos\utn\primer año\segundo cuatrimestre\progra-labo 2\tp final pokemon\tp final\tp_final_prog&labii\stbuzon.h
+1700585808 h:\documentos\utn\primer año\segundo cuatrimestre\progra-labo 2\tp final pokemon\tp final\tp_final_prog&labii\stbuzon.h
 	"stColeccion.h"
 	"stDatosUsuario.h"
 
-1700499276 source:h:\documentos\utn\primer año\segundo cuatrimestre\progra-labo 2\tp final pokemon\tp final\tp_final_prog&labii\stbuzon.c
+1700585808 source:h:\documentos\utn\primer año\segundo cuatrimestre\progra-labo 2\tp final pokemon\tp final\tp_final_prog&labii\stbuzon.c
 	"stBuzon.h"
 
 1700512897 c:\users\mrsli\onedrive\documentos\github\trabajofinallab2\tp_final_prog&labii\stbuzon.h

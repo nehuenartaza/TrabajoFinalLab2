@@ -33,4 +33,10 @@ stListaD * buscaNodoEnColeccionPorId(stListaD * coleccionARevisar , stCarta cart
 stListaD * altaCartaEnColeccion(stListaD * coleccionACargar , stCarta cartaACargar);
 datosUsuario guardaIndicadoresDeColeccion(stListaD * coleccionAGuardar, datosUsuario usuarioAEditar);
 
+//Funciones para estadisticas
+int contadorCartasTotalesEnColeccion(stListaD *);
+int contadorCartasPokemonEnColeccion(stListaD *);
+int contadorCartasEntrenadorEnColeccion(stListaD *);
+int contadorCartasEnergiaEnColeccion(stListaD *);
+
 #endif // STCOLECCION_H_INCLUDED

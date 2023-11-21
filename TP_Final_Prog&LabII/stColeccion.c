@@ -298,3 +298,56 @@ datosUsuario guardaIndicadoresDeColeccion(stListaD * coleccionAGuardar, datosUsu
     }
     return usuarioAEditar;
 }
+
+int contadorCartasTotalesEnColeccion(stListaD * coleccion)
+{
+    int cont = 0;
+
+    while(coleccion != NULL)
+    {
+        cont++;
+        coleccion = coleccion->sigNodo;
+    }
+
+    return cont;
+}
+
+int contadorCartasPokemonEnColeccion(stListaD * coleccion)
+{
+    int cont = 0;
+
+    while(coleccion != NULL){
+        if(coleccion->dataColecc.claseCarta.datosPokemon.estado == 1)
+            cont++;
+        coleccion = coleccion->sigNodo;
+    }
+
+    return cont;
+}
+
+int contadorCartasEntrenadorEnColeccion(stListaD * coleccion)
+{
+    int cont = 0;
+
+    while(coleccion != NULL){
+        if(coleccion->dataColecc.claseCarta.datosEntrenador.estado == 1)
+            cont++;
+        coleccion = coleccion->sigNodo;
+    }
+
+    return cont;
+}
+
+int contadorCartasEnergiaEnColeccion(stListaD * coleccion)
+{
+    int cont = 0;
+
+    while(coleccion != NULL){
+        if(coleccion->dataColecc.claseCarta.datosEnergia.estado == 1)
+            cont++;
+        coleccion = coleccion->sigNodo;
+    }
+
+    return cont;
+}
+

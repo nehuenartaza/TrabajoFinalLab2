@@ -57,6 +57,23 @@ void menuOpcionDeFiltradoColeccion()
 
 void menuColeccion1()
 {
+    /*  AGREGAR PARAMETRO COLECCION PARA QUE FUNCIONEN
+    int cartasTotales = contadorCartasTotalesEnColeccion();
+    int pokemon = contadorCartasPokemonEnColeccion();
+    int entrenador = contadorCartasEntrenadorEnColeccion();
+    int energia = contadorCartasEnergiaEnColeccion();
+
+    float promPokemon = (float) (pokemon/cartasTotales)*100;
+    float promEntrenador = (float) (entrenador/cartasTotales)*100;
+    float promEnergia = (float) (energia/cartasTotales)*100;
+
+    printf("\nActualmente contiene %d cartas en su coleccion.", cartasTotales);
+    printf("\nContiene %d de %.1f cartas de clase Pokemon.", pokemon, promPokemon);
+    printf("\nContiene %d de %.1f cartas de clase Entrenador.", entrenador, promEntrenador);
+    printf("\nContiene %d de %.1f cartas de clase Energia.", energia, promEnergia);
+
+    */
+
     printf("\n1- Ver mi coleccion.");
     printf("\n2- Agregar cartas a mi coleccion (por ID).");
     printf("\n3- Remover cartas de mi coleccion (por ID).");  // esta opcion la ponemos junto al menu de agregar carta o la dejamos separada en su propio menu??
