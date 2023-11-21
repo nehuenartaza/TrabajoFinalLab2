@@ -287,7 +287,7 @@ stListaD * altaCartaEnColeccion(stListaD * coleccionACargar, stCarta cartaACarga
     return coleccionACargar;
 }
 
-datosUsuario cargaIndicadoresDeColeccion(stListaD * coleccionAGuardar, datosUsuario usuarioAEditar)
+datosUsuario guardaIndicadoresDeColeccion(stListaD * coleccionAGuardar, datosUsuario usuarioAEditar)
 {
     usuarioAEditar.validosDatosColeccion = 0;
 

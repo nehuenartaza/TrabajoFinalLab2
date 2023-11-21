@@ -58,6 +58,7 @@ datosUsuario creaUsuario(); //inicializa los dato del usuario
 datosOferta creaOferta(datosUsuario ofertante , stCarta cartaOfrecida);
 datosDemanda creaDemanda(datosUsuario demandante , stCarta cartaDemandada);
 //Guarda
+
 datosUsuario guardaIndicadorMazo(datosUsuario, stCarta); // guarda datos de 1 carta en el indicador de un usuario
 datosUsuario guardaIndicadorColeccion(datosUsuario, stCarta); // guarda datos de las cartas en coleccion
 datosUsuario guardaIndicadorBuzon(datosUsuario , datosUsuario , datosUsuario , stCarta , stCarta); // guarda datos del intercambio en buzon

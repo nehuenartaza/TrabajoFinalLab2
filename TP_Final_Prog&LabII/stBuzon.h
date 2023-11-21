@@ -25,11 +25,13 @@ void muestraTodasNotificaciones(stNotificacion*); //Muestra la Notificacion
 void muestraBuzon(stBuzon*); //Muestra Buzon Entero
 
 ///Logica
+datosUsuario guardaBuzon(stNotificacion * buzonAGuardar , datosUsuario datosBuzonAGuardar);
 void inicStBuzon(stBuzon * buzonAInicializar);
 stNotificacion * creaNodoNotificacion(indicadorBuzon informacion);
 stNotificacion * intercambio(stListaD ** coleccionDemanda , stListaD ** ColeccionOferta , indicadorBuzon datosDeIntercambio); //Intercambia 2 cartas en colecciones distintas
 void agregarAlFinalBuzon(stBuzon * buzonACargar , stNotificacion * notificacionAGuardar);
 void eliminaPrimeroDeBuzon(stBuzon * buzonAElimnar);
 stNotificacion * extraerNotificacionDeBuzon(stBuzon * buzonAExtraer);
+datosUsuario guardaIndicadoresDeBuzon(stBuzon * buzonAGuardar);
 
 #endif // STBUZON_H_INCLUDED

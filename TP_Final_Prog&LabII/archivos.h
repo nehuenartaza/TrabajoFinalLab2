@@ -27,7 +27,7 @@ datosUsuario iniciarSesion(int*); // pide nombre de usuario y contraseña, busca 
 datosUsuario cerrarSesion(int*);  // vacia los datos de variable usuario y los retorna. Modifica la variable login por puntero
 //Carga Datos Del Usuario
 stListaD * cargaColeccionPorParametro(datosUsuario datosUsuarioACargar);
-stListaD * cargaMazoPorParametro(datosUsuario datosUsuarioACargar); ////// JULI
+stMazo * cargaMazoPorParametro(datosUsuario datosUsuarioACargar); //////////////////////// JULI
 void cargaBuzonPorParametro(datosUsuario datosUsuarioACargar , stBuzon * buzonACargar);
 //Muestra Datos Usuario
 void muestraUsuariosEnArchi();

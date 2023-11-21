@@ -110,6 +110,15 @@ void eliminaPrimeroDeBuzon(stBuzon * buzonAElimnar)
     }
 }
 
+datosUsuario guardaBuzon(stNotificacion * buzonAGuardar , datosUsuario datosBuzonAGuardar)
+{
+    datosBuzonAGuardar.datosBuzon[datosBuzonAGuardar.validosDatosBuzon].demanda = buzonAGuardar->datos.demanda;
+    datosBuzonAGuardar.datosBuzon[datosBuzonAGuardar.validosDatosBuzon].oferta = buzonAGuardar->datos.oferta;
+    datosBuzonAGuardar.validosDatosBuzon++;
+
+    return datosBuzonAGuardar;
+}
+
 stNotificacion * extraerNotificacionDeBuzon(stBuzon * buzonAExtraer)
 {
     stNotificacion * notificacionExtraida = setNULL();
@@ -119,4 +128,16 @@ stNotificacion * extraerNotificacionDeBuzon(stBuzon * buzonAExtraer)
         eliminaPrimeroDeBuzon(buzonAExtraer);
     }
     return notificacionExtraida;
+}
+
+datosUsuario guardaIndicadoresDeBuzon(stBuzon * buzonAGuardar)
+{
+    datosUsuario infoAGuardar;
+    stNotificacion * auxiliar = buzonAGuardar->primero;
+    while(auxiliar != NULL)
+    {
+        infoAGuardar = guardaBuzon(auxiliar , infoAGuardar);
+        auxiliar = auxiliar->siguiente;
+    }
+    return infoAGuardar;
 }

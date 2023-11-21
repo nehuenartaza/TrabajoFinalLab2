@@ -348,7 +348,7 @@ void hacerIntercambio(stUsuario * usuarioActual)
 
     nuevaNotificacionDeIntercambio = intercambio(&usuarioActual->coleccion, &coleccionDemandado, usuarioActual->dato.datosBuzon[usuarioActual->dato.validosDatosBuzon-1]);
 
-    agregarAlFinalBuzon(usuarioActual->buzon, nuevaNotificacionDeIntercambio);
+    agregarAlFinalBuzon(&usuarioActual->buzon, nuevaNotificacionDeIntercambio);
     FILE * archi = fopen(ARCHI_USUARIOS, "r+b");
     if(archi)
     {

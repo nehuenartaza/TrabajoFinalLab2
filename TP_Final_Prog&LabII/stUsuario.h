@@ -10,7 +10,11 @@ typedef struct
 
     stMazo * mazo;
     stListaD * coleccion;
-    stBuzon * buzon;
+    stBuzon buzon;
+
 } stUsuario;
+
+stUsuario cargaDatosUsuario(datosUsuario);
+datosUsuario guardaDatosUsuario(stUsuario);
 
 #endif // STUSUARIO_H_INCLUDED
