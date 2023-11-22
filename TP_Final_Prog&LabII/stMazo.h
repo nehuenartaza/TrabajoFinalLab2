@@ -31,7 +31,7 @@ int MazoVacio(stMazo*);
 void MostrarMazo(stMazo);
 void CargarMazoAleatoriamente(stMazo*Pila,stListaD*ListaDoble);
 stListaD*BorrarNodoYMeterEnMazoNodoElegidoConContador(stListaD*Lista,stMazo*Pila,int numeroDePosicion,int contador);
-
+datosUsuario guardaIndicadoresdeMazo(stMazo*ColeccionAguardar,datosUsuario UsuarioAeditar);
 
 
 

@@ -287,6 +287,27 @@ stListaD * cargaColeccionPorParametro(datosUsuario datosUsuarioACargar)
     }
     return coleccionACargar;
 }
+void cargaMazoPorParametro(stMazo *P,datosUsuario datosuarioAcargar)
+{
+    int idAbuscar;
+
+    int datoscargados=0;
+
+
+    InicMazo(P);
+
+    stCarta CartaACargar;
+
+    while(datoscargados<datosuarioAcargar.validosDatosMazo)
+    {
+        idAbuscar=datosuarioAcargar.datosMazo[datoscargados].idCartaEnMazo;
+        CartaACargar=buscaCartaPorIdEnArchi(idAbuscar);
+        CartaACargar.cant=datosuarioAcargar.datosMazo[datoscargados].cantCartaEnMazo;
+        apilarMazo(P,CartaACargar);
+        datoscargados++;
+    }
+
+}
 
 void cargaBuzonPorParametro(datosUsuario datosUsuarioACargar, stBuzon * buzonACargar)
 {
