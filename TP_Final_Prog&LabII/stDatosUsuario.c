@@ -100,3 +100,14 @@ void muestraIndicadoresColeccion(datosUsuario usuarioAMostrar)
         printf("\n %d Id Carta ---- %d Cant Canta");
     }
 }
+
+void muestraIndicadoresBuzon(datosUsuario usuarioAMostrar)
+{
+    for(int i ; i<usuarioAMostrar.validosDatosBuzon ; i++)
+    {
+        printf("\n Demanda: \n");
+        printf("\n %d Id Carta ---- %d Cant Canta", usuarioAMostrar.datosBuzon[i].demanda.demanda.id, usuarioAMostrar.datosBuzon[i].demanda.demanda.cant);
+        printf("\n Oferta: \n");
+        printf("\n %d Id Carta ---- %d Cant Canta", usuarioAMostrar.datosBuzon[i].oferta.oferta.id, usuarioAMostrar.datosBuzon[i].oferta.oferta.cant);
+    }
+}

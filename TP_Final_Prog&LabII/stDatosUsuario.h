@@ -66,5 +66,6 @@ datosUsuario eliminaUsuario(datosUsuario usuarioAEliminar); // "elimina" un usua
 datosUsuario vaciarDatosUsuario();
 //Muetra
 void muestraIndicadoresColeccion(datosUsuario usuarioAMostrar);
+void muestraIndicadoresBuzon(datosUsuario usuarioAMostrar);
 
 #endif // STDATOSUSUARIO_H_INCLUDED
