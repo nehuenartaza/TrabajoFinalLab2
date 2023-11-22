@@ -158,11 +158,11 @@ stListaD*BorrarNodoYMeterEnMazoNodoElegidoConContador(stListaD*Lista,stMazo*Pila
 datosUsuario guardaIndicadoresdeMazo(stMazo*ColeccionAguardar,datosUsuario UsuarioAeditar)
 {
    UsuarioAeditar.validosDatosMazo=0;
-   while(!MazoVacio(&ColeccionAguardar))
+   while(!MazoVacio(ColeccionAguardar))
    {
         UsuarioAeditar=guardaIndicadorMazo(UsuarioAeditar,ColeccionAguardar->Tope->dato);
 
-        DesapilarMazo(&ColeccionAguardar);
+        DesapilarMazo(ColeccionAguardar);
 
    }
 

@@ -152,7 +152,7 @@ void menuFINAL()
             do
             {
                 usuario.coleccion = cargaColeccionPorParametro(usuario.dato);
-                cargaMazoPorParametro(&(usuario.mazo),usuario.dato);
+                cargaMazoPorParametro(&usuario.mazo, usuario.dato);
                 system("cls");
                 menuPrincipal();
                 scanf("%d", &opcion);
@@ -422,7 +422,6 @@ void menuFINAL()
                         case 9:
                             usuario.dato = guardaIndicadoresDeColeccion(usuario.coleccion, usuario.dato);
                             guardaDatosNuevos(usuario.dato);
-                            muestraIndicadoresColeccion(usuario.dato);
                             break;
                         default:
                             system("cls");
@@ -488,20 +487,24 @@ void menuFINAL()
                             system("cls");
                             printf("ingrese un id de la carta que desea agregar al mazo: \n");
                             scanf("%d",&idBuscado);
-                            apilarMazo(&(usuario.mazo),buscarCartaPorIDYLaRetorna(usuario.coleccion,idBuscado));
+                            apilarMazo(&usuario.mazo, buscarCartaPorIDYLaRetorna(usuario.coleccion,idBuscado));
                             system("pause");
                             break;
                         case 3:
                             system("cls");
-                            DesapilarMazo(&(usuario.mazo));
+                            DesapilarMazo(&usuario.mazo);
                             system("pause");
                             break;
                         case 4:
                             system("cls");
-                            CargarMazoAleatoriamente(&(usuario.mazo),usuario.coleccion);
+                            CargarMazoAleatoriamente(&usuario.mazo,usuario.coleccion);
                             system("pause");
                             break;
                         case 9:
+                            usuario.dato = guardaIndicadoresdeMazo(&usuario.mazo, usuario.dato);
+                            printf("\n Validos de mazo vale %d " , usuario.dato.validosDatosMazo);
+                            system("pause");
+                            guardaDatosNuevos(usuario.dato);
                             break;
                         default:
                             system("cls");

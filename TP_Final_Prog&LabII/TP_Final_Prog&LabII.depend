@@ -328,13 +328,13 @@
 1700610613 c:\users\diego\documents\github\trabajofinallab2\tp_final_prog&labii\stcoleccion.h
 	"stDatosUsuario.h"
 
-1700620756 source:c:\users\diego\documents\github\trabajofinallab2\tp_final_prog&labii\archivos.c
+1700621578 source:c:\users\diego\documents\github\trabajofinallab2\tp_final_prog&labii\archivos.c
 	"archivos.h"
 
 1699656358 source:c:\users\diego\documents\github\trabajofinallab2\tp_final_prog&labii\listadoble.c
 	"listaDoble.h"
 
-1700620756 source:c:\users\diego\documents\github\trabajofinallab2\tp_final_prog&labii\main.c
+1700625278 source:c:\users\diego\documents\github\trabajofinallab2\tp_final_prog&labii\main.c
 	"menu.h"
 	"stCarta.h"
 	"Constantes.h"
@@ -379,13 +379,13 @@
 	<string.h>
 	"Constantes.h"
 
-1700615376 source:c:\users\diego\documents\github\trabajofinallab2\tp_final_prog&labii\menu.c
+1700626696 source:c:\users\diego\documents\github\trabajofinallab2\tp_final_prog&labii\menu.c
 	"menu.h"
 
 1700082869 source:c:\users\diego\documents\github\trabajofinallab2\tp_final_prog&labii\stclase.c
 	"stClase.h"
 
-1700610827 source:c:\users\diego\documents\github\trabajofinallab2\tp_final_prog&labii\stcoleccion.c
+1700621639 source:c:\users\diego\documents\github\trabajofinallab2\tp_final_prog&labii\stcoleccion.c
 	"stColeccion.h"
 
 1699909878 source:c:\users\diego\documents\github\trabajofinallab2\tp_final_prog&labii\stenergia.c
@@ -406,7 +406,7 @@
 1699884326 source:c:\users\diego\documents\github\trabajofinallab2\tp_final_prog&labii\stpokemon.c
 	"stPokemon.h"
 
-1700615753 source:c:\users\diego\documents\github\trabajofinallab2\tp_final_prog&labii\stusuario.c
+1700625199 source:c:\users\diego\documents\github\trabajofinallab2\tp_final_prog&labii\stusuario.c
 	"stUsuario.h"
 
 1700424494 source:c:\users\diego\documents\github\trabajofinallab2\tp_final_prog&labii\stcarta.c
@@ -630,7 +630,7 @@
 1700615131 c:\users\diego\documents\github\trabajofinallab2\tp_final_prog&labii\archivos.h
 	"stUsuario.h"
 
-1700615753 c:\users\diego\documents\github\trabajofinallab2\tp_final_prog&labii\stusuario.h
+1700625199 c:\users\diego\documents\github\trabajofinallab2\tp_final_prog&labii\stusuario.h
 	"stMazo.h"
 	"stBuzon.h"
 
