@@ -8,7 +8,7 @@ typedef struct
 {
     datosUsuario dato;
 
-    stMazo * mazo;
+    stMazo mazo;
     stListaD * coleccion;
     stBuzon buzon;
 

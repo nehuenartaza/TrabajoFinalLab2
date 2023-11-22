@@ -152,6 +152,7 @@ void menuFINAL()
             do
             {
                 usuario.coleccion = cargaColeccionPorParametro(usuario.dato);
+                cargaMazoPorParametro(&(usuario.mazo),usuario.dato);
                 system("cls");
                 menuPrincipal();
                 scanf("%d", &opcion);
@@ -480,22 +481,24 @@ void menuFINAL()
                         {
                         case 1:
                             system("cls");
-                            // agregar funcion mostrar mazo completo
+                            MostrarMazo(usuario.mazo);
                             system("pause");
                             break;
                         case 2:
                             system("cls");
-                            // agregar funcion agregar una carta de la coleccion al mazo
+                            printf("ingrese un id de la carta que desea agregar al mazo: \n");
+                            scanf("%d",&idBuscado);
+                            apilarMazo(&(usuario.mazo),buscarCartaPorIDYLaRetorna(usuario.coleccion,idBuscado));
                             system("pause");
                             break;
                         case 3:
                             system("cls");
-                            // agregar funcion remover una carta del mazo
+                            DesapilarMazo(&(usuario.mazo));
                             system("pause");
                             break;
                         case 4:
                             system("cls");
-                            // agregar funcion armar un mazo aleatorio con las cartas disponibles en la coleccion
+                            CargarMazoAleatoriamente(&(usuario.mazo),usuario.coleccion);
                             system("pause");
                             break;
                         case 9:

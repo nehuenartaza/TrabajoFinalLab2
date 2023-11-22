@@ -4,7 +4,7 @@ void inicStUsuario(stUsuario * usuarioAInicializar)
 {
     inicStBuzon(&usuarioAInicializar->buzon);
     usuarioAInicializar->coleccion = setNULL();
-    usuarioAInicializar->mazo = setNULL();
+    InicMazo(&(usuarioAInicializar->mazo));
 }
 
 stUsuario cargaDatosUsuario(datosUsuario usuarioACargar)
@@ -25,7 +25,7 @@ datosUsuario guardaDatosUsuario(stUsuario usuarioAGuardar)
 
     usuarioGuardado = guardaIndicadoresDeColeccion(usuarioAGuardar.coleccion , usuarioGuardado);
     usuarioGuardado = guardaIndicadoresDeBuzon(&usuarioAGuardar.buzon);
-    usuarioGuardado = guardaIndicadoresdeMazo(usuarioAGuardar.mazo,usuarioGuardado);
+    usuarioGuardado = guardaIndicadoresdeMazo((&usuarioAGuardar.mazo),usuarioGuardado);
 
     return usuarioGuardado;
 }
