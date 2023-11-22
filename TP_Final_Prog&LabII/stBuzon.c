@@ -3,11 +3,17 @@
 ///Muestra
 void muestraMazoIntercambio(stListaD * mazoIntercambioAMostrar) //Muestra Cartas de la coleccion que se pueden intercambiar
 {
-    stListaD * auxiliar = mazoIntercambioAMostrar;
-    while (auxiliar =! NULL)
+    if(mazoIntercambioAMostrar == NULL)
+        printf("\n No hay cartas para intercambiar. ");
+    else
     {
-        if(auxiliar->dataColecc.cant >= 2)
-            muestraCarta(auxiliar->dataColecc);
+        stListaD * auxiliar = mazoIntercambioAMostrar;
+        while (auxiliar != NULL)
+        {
+            if(auxiliar->dataColecc.cant >= 2)
+                muestraCarta(auxiliar->dataColecc);
+            auxiliar = auxiliar->sigNodo;
+        }
     }
 }
 
@@ -42,16 +48,21 @@ void muestraTodasNotificaciones(stNotificacion * notificacionesAMostrar) //Muest
 
 void muestraBuzon(stBuzon * buzonAMostrar) //Muestra Buzon Entero
 {
-    stNotificacion * notificacionExtraida;
-    printf("\n ---------- BUZON ---------- ");
-    while(buzonAMostrar->primero != NULL)
+    if(buzonAMostrar->primero != NULL)
     {
-        notificacionExtraida = extraerNotificacionDeBuzon(buzonAMostrar);
-        muestraNotificacion(notificacionExtraida);
-        system("pause");
-        system("cls");
+        stNotificacion * notificacionExtraida;
+        printf("\n ---------- BUZON ---------- ");
+        while(buzonAMostrar->primero != NULL)
+        {
+            notificacionExtraida = extraerNotificacionDeBuzon(buzonAMostrar);
+            muestraNotificacion(notificacionExtraida);
+            system("pause");
+            system("cls");
+        }
+        printf("\n ---------- BUZON VACIO ---------- ");
     }
-    printf("\n ---------- BUZON VACIO ---------- "); ///// despues de mostrar todo el buzon establecer datoUsuario.validosDatosBuzon = 0
+    else
+        printf("\n ---------- BUZON VACIO ---------- ");
 }
 
 ///Logica
@@ -71,26 +82,27 @@ stNotificacion * creaNodoNotificacion(indicadorBuzon informacion)
     return nuevaNotifi;
 }
 
-stNotificacion * intercambio(stListaD ** coleccionDemanda , stListaD ** ColeccionOferta , indicadorBuzon datosDeIntercambio) //Intercambia 2 cartas en colecciones distintas
+stNotificacion * intercambio(stListaD ** coleccionDemanda, stListaD ** ColeccionOferta, indicadorBuzon datosDeIntercambio)   //Intercambia 2 cartas en colecciones distintas
 {
     stNotificacion * nuevaNotificacion = creaNodoNotificacion(datosDeIntercambio);
 
-    (*coleccionDemanda) = altaCartaEnColeccion((*coleccionDemanda) , datosDeIntercambio.oferta.oferta);
-    (*coleccionDemanda) = eliminarYRetirarCartaDeColeccion((*coleccionDemanda) , &datosDeIntercambio.demanda.demanda);
+    (*coleccionDemanda) = altaCartaEnColeccion((*coleccionDemanda), datosDeIntercambio.oferta.oferta);
+    (*coleccionDemanda) = eliminarYRetirarCartaDeColeccion((*coleccionDemanda), &datosDeIntercambio.demanda.demanda);
 
-    (*ColeccionOferta) = altaCartaEnColeccion((*ColeccionOferta) , datosDeIntercambio.demanda.demanda);
-    (*ColeccionOferta) = eliminarYRetirarCartaDeColeccion((*ColeccionOferta) , &datosDeIntercambio.oferta.oferta);
+    (*ColeccionOferta) = altaCartaEnColeccion((*ColeccionOferta), datosDeIntercambio.demanda.demanda);
+    (*ColeccionOferta) = eliminarYRetirarCartaDeColeccion((*ColeccionOferta), &datosDeIntercambio.oferta.oferta);
 
     return nuevaNotificacion;
 }
 
-void agregarAlFinalBuzon(stBuzon * buzonACargar , stNotificacion * notificacionAGuardar)
+void agregarAlFinalBuzon(stBuzon * buzonACargar, stNotificacion * notificacionAGuardar)
 {
     if(buzonACargar->primero == NULL)
     {
         buzonACargar->primero = notificacionAGuardar;
         buzonACargar->ultimo = notificacionAGuardar;
-    }else
+    }
+    else
     {
         buzonACargar->ultimo->siguiente = notificacionAGuardar;
         buzonACargar->ultimo = notificacionAGuardar;
@@ -110,7 +122,7 @@ void eliminaPrimeroDeBuzon(stBuzon * buzonAElimnar)
     }
 }
 
-datosUsuario guardaBuzon(stNotificacion * buzonAGuardar , datosUsuario datosBuzonAGuardar)
+datosUsuario guardaBuzon(stNotificacion * buzonAGuardar, datosUsuario datosBuzonAGuardar)
 {
     datosBuzonAGuardar.datosBuzon[datosBuzonAGuardar.validosDatosBuzon].demanda = buzonAGuardar->datos.demanda;
     datosBuzonAGuardar.datosBuzon[datosBuzonAGuardar.validosDatosBuzon].oferta = buzonAGuardar->datos.oferta;
@@ -136,7 +148,7 @@ datosUsuario guardaIndicadoresDeBuzon(stBuzon * buzonAGuardar)
     stNotificacion * auxiliar = buzonAGuardar->primero;
     while(auxiliar != NULL)
     {
-        infoAGuardar = guardaBuzon(auxiliar , infoAGuardar);
+        infoAGuardar = guardaBuzon(auxiliar, infoAGuardar);
         auxiliar = auxiliar->siguiente;
     }
     return infoAGuardar;

@@ -35,6 +35,7 @@ void cargaBuzonPorParametro(datosUsuario datosUsuarioACargar , stBuzon * buzonAC
 void cargaMazoPorParametro(stMazo *P,datosUsuario datosuarioAcargar);
 //Muestra Datos Usuario
 void muestraUsuariosEnArchi();
+void muestraUsuariosAIntercambiarEnArchi(datosUsuario usuarioActual);
 void muestraColeccionIntercambioUsuarioEnArchi(int idDeUsuarioAMostrar);
 //Busqueda
 int buscaUltimoIDEnArchiUsuarios();

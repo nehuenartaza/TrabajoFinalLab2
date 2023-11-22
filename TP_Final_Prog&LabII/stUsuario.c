@@ -1,5 +1,12 @@
 #include "stUsuario.h"
 
+void inicStUsuario(stUsuario * usuarioAInicializar)
+{
+    inicStBuzon(&usuarioAInicializar->buzon);
+    usuarioAInicializar->coleccion = setNULL();
+    usuarioAInicializar->mazo = setNULL();
+}
+
 stUsuario cargaDatosUsuario(datosUsuario usuarioACargar)
 {
     stUsuario usuarioCargado;

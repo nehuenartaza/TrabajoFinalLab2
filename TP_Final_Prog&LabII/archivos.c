@@ -343,6 +343,27 @@ void muestraUsuariosEnArchi()
     }
 }
 
+void muestraUsuariosAIntercambiarEnArchi(datosUsuario usuarioActual)
+{
+    FILE * archi = fopen(ARCHI_USUARIOS, "rb");
+    if(archi)
+    {
+        datosUsuario usuarioAMostrar;
+        while(!feof(archi))
+        {
+            fread(&usuarioAMostrar, sizeof(datosUsuario), 1, archi);
+            printf("\n --------------------");
+            if(!feof(archi) && usuarioActual.id != usuarioAMostrar.id)
+            {
+                printf("\n Id Usuario....: %d", usuarioAMostrar.id);
+                printf("\n Nombre Usuario: %s", usuarioAMostrar.nombre);
+            }
+        }
+        printf("\n --------------------");
+        fclose(archi);
+    }
+}
+
 void muestraColeccionIntercambioUsuarioEnArchi(int idDeUsuarioAMostrar)
 {
     datosUsuario usuarioQueTieneColeccionAMostrar = buscaUsuarioPorIdEnArchi(idDeUsuarioAMostrar);
@@ -399,7 +420,7 @@ void hacerIntercambio(stUsuario * usuarioActual)
     do
     {
         printf("\n Los usuarios Disponibles para intercambio son : ");
-        muestraUsuariosEnArchi();
+        muestraUsuariosAIntercambiarEnArchi(usuarioActual->dato);
 
         printf("\n Ingrese Id de Usuario que desea ver coleccion disponible a intercambiar : ");
         scanf("%d", &idDemandado);
@@ -434,7 +455,7 @@ void hacerIntercambio(stUsuario * usuarioActual)
     if(archi)
     {
         datosUsuario usuarioEnArchi;
-        while(!feof(archi) && estado == 0)
+        while(!feof(archi))
         {
             fread(&usuarioEnArchi, sizeof(datosUsuario), 1, archi);
             if(!feof(archi) && usuarioEnArchi.id == idDemandado)
@@ -442,11 +463,12 @@ void hacerIntercambio(stUsuario * usuarioActual)
                 fseek(archi, -sizeof(stCarta), SEEK_CUR);
                 usuarioEnArchi = parteDemandada;
                 fwrite(&usuarioEnArchi, sizeof(datosUsuario), 1, archi);
-                estado = 1;
+                break;
             }
         }
         fclose(archi);
     }
+    printf("\n Intercambio realizado. ");
 }
 
 //Guardado De Datos

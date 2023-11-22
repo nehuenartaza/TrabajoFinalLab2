@@ -80,9 +80,9 @@ void menuColeccion2()
 
 void menuIntercambio()      // prototipo super prototipo SUJETO A CAMBIOS
 {
-    printf("\n1- Ver mazo de intercambio.");
-    printf("\n4- Realizar intercambio.");
-    printf("\n5- Buzon de notificaciones.");
+    printf("\n1- Ver mis cartas a intercambiar.");
+    printf("\n2- Ver mi Buzon.");
+    printf("\n3- Buscar Intercambio.");
     printf("\n9- Volver.");
     printf("\n\n");
 }
@@ -101,6 +101,7 @@ void menuMazo()
 void menuFINAL()
 {
     stUsuario usuario;
+    inicStUsuario(&usuario);
     datosUsuario usuarioACargar;
     int login = 0;  // valor 0 indica que no está logueado y se usa para mandar al menu de inicio, valor 1 significa que hay un usuario logueado y se abre el programa.
     int opcion = 0; // variable para navegar por los menues/switch
@@ -442,27 +443,19 @@ void menuFINAL()
                         {
                         case 1:
                             system("cls");
-                            // agregar funcion para mostrar mazo de intercambio completo
+                            muestraMazoIntercambio(usuario.coleccion);
                             system("pause");
                             break;
                         case 2:
                             system("cls");
-                            // agregar funcion para agregar cartas al mazo de intercambio desde la coleccion
+                            muestraBuzon(&usuario.buzon);
+                            usuario.dato.validosDatosBuzon = 0;
+                            printf("\n");
                             system("pause");
                             break;
                         case 3:
                             system("cls");
-                            // agregar funcion para remover cartas del mazo de intercambio desde la coleccion
-                            system("pause");
-                            break;
-                        case 4:
-                            system("cls");
-                            // agregar funcion para realizar un intercambio si el mazo de intercambio esta cargado
-                            system("pause");
-                            break;
-                        case 5:
-                            system("cls");
-
+                            hacerIntercambio(&usuario);
                             system("pause");
                             break;
                         case 9:

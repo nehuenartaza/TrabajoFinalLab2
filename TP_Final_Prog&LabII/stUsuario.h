@@ -14,6 +14,7 @@ typedef struct
 
 } stUsuario;
 
+void inicStUsuario(stUsuario * usuarioAInicializar);
 stUsuario cargaDatosUsuario(datosUsuario);
 datosUsuario guardaDatosUsuario(stUsuario);
 
