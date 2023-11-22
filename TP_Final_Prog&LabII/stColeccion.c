@@ -396,7 +396,7 @@ int contadorCartasTotalesEnColeccion(stListaD * coleccion)
 
     while(coleccion != NULL)
     {
-        cont++;
+        cont = cont + coleccion->dataColecc.cant;
         coleccion = coleccion->sigNodo;
     }
 

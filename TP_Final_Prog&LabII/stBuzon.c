@@ -10,8 +10,7 @@ void muestraMazoIntercambio(stListaD * mazoIntercambioAMostrar) //Muestra Cartas
         stListaD * auxiliar = mazoIntercambioAMostrar;
         while (auxiliar != NULL)
         {
-            if(auxiliar->dataColecc.cant >= 2)
-                muestraCarta(auxiliar->dataColecc);
+            muestraCarta(auxiliar->dataColecc);
             auxiliar = auxiliar->sigNodo;
         }
     }

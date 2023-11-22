@@ -413,7 +413,6 @@ void hacerIntercambio(stUsuario * usuarioActual)
     int idDemandado;
     int cartaDemandada;
     int cartaOfrecida;
-    int estado = 0;
     char control = 'n';
     stNotificacion * nuevaNotificacionDeIntercambio;
 
@@ -448,9 +447,9 @@ void hacerIntercambio(stUsuario * usuarioActual)
     usuarioActual->dato = guardaIndicadorBuzon(usuarioActual->dato, usuarioActual->dato, parteDemandada, oferta, demanda);
     parteDemandada = guardaIndicadorBuzon(parteDemandada, usuarioActual->dato, parteDemandada, oferta, demanda);
 
-    nuevaNotificacionDeIntercambio = intercambio(&usuarioActual->coleccion, &coleccionDemandado, usuarioActual->dato.datosBuzon[usuarioActual->dato.validosDatosBuzon-1]);
+    nuevaNotificacionDeIntercambio = intercambio(&(usuarioActual->coleccion), &coleccionDemandado , usuarioActual->dato.datosBuzon[usuarioActual->dato.validosDatosBuzon-1]);
 
-    agregarAlFinalBuzon(&usuarioActual->buzon, nuevaNotificacionDeIntercambio);
+    agregarAlFinalBuzon(&(usuarioActual->buzon), nuevaNotificacionDeIntercambio);
     FILE * archi = fopen(ARCHI_USUARIOS, "r+b");
     if(archi)
     {
