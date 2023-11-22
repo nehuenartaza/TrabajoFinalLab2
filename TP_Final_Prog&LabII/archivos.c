@@ -460,7 +460,7 @@ void hacerIntercambio(stUsuario * usuarioActual)
             fread(&usuarioEnArchi, sizeof(datosUsuario), 1, archi);
             if(!feof(archi) && usuarioEnArchi.id == idDemandado)
             {
-                fseek(archi, -sizeof(stCarta), SEEK_CUR);
+                fseek(archi, -sizeof(datosUsuario), SEEK_CUR);
                 usuarioEnArchi = parteDemandada;
                 fwrite(&usuarioEnArchi, sizeof(datosUsuario), 1, archi);
                 break;
