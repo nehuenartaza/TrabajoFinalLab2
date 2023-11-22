@@ -4,11 +4,11 @@
 #include <time.h>
 int main()
 {
-    //muestraUsuariosEnArchi();
-    menuFINAL();
+    // muestraUsuariosEnArchi();
+    // menuFINAL();
 
 
-    /*
+
     ///Carga todo el archivo hasta que nosotros queramos
     printf("\n ---------------Archi---------------");
     muestraArchiCartas();
@@ -25,7 +25,7 @@ int main()
 
     printf("\n ---------------Archi Nuevo---------------");
     muestraArchiCartas();
-    */
+
 
     return 0;
 }
