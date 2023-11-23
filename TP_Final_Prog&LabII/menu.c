@@ -573,7 +573,7 @@ void menuFINAL()
                            break;
                         case 5:
                             system("cls");
-                             if(ContarMazo(usuario.mazo)>1)
+                             if(ContarMazo(usuario.mazo)>=1)
                               {
                                   printf("\n El Mazo ya tiene datos cargados, si desea cargar un mazo aleatorio tendra que vaciar el Mazo.\n");
                               }
