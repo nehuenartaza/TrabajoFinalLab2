@@ -21,6 +21,7 @@ typedef struct
 mazoSimple*AgregarAlprincipio(mazoSimple*,mazoSimple*);
 mazoSimple*CrearNodo(stCarta);
 stCarta BorrarPrimero(mazoSimple**);
+mazoSimple*VerRepetidosSimple(mazoSimple*Lista,mazoSimple*ListaVerificar,int*Verificar);
 
 //FUNCIONES PARA EL MAZO
 void InicMazo(stMazo*);
@@ -28,6 +29,8 @@ void apilarMazo(stMazo*,stCarta);
 stCarta DesapilarMazo(stMazo*);
 stCarta MostrarTope(stMazo*);
 int MazoVacio(stMazo*);
+int ContarMazo(stMazo Pila);
+void VaciarMazo(stMazo*Pila);
 void MostrarMazo(stMazo);
 void CargarMazoAleatoriamente(stMazo*Pila,stListaD*ListaDoble);
 stListaD*BorrarNodoYMeterEnMazoNodoElegidoConContador(stListaD*Lista,stMazo*Pila,int numeroDePosicion,int contador);

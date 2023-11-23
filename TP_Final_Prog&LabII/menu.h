@@ -3,6 +3,7 @@
 ///Librerias
 #include "constantes.h"
 #include "archivos.h"
+#include <time.h>
 ///Prototipados
 void menuLogin();
 void menuPrincipal();

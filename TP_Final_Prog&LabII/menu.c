@@ -18,7 +18,7 @@ void menuPrincipal()
 {
     printf("\n1- Base de datos de cartas.");
     printf("\n2- Coleccion.");
-    printf("\n3- Intercambio.(NO ENTRAR ACA TODAVIA, FALTAN TERMINAR FUNCIONES)");  // NO OLVIDARSE ESTO
+    printf("\n3- Intercambio.");
     printf("\n4- Mazo de juego.");
     printf("\n9- Guardar y cerrar sesion.");
     printf("\n\n");
@@ -93,13 +93,16 @@ void menuMazo()
     printf("\n1- Mostrar mazo.");
     printf("\n2- Agregar carta al mazo.");
     printf("\n3- Remover carta del mazo.");       // idem que con la coleccion, ponemos agregar/remover juntos o separados?
-    printf("\n4- Armar mazo aleatorio.");
+    printf("\n4- Vaciar el mazo.");
+    printf("\n5- Armar mazo aleatorio.");
     printf("\n9- Volver.");
     printf("\n\n");
 }
 
 void menuFINAL()
 {
+    srand(time(NULL));
+    stCarta DelMazo;
     stUsuario usuario;
     inicStUsuario(&usuario);
     datosUsuario usuarioACargar;
@@ -284,16 +287,37 @@ void menuFINAL()
                                 pokemon = contadorCartasPokemonEnColeccion(usuario.coleccion);
                                 entrenador = contadorCartasEntrenadorEnColeccion(usuario.coleccion);
                                 energia = contadorCartasEnergiaEnColeccion(usuario.coleccion);
+                                if ( pokemon == 0 || cartasTotales == 0 )
+                                {
+                                    promPokemon = 0;
+                                }
+                                else
+                                {
+                                    promPokemon = (float) (100 * pokemon) / cartasTotales;
+                                }
+                                if ( entrenador == 0 || cartasTotales == 0 )
+                                {
+                                    promEntrenador = 0;
+                                }
+                                else
+                                {
+                                    promEntrenador = (float) (100 * entrenador) / cartasTotales;
+                                }
+                                if ( energia == 0 || cartasTotales == 0 )
+                                {
+                                    promEnergia = 0;
+                                }
+                                else
+                                {
+                                    promEnergia = (float) (100 * energia) / cartasTotales;
+                                }
 
-                                promPokemon = (float) (pokemon/cartasTotales)*100;
-                                promEntrenador = (float) (entrenador/cartasTotales)*100;
-                                promEnergia = (float) (energia/cartasTotales)*100;
 
 
                                 printf("\nActualmente contiene %d cartas en su coleccion.", cartasTotales);
-                                printf("\nContiene %d de %d (%.1f) cartas de clase Pokemon.", pokemon, cartasTotales, promPokemon);
-                                printf("\nContiene %d de %d (%.1f) cartas de clase Entrenador.", entrenador, cartasTotales, promEntrenador);
-                                printf("\nContiene %d de %d (%.1f) cartas de clase Energia.\n", energia, cartasTotales, promEnergia);
+                                printf("\nContiene %d de %d (%.1f%%) cartas de clase Pokemon.", pokemon, cartasTotales, promPokemon);
+                                printf("\nContiene %d de %d (%.1f%%) cartas de clase Entrenador.", entrenador, cartasTotales, promEntrenador);
+                                printf("\nContiene %d de %d (%.1f%%) cartas de clase Energia.\n", energia, cartasTotales, promEnergia);
                                 scanf("%d", &opcion);
 
                                 switch(opcion)
@@ -485,25 +509,72 @@ void menuFINAL()
                             break;
                         case 2:
                             system("cls");
-                            printf("ingrese un id de la carta que desea agregar al mazo: \n");
-                            scanf("%d",&idBuscado);
-                            apilarMazo(&usuario.mazo, buscarCartaPorIDYLaRetorna(usuario.coleccion,idBuscado));
+                            if((ContarMazo(usuario.mazo))>MAXMAZO)
+                            {
+                                printf("\nNo se pueden apilar mas cartas en el mazo (max de cartas:60).\n");
+
+                            }
+                            else
+                            {
+
+
+                                printf("\nIngrese el numero de ID de la carta a agregar: ");
+                                scanf("%d",&idBuscado);
+                                system("cls");
+                                DelMazo=buscarCartaPorIDYLaRetorna(usuario.coleccion,idBuscado);
+                                if(DelMazo.id==-1)
+                                {
+                                  printf("\nNo se encontro una carta con ese ID.\n");
+
+                                }
+                                else
+                                {
+
+                                    apilarMazo(&usuario.mazo,DelMazo);
+
+                                    printf("\nCarta agregada exitosamente.\n");
+
+                                }
+                            }
                             system("pause");
                             break;
                         case 3:
                             system("cls");
-                            DesapilarMazo(&usuario.mazo);
+                            if(MazoVacio(&usuario.mazo))
+                            {
+                                printf("\nEl Mazo Esta Vacio\n");
+
+                            }
+                            else
+                            {
+                               DesapilarMazo(&usuario.mazo);
+                               printf("\nCarta removida exitosamente.\n");
+
+                            }
                             system("pause");
                             break;
                         case 4:
+                           system("cls");
+                           if(MazoVacio(&usuario.mazo))
+                            {
+                                printf("\nEl Mazo Esta Vacio.\n");
+
+                            }
+                            else
+                            {
+                                VaciarMazo(&usuario.mazo);
+                                printf("\nMazo vaciado exitosamente.\n");
+
+                            }
+                           system("pause");
+                           break;
+                        case 5:
                             system("cls");
                             CargarMazoAleatoriamente(&usuario.mazo,usuario.coleccion);
                             system("pause");
                             break;
                         case 9:
                             usuario.dato = guardaIndicadoresdeMazo(&usuario.mazo, usuario.dato);
-                            printf("\n Validos de mazo vale %d " , usuario.dato.validosDatosMazo);
-                            system("pause");
                             guardaDatosNuevos(usuario.dato);
                             break;
                         default:

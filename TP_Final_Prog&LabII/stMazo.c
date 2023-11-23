@@ -1,5 +1,38 @@
 #include "stMazo.h"
 //FUNCIONES PARA LA LISTA SIMPLE QUE TIENE EL MAZO///
+mazoSimple*VerRepetidosSimple(mazoSimple*Lista,mazoSimple*ListaVerificar,int*verificar) //VERIFICA SI NO SE REPITE EL ID, SI LO HACE, SE SUMA SU CANTIDAD
+{
+    if(Lista!=NULL)
+    {
+        if(Lista->dato.id==ListaVerificar->dato.id)
+        {
+            Lista->dato.cant++;
+            (*verificar)=1;
+        }
+        else
+        {
+            mazoSimple*seguidora=Lista->siguiente;
+            while(seguidora!=NULL&&seguidora->dato.id!=ListaVerificar->dato.id)
+            {
+
+                seguidora=seguidora->siguiente;
+
+
+            }
+            if(seguidora!=NULL)
+            {
+               seguidora->dato.cant++;
+               (*verificar)=1;
+
+            }
+
+        }
+
+
+
+    }
+    return Lista;
+}
 mazoSimple*AgregarAlprincipio(mazoSimple*Lista,mazoSimple*NuevaLista) //agrega al principio el nuevo nodo
 {
     if(Lista==NULL)
@@ -53,12 +86,19 @@ void InicMazo(stMazo*Pila) //INICIALIZA EL MAZO
 }
 void apilarMazo(stMazo*Pila,stCarta NuevaCarta)  //apila una carta en el mazo creado
 {
+    int dato=0;
     mazoSimple*NuevoNodo=CrearNodo(NuevaCarta);
-    Pila->Tope=AgregarAlprincipio(Pila->Tope,NuevoNodo);
+    Pila->Tope=VerRepetidosSimple(Pila->Tope,NuevoNodo,&dato);
+    if(dato==0)
+    {
+        Pila->Tope=AgregarAlprincipio(Pila->Tope,NuevoNodo);
+    }
 }
 stCarta DesapilarMazo(stMazo*Pila)   //saca una carta del mazo y retorna la carta
 {
-    stCarta dato=BorrarPrimero(&(Pila->Tope));  //direccion de memoria del tope para el doble puntero
+    stCarta dato;
+
+   dato=BorrarPrimero(&(Pila->Tope));  //direccion de memoria del tope para el doble puntero
 
   return dato;
 }
@@ -69,12 +109,42 @@ stCarta MostrarTope(stMazo*Pila)   //muestra la carta que esta al tope del mazo
 
     return dato;
 }
+int ContarMazo(stMazo Pila)
+{
+    int cant=0;
+    while(!MazoVacio(&Pila))
+    {
+        cant=cant+Pila.Tope->dato.cant;
+        DesapilarMazo(&Pila);
+
+    }
+    return cant;
+}
 int MazoVacio(stMazo*Pila) //determina si el mazo esta vacio
 {
 
     return Pila->Tope? 0:1;  //vefifica si el tope tiene datos, si no los tiene retorna 0, sino 1
 }
-void MostrarMazo(stMazo Pila) //muestra el mazo de cartas
+void VaciarMazo(stMazo*Pila)  //desapila el mazo hasta que este vacio
+{
+    if(MazoVacio(Pila))
+    {
+
+        printf("El Mazo ya esta Vacio\n");
+
+    }
+    else
+    {
+        while(!MazoVacio(Pila))
+        {
+            DesapilarMazo(Pila);
+        }
+      printf("El mazo se ha vaciado correctamente\n");
+    }
+
+}
+
+void MostrarMazo(stMazo Pila) //muestra el mazo de cartas , desapilando una copia del mazo para que no afecte a la original
 {
     printf("MAZO DE CARTAS:\n");
     while(!MazoVacio(&Pila))
@@ -91,7 +161,7 @@ void CargarMazoAleatoriamente(stMazo*Pila,stListaD*ListaDoble)
    int cartas=contarCartasListaDoble(ListaDoble);
    int contador;
    int numeroRandom;
-   while(cartas!=0)
+   while(cartas!=0&&(ContarMazo(*Pila))<MAXMAZO)
    {
         contador=0;
         numeroRandom=rand()%cartas+1;
