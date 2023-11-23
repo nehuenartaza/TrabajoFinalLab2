@@ -432,12 +432,13 @@
 1700691486 source:c:\users\mrsli\onedrive\documentos\github\trabajofinallab2\tp_final_prog&labii\archivos.c
 	"archivos.h"
 
-1700691486 source:c:\users\mrsli\onedrive\documentos\github\trabajofinallab2\tp_final_prog&labii\menu.c
+1700713408 source:c:\users\mrsli\onedrive\documentos\github\trabajofinallab2\tp_final_prog&labii\menu.c
 	"menu.h"
 
-1700691486 c:\users\mrsli\onedrive\documentos\github\trabajofinallab2\tp_final_prog&labii\menu.h
+1700678210 c:\users\mrsli\onedrive\documentos\github\trabajofinallab2\tp_final_prog&labii\menu.h
 	"constantes.h"
 	"archivos.h"
+	<time.h>
 
 1700691486 source:c:\users\mrsli\onedrive\documentos\github\trabajofinallab2\tp_final_prog&labii\stcarta.c
 	"stCarta.h"
@@ -480,7 +481,7 @@
 1700691486 source:c:\users\mrsli\onedrive\documentos\github\trabajofinallab2\tp_final_prog&labii\stclase.c
 	"stClase.h"
 
-1700691486 source:c:\users\mrsli\onedrive\documentos\github\trabajofinallab2\tp_final_prog&labii\stcoleccion.c
+1700711438 source:c:\users\mrsli\onedrive\documentos\github\trabajofinallab2\tp_final_prog&labii\stcoleccion.c
 	"stColeccion.h"
 
 1699931647 source:c:\users\mrsli\onedrive\documentos\github\trabajofinallab2\tp_final_prog&labii\stenergia.c
@@ -504,10 +505,10 @@
 	"Constantes.h"
 	<time.h>
 
-1700691486 source:c:\users\mrsli\onedrive\documentos\github\trabajofinallab2\tp_final_prog&labii\stmazo.c
+1700713446 source:c:\users\mrsli\onedrive\documentos\github\trabajofinallab2\tp_final_prog&labii\stmazo.c
 	"stMazo.h"
 
-1700691486 c:\users\mrsli\onedrive\documentos\github\trabajofinallab2\tp_final_prog&labii\stmazo.h
+1700710363 c:\users\mrsli\onedrive\documentos\github\trabajofinallab2\tp_final_prog&labii\stmazo.h
 	"stColeccion.h"
 
 1699673655 source:c:\users\mrsli\onedrive\documentos\github\trabajofinallab2\tp_final_prog&labii\listadoble.c

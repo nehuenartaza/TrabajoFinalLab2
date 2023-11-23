@@ -6,6 +6,7 @@ int contarCartasListaDoble(stListaD * lista)
     {
         cantidad = 1;
         cantidad = cantidad + contarCartasListaDoble(lista->sigNodo);
+
     }
     return cantidad;
 }
@@ -329,6 +330,8 @@ void mostrarCartasPorExpansionAuxiliar(stListaD * coleccion, char expan[])   ///
 stCarta buscarCartaPorIDYLaRetorna(stListaD * lista, int id)
 {
     stCarta cartaBuscada;
+
+    cartaBuscada.id=-1;
     while ( lista != NULL )
     {
         if ( lista->dataColecc.id == id )
@@ -355,12 +358,17 @@ stListaD * buscaNodoEnColeccionPorId(stListaD * coleccionARevisar, stCarta carta
 {
     stListaD * nodoBuscado = setNULL();
     stListaD * auxiliar = coleccionARevisar;
-
     while(auxiliar != NULL && auxiliar->dataColecc.id != cartaABuscar.id)
+    {
+        if(auxiliar->dataColecc.id == cartaABuscar.id)
+        {
+            nodoBuscado = auxiliar;
+        }
+
         auxiliar = auxiliar->sigNodo;
 
-    if(auxiliar->dataColecc.id == cartaABuscar.id)
-        nodoBuscado = auxiliar;
+    }
+
 
     return nodoBuscado;
 }

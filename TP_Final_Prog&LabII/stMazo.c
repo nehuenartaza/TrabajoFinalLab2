@@ -61,17 +61,27 @@ mazoSimple*CrearNodo(stCarta dato) //crea el nodo simple para poner en el mazo, 
 stCarta BorrarPrimero(mazoSimple**Lista) //borra el primer nodo de la lista usando puntero doble y lo retorna
 {
   stCarta datoAretornar;
-
-    if(Lista!=NULL)
+    if(*Lista!=NULL)
     {
-        mazoSimple*Borrar;
+        if((*Lista)->dato.cant>1)
+        {
+            (*Lista)->dato.cant--;
+            datoAretornar=(*Lista)->dato;
+            datoAretornar.cant=1;
+        }
+        else
+        {
+            mazoSimple*Borrar;
 
-        datoAretornar=(*Lista)->dato;
-        Borrar=(*Lista);
+            datoAretornar=(*Lista)->dato;
+            Borrar=(*Lista);
 
-        (*Lista)=(*Lista)->siguiente;
+            (*Lista)=(*Lista)->siguiente;
 
-        free(Borrar);
+            free(Borrar);
+
+        }
+
 
     }
 
@@ -112,13 +122,21 @@ stCarta MostrarTope(stMazo*Pila)   //muestra la carta que esta al tope del mazo
 int ContarMazo(stMazo Pila)
 {
     int cant=0;
-    while(!MazoVacio(&Pila))
+    cant=ContarMazoSimple(Pila.Tope);
+    return cant;
+}
+int ContarMazoSimple(mazoSimple*Lista)
+{
+    int dato=0;
+    if(Lista!=NULL)
     {
-        cant=cant+Pila.Tope->dato.cant;
-        DesapilarMazo(&Pila);
+        dato=Lista->dato.cant+ContarMazoSimple(Lista->siguiente);
+
 
     }
-    return cant;
+
+    return dato;
+
 }
 int MazoVacio(stMazo*Pila) //determina si el mazo esta vacio
 {
@@ -130,7 +148,7 @@ void VaciarMazo(stMazo*Pila)  //desapila el mazo hasta que este vacio
     if(MazoVacio(Pila))
     {
 
-        printf("El Mazo ya esta Vacio\n");
+        printf("\nEl Mazo ya esta Vacio.\n");
 
     }
     else
@@ -139,35 +157,58 @@ void VaciarMazo(stMazo*Pila)  //desapila el mazo hasta que este vacio
         {
             DesapilarMazo(Pila);
         }
-      printf("El mazo se ha vaciado correctamente\n");
+      printf("\n El mazo se ha vaciado correctamente\n");
     }
 
 }
 
-void MostrarMazo(stMazo Pila) //muestra el mazo de cartas , desapilando una copia del mazo para que no afecte a la original
+void MostrarMazo(stMazo Pila) //muestra el mazo de cartas , accediendo de forma recursiva a la lista simple
 {
-    printf("MAZO DE CARTAS:\n");
-    while(!MazoVacio(&Pila))
+    if(MazoVacio(&Pila))
+    {
+        printf("\n El Mazo esta Vacio.\n");
+
+    }
+    else
+    {
+       printf("\n Mazo de cartas:\n");
+
+       MostrarMazoSimple(Pila.Tope);
+
+    }
+
+
+}
+void MostrarMazoSimple(mazoSimple*Lista)
+{
+    if(Lista!=NULL)
     {
         printf("----------------------------------\n");
-        muestraCarta((Pila.Tope)->dato);
-        DesapilarMazo(&Pila);
+        muestraCarta(Lista->dato);
         printf("----------------------------------\n");
+        MostrarMazoSimple(Lista->siguiente);
+
+
+
     }
 }
 //FUNCION PARA METER EN EL MAZO Y BORRAR NODO
-void CargarMazoAleatoriamente(stMazo*Pila,stListaD*ListaDoble)
+void CargarMazoAleatoriamente(stMazo*Pila,stListaD*ListaDoble) //recibimos una copia de la coleccion, no la original
 {
    int cartas=contarCartasListaDoble(ListaDoble);
+    //contamos sus cartas para ver con cuantas trabajamos para apilar
    int contador;
    int numeroRandom;
-   while(cartas!=0&&(ContarMazo(*Pila))<MAXMAZO)
+   while(cartas!=0&&(ContarMazo(*Pila))<MAXMAZO) //el programa solo podra llenar el mazo hasta que el mazo no llegue a su limite o se vacien las cartas de la copia de la coleccion
    {
         contador=0;
         numeroRandom=rand()%cartas+1;
         ListaDoble=BorrarNodoYMeterEnMazoNodoElegidoConContador(ListaDoble,Pila,numeroRandom,contador+1);
-        cartas--;
+        cartas=contarCartasListaDoble(ListaDoble);
    }
+
+     printf("\n Se ha implementado el Mazo aleatorio correctamente\n");
+
 }
 
 
@@ -175,45 +216,71 @@ stListaD*BorrarNodoYMeterEnMazoNodoElegidoConContador(stListaD*Lista,stMazo*Pila
 {
     if(Lista!=NULL)
     {
+        stCarta dato;
         stListaD*Borrar;
-        if(contador==numeroDePosicion)
-        {
-            Borrar=Lista;
-            Lista=Lista->sigNodo;
-            apilarMazo(Pila,Borrar->dataColecc);
-            free(Borrar);
+        if(contador==numeroDePosicion)          //encuentra la posicion en donde se encuentra el nodo que se apilara al mazo
+        {                                       //pueden suceder dos cosas
+
+            if(Lista->dataColecc.cant>1)        //la copia de la coleccion puede tener mas de una carta por lo tanto, no se borra el nodo
+            {
+                Lista->dataColecc.cant--;       //se resta la cantidad de la lista,se hace una copia para no afectar la original y se agrega al mazo
+                dato=Lista->dataColecc;
+                dato.cant=1;
+                apilarMazo(Pila,dato);
+
+            }
+            else
+            {
+                Borrar=Lista;                           //caso contrario si solo tiene una cantidad de una carta, se borra de la lista y se agrega al mazo
+                Lista=Lista->sigNodo;
+                apilarMazo(Pila,Borrar->dataColecc);
+                free(Borrar);
+
+
+            }
+
 
         }
         else
         {
-           contador++;
-           stListaD*siguiente=Lista->sigNodo;
-           stListaD*anterior=Lista;
-           while(siguiente!=NULL&&contador!=numeroDePosicion)
-           {
+            contador++;
+            stListaD*siguiente=Lista->sigNodo;
+            stListaD*anterior=Lista;
+            while(siguiente!=NULL&&contador!=numeroDePosicion)
+            {
                 anterior=siguiente;
                 siguiente=siguiente->sigNodo;
                 contador++;
+            }
+            if(siguiente!=NULL)
+            {
+                if(siguiente->dataColecc.cant>1)
+                {
+                    siguiente->dataColecc.cant--;
+                    dato=siguiente->dataColecc;
+                    dato.cant=1;
+                    apilarMazo(Pila,dato);
+
+                }
+                else
+                {
 
 
-           }
-           if(siguiente!=NULL)
-           {
-             Borrar=siguiente;
-             siguiente=siguiente->sigNodo;
-             anterior->sigNodo=Borrar->sigNodo;
-             if(siguiente!=NULL)
-             {
+                    Borrar=siguiente;
+                    siguiente=siguiente->sigNodo;
+                    anterior->sigNodo=Borrar->sigNodo;
+                    if(siguiente!=NULL)
+                    {
 
-                siguiente->antNodo=anterior;
+                        siguiente->antNodo=anterior;
 
 
-             }
+                    }
 
-            apilarMazo(Pila,Borrar->dataColecc);
-            free(Borrar);
-
-           }
+                    apilarMazo(Pila,Borrar->dataColecc);
+                    free(Borrar);
+                }
+            }
 
 
 

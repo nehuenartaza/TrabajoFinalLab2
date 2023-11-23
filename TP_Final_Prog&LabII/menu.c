@@ -440,7 +440,10 @@ void menuFINAL()
                                 printf("\nCarta borrada exitosamente.\n");
                             }
                             else
-                                printf("\nNo se encontro una carta con ese ID\n");
+                            {
+                                    printf("\nNo se encontro una carta con ese ID\n");
+
+                            }
                             system("pause");
                             break;
                         case 9:
@@ -509,7 +512,7 @@ void menuFINAL()
                             break;
                         case 2:
                             system("cls");
-                            if((ContarMazo(usuario.mazo))>MAXMAZO)
+                            if((ContarMazo(usuario.mazo))>=MAXMAZO)
                             {
                                 printf("\nNo se pueden apilar mas cartas en el mazo (max de cartas:60).\n");
 
@@ -529,7 +532,7 @@ void menuFINAL()
                                 }
                                 else
                                 {
-
+                                    DelMazo.cant=1;
                                     apilarMazo(&usuario.mazo,DelMazo);
 
                                     printf("\nCarta agregada exitosamente.\n");
@@ -570,7 +573,19 @@ void menuFINAL()
                            break;
                         case 5:
                             system("cls");
-                            CargarMazoAleatoriamente(&usuario.mazo,usuario.coleccion);
+                             if(ContarMazo(usuario.mazo)>1)
+                              {
+                                  printf("\n El Mazo ya tiene datos cargados, si desea cargar un mazo aleatorio tendra que vaciar el Mazo.\n");
+                              }
+                              else
+                              {
+
+                                  CargarMazoAleatoriamente(&usuario.mazo,usuario.coleccion);
+                                  usuario.coleccion = cargaColeccionPorParametro(usuario.dato);
+
+
+                              }
+
                             system("pause");
                             break;
                         case 9:
