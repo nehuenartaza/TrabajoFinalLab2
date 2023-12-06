@@ -360,15 +360,19 @@ stListaD * buscaNodoEnColeccionPorId(stListaD * coleccionARevisar, stCarta carta
     stListaD * auxiliar = coleccionARevisar;
     while(auxiliar != NULL && auxiliar->dataColecc.id != cartaABuscar.id)
     {
+
+        auxiliar = auxiliar->sigNodo;
+
+    }
+    if(auxiliar!=NULL)
+    {
         if(auxiliar->dataColecc.id == cartaABuscar.id)
         {
             nodoBuscado = auxiliar;
         }
 
-        auxiliar = auxiliar->sigNodo;
 
     }
-
 
     return nodoBuscado;
 }

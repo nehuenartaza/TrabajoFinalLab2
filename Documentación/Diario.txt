@@ -1,0 +1,28 @@
+semana 1/11
+- Diego comenzó las librerías de stCartas.
+- Nehuen creó las librerías arboles y listas dobles.
+- Julián creó la estructura del mazo(), y la función apilar(),mazoVacio(), desapilar(), mostrar() y mostrarTope().
+- Julian creó la estructura para la lista simple de cartas con la que se va a cargar el mazo, con la funcion borrarPrimero(), agregarAlprincipio() y crearNodo().
+- Nehuen creó las funciones, romperEnlaces(), agregarInicioColeccion(), agregarFinalColeccion(), agregarPorIDColeccion(), retornarUltimaCarta() y mostrarListaDoble() para la colección.
+- Diego creó las librerías de archivos.
+- Nehuen creó la librería de constantes.
+- Diego creó las funciones cargaClasePokemon(), cargaClaseEnergia(), cargaClaseEntrenador(), cargaClaseUsuario(), validaOpcionCargaClaseUsuario(), muestraClase(), muestraEntrenador(), muestraEnergia(), muestrapokemonAGuardarataqueNro1Entrenador(), cargaExpansionUsuario(), muestraExpansion(), cargaPokemon(), muestraPokemon().
+
+
+semana 8/11
+- Diego creó las funciones cargaCartaUsuario(), muestraCarta(), inicLista(), creaNodoConCarta(), CargaCartas(), cargaAFIN(), buscaUltimoNodoListaCartas(), muestraListaCartas(), muestraNodoCarta(), creaNodoArbolCartas(), inicArbol(), buscaNodoConInicial(), agregarNodoArbol(), altaCarta(), muestraArbolDeCartas(), muestraRaiz(), cargaArbolDeListasDeCartasUsuario().
+- Nehuen creó las funciones, mostrarCartasPorStringAproximado(), eliminarYRetirarCartaDeColeccion(), IDsCartasCoinciden(), borrarNodoDeColeccion(), mostrarCartasPorRareza(), rarezasCartasCoinciden(), mostrarCartaPorID().
+- Nehuen cambió la estructura if - else if - else if por if - else if - else de las funciones agregaCartaANodoArbol y buscaNodoConInicial.
+- Julian hizo las funciones AgregarAlPrincipio(), CrearNodo(), BorrarPrimero(), apilarMazo(), DesapilarMazo(), MostrarTope(), MazoVacio(), MostrarMazo().
+- Diego hizo las funciones agregaCartaANodoDeArbol(), cargaArchiCartas(), muestraArchiCartas(), buscaUltimoIDEnArchi(), contarCartasListaDoble(), cargaCartasArchiToArbolDL(), creaUsuario(), guardaIndicadorMazo(), guardaIndicadorColeccion(), guardaIndicadorMazoIntercambio(), eliminaUsuario(), guardaIndicadorBuzon(), 
+- Julian movió todo lo de listaDoble.c a stColeccion.c y borró la otra librería.
+- Diego implementó las estructuras de stDatosUsuario, stUsuario y stNoficicaciones.
+
+semana 15/11
+
+- Federico hizo las funciones cargaArchiUsuarios(), iniciarSesion(), verificaSiListaDobleEstaVacia(), menuPrincipal(), menuBaseDeDatos(), menuOpcionDeFiltradoBaseDeDatos(), menuOpcionDeFiltradoColeccion(), menuColeccion1(), menuColeccion2(), menuIntercambio(), menuMazo(), menuFINAL(), vaciarDatosUsuario(), contadorCartasTotalesEnColeccion(), contadorCartasPokemonEnColeccion(), contadorCartasEntrenadorEnColeccion(), contadorCartasEnergiaEnColeccion(), .
+- Nehuen arregló la función mostrarListaDoble(), cálculos a la hora de sacar promedios de cartas, la función agregarPorIDColeccion().
+- Nehuen hizo las funciones buscarYRetornarNodoCartaPorID(), mostrarCartasPorClasePokemon(), mostrarCartasPorClaseEnergia(), mostrarCartasPorClaseEntrenador(), mostrarCartasPorExpansion(), mostrarCartasPorExpansionAuxiliar(), 
+- Diego hizo las funciones buscaUsuarioPorIdEnArchi(), muestraNotificacion(), muestraCartaAIntercambiar(), muestraMazoIntercambio(), muestraTodasNotificaciones(), muestraBuzon(), creaNodoNotificacion(), buscaCartaPorIdEnArchi(), buscaUltimoIDEnArchiUsuarios(), muestraUsuariosEnArchi(), muestraColeccionIntercambioUsuarioEnArchi(), hacerIntercambio(), inicStBuzon(), eliminaPrimeroDeBuzon(), agregarAlFinalBuzon(), extraerNotificacionDeBuzon(), cargaColeccionPorParametro(), buscarCartaPorIDYLaRetorna(), creaNodoColeccion(), buscaNodoEnColeccionPorId(), altaCartaEnColeccion(), creaDemanda(), guardaIndicadorBuzon(), cargaColeccionPorParametro(), guardaDatosNuevos(), muestraArchiCartasPorNombre(), muestraArchiCartasPorRareza(), muestraArchiCartasPorExpansion(), muestraArchiCartasPorSubExpansion(), cargaBuzonPorParametro(), guardaIndicadorColeccion(), cargaIndicadoresDeColeccion(), guardaBuzon(), guardaIndicadoresDeBuzon(), cargaDatosUsuario(), guardaDatosUsuario(), muestraArchiCartasPorClase(), muestraArchiCartasPokemon(), muestraArchiCartasEnergia(), muestraArchiCartasEntrenador(), muestraIndicadoresColeccion(), muestraUsuariosAIntercambiarEnArchi(), inicStUsuario(), muestraIndicadoresBuzon().
+- Julian hizo las funciones InicMazo(), cargaMazoPorParametro(), guardaIndicadoresdeMazo(), VerRepetidosSimple(), ContarMazo(), VaciarMazo(), MostrarMazo(), ContarMazoSimple().
+- Nehuen y Julian arreglaron la función buscaNodoEnColeccionPorId().

@@ -4,7 +4,7 @@
 
 void menuLogin()
 {
-    printf("\n Bienvenido a la aplicacion (nombre o no se)\n");
+    printf("\n Bienvenido a la aplicacion Pokemon Cards Game\n");
 
     printf("\n1- Iniciar sesion.");
     printf("\n2- Crear cuenta nueva.");
